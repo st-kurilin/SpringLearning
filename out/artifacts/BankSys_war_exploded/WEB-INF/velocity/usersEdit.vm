@@ -1,9 +1,0 @@
-<html>
-<body>
-<form method="POST" action="/users/${user.id}">
-    #springBind("user.name")
-        <input type="text" name="${user.name}" value="${user.name}" size="10" />
-        <input type="submit"/>
-</form>
-</body>
-</html>

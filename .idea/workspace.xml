@@ -92,21 +92,91 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="persistence-configuration.cfg.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/persistence-configuration.cfg.xml">
+      <file leaf-file-name="UserController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="12" selection-start="2733" selection-end="2733" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="tag#prop#0;tag#props#0;tag#property#1;tag#bean#5;tag#beans#0" expanded="true" />
-              </folding>
+            <state line="41" column="30" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.8888889">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitgnore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitgnore">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="3" column="13" selection-start="266" selection-end="283" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persistence-configuration.cfg.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/persistence-configuration.cfg.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="12" selection-start="2733" selection-end="2733" vertical-scroll-proportion="2.9333334">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserRepository.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/domain/repo/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="21" selection-start="269" selection-end="288" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrudRepository.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons-core/1.1.0.RELEASE/spring-data-commons-core-1.1.0.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="72" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Repository.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons-core/1.1.0.RELEASE/spring-data-commons-core-1.1.0.RELEASE-sources.jar!/org/springframework/data/repository/Repository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="17" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring-context.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/spring-context.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="30" selection-start="695" selection-end="695" vertical-scroll-proportion="-11.9">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controllers.cfg.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/controllers.cfg.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="30" selection-start="870" selection-end="870" vertical-scroll-proportion="-14.45">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RequestMapping.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.0.5.RELEASE/spring-web-3.0.5.RELEASE-sources.jar!/org/springframework/web/bind/annotation/RequestMapping.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="209" column="18" selection-start="12598" selection-end="12598" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,12 +206,12 @@
         <option value="$PROJECT_DIR$/src/com/domain/repo/TransactionRepository.java" />
         <option value="$PROJECT_DIR$/src/com/domain/FinancialService.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/spring/services.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/com/controller/UserController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/META-INF/db.properties" />
         <option value="$PROJECT_DIR$/web/WEB-INF/META-INF/db_connnection" />
         <option value="$PROJECT_DIR$/web/WEB-INF/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/META-INF/db_connection.properties" />
         <option value="$PROJECT_DIR$/web/WEB-INF/spring/persistence-configuration.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/com/controller/UserController.java" />
       </list>
     </option>
   </component>
@@ -222,7 +292,101 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -571,7 +735,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="71" y="42" width="1296" height="1000" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -591,7 +755,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15121952" sideWeight="0.6103896" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25772357" sideWeight="0.6103896" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25772357" sideWeight="0.6103896" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38961038" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -680,63 +844,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/persistence/EmailAddressType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="18" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE.jar!/org/springframework/beans/factory/config/PropertyPlaceholderConfigurer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="178" selection-end="178" vertical-scroll-proportion="-3.4">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/hello.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="40" selection-start="711" selection-end="725" vertical-scroll-proportion="0.037037037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/spring-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/velocity/usersEdit.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/velocity/users.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.0.5.RELEASE/spring-beans-3.0.5.RELEASE-sources.jar!/org/springframework/beans/factory/config/PropertyPlaceholderConfigurer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="55" selection-start="295" selection-end="295" vertical-scroll-proportion="0.18518518">
@@ -761,16 +868,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/spring-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="34" selection-start="640" selection-end="640" vertical-scroll-proportion="0.46331236">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/users.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -783,21 +880,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/persistence-configuration.cfg.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.0.5.RELEASE/spring-web-3.0.5.RELEASE.jar!/org/springframework/web/bind/annotation/RequestMapping.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="12" selection-start="2733" selection-end="2733" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="tag#prop#0;tag#props#0;tag#property#1;tag#bean#5;tag#beans#0" expanded="true" />
-          </folding>
+        <state line="9" column="18" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons-core/1.1.0.RELEASE/spring-data-commons-core-1.1.0.RELEASE.jar!/org/springframework/data/repository/CrudRepository.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="231" selection-end="231" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.0.5.RELEASE/spring-web-3.0.5.RELEASE-sources.jar!/org/springframework/web/bind/annotation/RequestMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="209" column="18" selection-start="12598" selection-end="12598" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/controllers.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="30" selection-start="870" selection-end="870" vertical-scroll-proportion="-14.45">
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitgnore">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/spring-context.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="14" column="30" selection-start="695" selection-end="695" vertical-scroll-proportion="-11.9">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons-core/1.1.0.RELEASE/spring-data-commons-core-1.1.0.RELEASE-sources.jar!/org/springframework/data/repository/Repository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="17" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons-core/1.1.0.RELEASE/spring-data-commons-core-1.1.0.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="72" selection-start="928" selection-end="928" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="266" selection-end="283" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/persistence-configuration.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="12" selection-start="2733" selection-end="2733" vertical-scroll-proportion="2.9333334">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/domain/repo/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="21" selection-start="269" selection-end="288" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="30" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.8888889">
           <folding />
         </state>
       </provider>
