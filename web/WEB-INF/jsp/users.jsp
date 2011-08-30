@@ -19,8 +19,13 @@ Place your content here
             <td><c:out value="${user.id}"/></td>
             <td><c:out value="${user.name}"/></td>
             <td><c:out value="${user.email.value}"/></td>
+            <td><a href="<c:url value="/users/${user.id}"/>">View</a></td>
+            <td><a href="<c:url value="/users/${user.id}/edit"/>">Edit</a></td>
         </tr>
     </c:forEach>
+    <tr>
+        <td colspan="5"><a href="<c:url value="/users/?new" />"> Add new user</a></td>
+    </tr>
 </table>
 </body>
 </html>

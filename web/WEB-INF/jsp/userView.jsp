@@ -9,5 +9,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head><title>Simple jsp page</title></head>
-<body><c:out value="${user.id}"/>--!--<c:out value="${user.name}"/><br/></body>
+<body>
+    <c:out value="${user.id}"/>--!--<c:out value="${user.name}"/>
+    <a href="<c:url value="${user.id}/edit" />">Edit</a>   &nbsp;
+    <a href="<c:url value="/users/" />">View all users</a>
+<br/></body>
 </html>

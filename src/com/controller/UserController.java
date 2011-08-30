@@ -37,7 +37,7 @@ public class UserController {
     @RequestMapping(params = "new", method = RequestMethod.GET)
     public String createPage(Map<String, Object> model) {
         model.put("user", new User());
-        return "usersEdit";
+        return "userNew";
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -52,22 +52,24 @@ public class UserController {
         model.put("user", repository.findOne(id));
         return "usersEdit";
     }
-
+          /*when user has submitted form from  userNew*/
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String create(User user, BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
-            return "usersEdit";
+            return "userNew";
         }
         final User entity = repository.save(user);
         return "redirect:/users/" + user.getId();
     }
 
+    /*when user has submitted form from  usersEdit*/
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
     public String edit(@PathVariable("id") Long id, User user, BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
             return "usersEdit";
         }
         user.setId(id);
+        //user.
         final User entity = repository.save(user);
         return "redirect:/users/" + id;
     }
