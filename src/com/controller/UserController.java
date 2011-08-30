@@ -1,9 +1,8 @@
 package com.controller;
 
-import com.domain.EmailAddress;
-import com.domain.User;
-import com.domain.repo.UserRepository;
-import org.springframework.format.annotation.DateTimeFormat;
+import com.domain.customer.EmailAddress;
+import com.domain.customer.User;
+import com.domain.customer.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
-import java.util.Date;
 import java.util.Map;
 
 /**

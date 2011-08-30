@@ -1,6 +1,6 @@
 package com.persistence;
 
-import com.domain.EmailAddress;
+import com.domain.customer.EmailAddress;
 import org.hibernate.type.AbstractSingleColumnStandardBasicType;
 import org.hibernate.type.descriptor.java.StringTypeDescriptor;
 import org.hibernate.type.descriptor.sql.VarcharTypeDescriptor;

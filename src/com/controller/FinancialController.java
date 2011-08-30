@@ -1,9 +1,9 @@
 package com.controller;
 
-import com.domain.FinancialService;
-import com.domain.User;
-import com.domain.repo.TransactionRepository;
-import com.domain.repo.UserRepository;
+import com.domain.commerce.FinancialService;
+import com.domain.customer.User;
+import com.domain.commerce.TransactionRepository;
+import com.domain.customer.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,8 +1,7 @@
 package com.persistence;
 
-import com.domain.EmailAddress;
+import com.domain.customer.EmailAddress;
 import org.hibernate.HibernateException;
-import org.hibernate.engine.SessionImplementor;
 import org.hibernate.type.StringType;
 import org.hibernate.usertype.UserType;
 
