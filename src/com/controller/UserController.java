@@ -3,6 +3,7 @@ package com.controller;
 import com.domain.EmailAddress;
 import com.domain.User;
 import com.domain.repo.UserRepository;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.inject.Inject;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -54,7 +56,7 @@ public class UserController {
     }
           /*when user has submitted form from  userNew*/
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String create(User user, BindingResult bindingResult, Map<String, Object> model) {
+    public String create(User user,  BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
             return "userNew";
         }

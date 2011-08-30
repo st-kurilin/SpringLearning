@@ -1,0 +1,9 @@
+#ui-datepicker-div,
+ui-datepicker,
+ui-widget,
+ui-widget-content,
+ui-helper-clearfix,
+ui-corner-all,
+ui-datepicker-calendar{
+    font-size: 12px;
+}
