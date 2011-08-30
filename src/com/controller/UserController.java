@@ -34,7 +34,7 @@ public class UserController {
         return "users";
     }
 
-    @RequestMapping(value = "/", params = "new", method = RequestMethod.GET)
+    @RequestMapping(params = "new", method = RequestMethod.GET)
     public String createPage(Map<String, Object> model) {
         model.put("user", new User());
         return "usersEdit";
@@ -59,7 +59,7 @@ public class UserController {
             return "usersEdit";
         }
         final User entity = repository.save(user);
-        return "redirect:/users/" + entity.getId();
+        return "redirect:/users/" + user.getId();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
