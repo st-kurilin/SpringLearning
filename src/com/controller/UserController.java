@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import java.util.Date;
 import java.util.Map;
 
@@ -28,7 +29,6 @@ public class UserController {
         this.repository = repository;
     }
 
-    //CRUD Begin
     @RequestMapping(method = RequestMethod.GET)
     public String showAll(Map<String, Object> model) {
         model.put("users", repository.findAll());
@@ -36,7 +36,7 @@ public class UserController {
         return "users";
     }
 
-    @RequestMapping(params = "new", method = RequestMethod.GET)
+    @RequestMapping(value = "/new",method = RequestMethod.GET)
     public String createPage(Map<String, Object> model) {
         model.put("user", new User());
         return "userNew";
@@ -54,28 +54,25 @@ public class UserController {
         model.put("user", repository.findOne(id));
         return "usersEdit";
     }
-          /*when user has submitted form from  userNew*/
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String create(User user,  BindingResult bindingResult, Map<String, Object> model) {
+
+    @RequestMapping(value = "/new", method = RequestMethod.POST)
+    public String create(@Valid User user,  BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
             return "userNew";
         }
         final User entity = repository.save(user);
-        return "redirect:/users/" + user.getId();
+        return "redirect:/users/" + entity.getId();
     }
 
-    /*when user has submitted form from  usersEdit*/
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
     public String edit(@PathVariable("id") Long id, User user, BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
             return "usersEdit";
         }
         user.setId(id);
-        //user.
-        final User entity = repository.save(user);
+        repository.save(user);
         return "redirect:/users/" + id;
     }
-    //CRUD End
 
     @RequestMapping(value = "/findByEmail", method = RequestMethod.GET, params = "email")
     public String findByEmail(@RequestParam("email") EmailAddress email){

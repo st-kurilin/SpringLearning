@@ -24,7 +24,7 @@ Place your content here
         </tr>
     </c:forEach>
     <tr>
-        <td colspan="5"><a href="<c:url value="/users/?new" />"> Add new user</a></td>
+        <td colspan="5"><a href="<c:url value="/users/new" />"> Add new user</a></td>
     </tr>
 </table>
 </body>

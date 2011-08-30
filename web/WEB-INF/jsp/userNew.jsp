@@ -26,7 +26,7 @@
 </head>
 <body>
 1
-<c:url var="formSend" value="/users/"/>
+<c:url var="formSend" value="/users/new"/>
 <sf:form method="POST"  modelAttribute="user" action="${formSend}">
     <fieldset>
         <table>

@@ -1,6 +1,7 @@
 package com.domain;
 
 import com.persistence.EmailAddressType2;
+import com.sun.istack.internal.NotNull;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -20,6 +21,7 @@ public class User extends AbstractPersistable<Long> {
     @Type(type = "com.domain.EmailAddress")
     private EmailAddress email;
     @Temporal(TemporalType.DATE)
+    @NotNull
     private Date birthday;
 
     public User() {
