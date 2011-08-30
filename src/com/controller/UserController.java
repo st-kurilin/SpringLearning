@@ -1,17 +1,17 @@
 package com.controller;
 
-import com.domain.customer.EmailAddress;
-import com.domain.customer.User;
-import com.domain.customer.UserRepository;
+import com.domain.customer.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -21,10 +21,12 @@ import java.util.Map;
 @RequestMapping("/users")
 public class UserController {
     private final UserRepository repository;
+    private final AvatarRepository avatarRepository;
 
     @Inject
-    public UserController(UserRepository repository) {
+    public UserController(UserRepository repository, AvatarRepository avatarRepository) {
         this.repository = repository;
+        this.avatarRepository = avatarRepository;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -54,11 +56,14 @@ public class UserController {
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public String create(@Valid User user,  BindingResult bindingResult, Map<String, Object> model) {
+    public String create(@Valid User user,  BindingResult bindingResult, @RequestParam("avatar") MultipartFile file,Map<String, Object> model) throws IOException {
         if (bindingResult.hasErrors()) {
             return "userNew";
         }
         final User entity = repository.save(user);
+        if(!file.isEmpty()){
+            avatarRepository.assign(entity, new Avatar(file.getBytes()));
+        }
         return "redirect:/users/" + entity.getId();
     }
 

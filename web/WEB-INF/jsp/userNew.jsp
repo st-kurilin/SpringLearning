@@ -27,7 +27,7 @@
 <body>
 1
 <c:url var="formSend" value="/users/new"/>
-<sf:form method="POST"  modelAttribute="user" action="${formSend}">
+<sf:form method="POST"  modelAttribute="user" action="${formSend}" enctype="multipart/form-data">
     <fieldset>
         <table>
            <tr><td>Name:</td><td> <sf:input path="name" size="10" /></td></tr>
@@ -36,6 +36,8 @@
                <td>Date of birthday:</td>
                <td><input type="text" name="birthday" size="10" id="datepicker"></td>
            </tr>
+            <tr><td>Avatar:</td><td><input type="file" name="avatar"/></td></tr>
+
            <tr><td colspan=2><input type="submit"/></td></tr>
         </table>
     </fieldset>
