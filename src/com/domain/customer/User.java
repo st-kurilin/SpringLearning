@@ -1,12 +1,17 @@
 package com.domain.customer;
 
 import com.persistence.EmailAddressType2;
-import com.sun.istack.internal.NotNull;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 
@@ -17,11 +22,16 @@ import java.util.Date;
 @Table(name = "USERS")
 @TypeDef(name = "com.domain.customer.EmailAddress", typeClass = EmailAddressType2.class)
 public class User extends AbstractPersistable<Long> {
+
+    @Length(min = 6, max = 14, message = "Length should be from 6 to 14")
     private String name;
+
+
     @Type(type = "com.domain.customer.EmailAddress")
     private EmailAddress email;
+
     @Temporal(TemporalType.DATE)
-    @NotNull
+    @NotNull(message = "Birthday field can't be null")
     private Date birthday;
 
     public User() {

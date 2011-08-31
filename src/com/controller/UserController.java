@@ -1,20 +1,21 @@
 package com.controller;
 
 import com.domain.customer.*;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -30,6 +31,14 @@ public class UserController {
     public UserController(UserRepository repository, AvatarRepository avatarRepository) {
         this.repository = repository;
         this.avatarRepository = avatarRepository;
+    }
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        dateFormat.setLenient(false);
+        // true passed to CustomDateEditor constructor means convert empty String to null
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -71,7 +80,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String edit(@PathVariable("id") Long id, User user, BindingResult bindingResult, Map<String, Object> model) {
+    public String edit(@PathVariable("id") Long id,@Valid User user, BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
             return "usersEdit";
         }

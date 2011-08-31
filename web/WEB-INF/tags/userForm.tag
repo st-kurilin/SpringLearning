@@ -16,15 +16,24 @@
     <sf:form method="POST"  modelAttribute="user" action="${formSend}" enctype="multipart/form-data">
         <fieldset>
             <table>
-               <tr><td>Name:</td><td> <sf:input path="name" size="10" /></td></tr>
-               <tr><td>Mail:</td><td><sf:input path="email" size="10" /></td></tr>
+               <tr>
+                   <td>Name:</td>
+                   <td> <sf:input path="name" size="10" /></td>
+                   <td><sf:errors path="name" cssClass="error"/></td>
+               </tr>
+               <tr>
+                   <td>Mail:</td>
+                   <td><sf:input path="email" size="10" /></td>
+                   <td><sf:errors path="email" cssClass="error"/></td>
+               </tr>
                <tr>
                    <td>Date of birthday:</td>
                    <td><sf:input path="birthday" size="10" /></td>
+                   <td><sf:errors path="birthday" cssClass="error"/></td>
                </tr>
                 <tr><td>Avatar:</td><td><input type="file" name="avatar"/></td></tr>
 
-               <tr><td colspan=2><input type="submit"/></td></tr>
+               <tr><td colspan=3><input type="submit"/></td></tr>
             </table>
         </fieldset>
     </sf:form>
