@@ -31,8 +31,10 @@
                    <td><sf:input path="birthday" size="10" /></td>
                    <td><sf:errors path="birthday" cssClass="error"/></td>
                </tr>
-                <tr><td>Avatar:</td><td><input type="file" name="avatar"/></td></tr>
-
+                <tr>
+                    <td>Avatar:</td>
+                    <td><input type="file" name="avatar"/></td>
+                </tr>
                <tr><td colspan=3><input type="submit"/></td></tr>
             </table>
         </fieldset>

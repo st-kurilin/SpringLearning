@@ -10,8 +10,21 @@
 <html>
 <head><title>Simple jsp page</title></head>
 <body>
-    <c:out value="${user.id}"/>--!--<c:out value="${user.name}"/>
-    <a href="<c:url value="${user.id}/edit" />">Edit</a>   &nbsp;
-    <a href="<c:url value="/users/" />">View all users</a>
-<br/></body>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td><c:out value="${user.id}"/></td>
+            <td><a href="<c:url value="/users/${user.id}/edit" />">Edit</a> </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><c:out value="${user.name}"/></td>
+            <td><a href="<c:url value="/users" />">View all users</a></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><c:out value="${user.email.value}"/></td>
+        </tr>
+    </table>
+</body>
 </html>

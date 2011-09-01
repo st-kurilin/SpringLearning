@@ -16,6 +16,7 @@
                 <directory>src/snippets/resources</directory>
             </resource>
         </resources>
+
     </build>
     <properties>
         <spring.version>3.0.5.RELEASE</spring.version>
@@ -158,6 +159,13 @@
             <artifactId>hibernate-validator-annotation-processor</artifactId>
             <version>4.2.0.Final</version>
         </dependency>
+
+        <!--<dependency>
+                <groupId>jmimemagic</groupId>
+                <artifactId>jmimemagic</artifactId>
+                <version>0.1.2</version>
+        </dependency>-->
+
 
 
     </dependencies>

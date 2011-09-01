@@ -18,7 +18,7 @@
 <body>
     <c:url var="formSend" value="/users/${user.id}"/>
     <tags:userForm formSend="${formSend}" user="${user}"/>
-    <a href="<c:url value="/users/" />">Cancel and view all users</a>
+    <a href="<c:url value="/users" />">Cancel and view all users</a>
     <a href="<c:url value="/users/${user.id}" />">Cancel and view this user</a>
 
 2Place your content here

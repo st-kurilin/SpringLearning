@@ -11,6 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import java.util.Date;
 
@@ -26,12 +27,12 @@ public class User extends AbstractPersistable<Long> {
     @Length(min = 6, max = 14, message = "Length should be from 6 to 14")
     private String name;
 
-
     @Type(type = "com.domain.customer.EmailAddress")
     private EmailAddress email;
 
     @Temporal(TemporalType.DATE)
     @NotNull(message = "Birthday field can't be null")
+    @Past(message = "Date should be in past time")
     private Date birthday;
 
     public User() {

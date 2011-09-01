@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 public final class EmailAddress {
     @Column(name = "email")
 
-    /*@Email(message = "Email is not valid!")*/
+    /*@Email(message = "Email is not valid!") */
     private final String value;
 
     public EmailAddress(String value) {

@@ -18,7 +18,7 @@
 1
     <c:url var="formSend" value="/users/new"/>
     <tags:userForm formSend="${formSend}" user="${user}"/>
-    <a href="<c:url value="/users/" />">Cancel and view all users</a>
+    <a href="<c:url value="/users" />">Cancel and view all users</a>
 
 2Place your content here
 </body>

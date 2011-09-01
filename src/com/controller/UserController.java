@@ -1,12 +1,15 @@
 package com.controller;
 
 import com.domain.customer.*;
+import net.sf.jmimemagic.UnsupportedTypeException;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -38,7 +41,6 @@ public class UserController {
         dateFormat.setLenient(false);
         // true passed to CustomDateEditor constructor means convert empty String to null
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
-
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -69,13 +71,26 @@ public class UserController {
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@Valid User user, BindingResult bindingResult, @RequestParam("avatar") MultipartFile file, Map<String, Object> model) throws IOException {
+
         if (bindingResult.hasErrors()) {
             return "userNew";
         }
-        final User entity = repository.save(user);
+
+        Avatar avatar=null;
         if (!file.isEmpty()) {
-            avatarRepository.assign(entity.getId(), new Avatar(file.getBytes()));
+            try {
+                 avatar=new Avatar(file.getBytes());
+            } catch (UnsupportedTypeException e) {
+                 return "userNew";
+            }
         }
+
+        final User entity = repository.save(user);
+
+        if (avatar!=null) {
+            avatarRepository.assign(entity.getId(), avatar);
+        }
+
         return "redirect:/users/" + entity.getId();
     }
 
@@ -100,9 +115,11 @@ public class UserController {
 
     @RequestMapping(value = "/{id}/avatar", method = RequestMethod.GET)
     public ResponseEntity<byte[]> avatar(@PathVariable("id") Long id) {
-        final byte[] content = avatarRepository.load(id).getContent();
+        Avatar avatar=avatarRepository.load(id);
+
         HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.set("Content-Type", "image/jpeg");  //TODO: do not hardcode content type. Move it to Avatar class
-        return new ResponseEntity<byte[]>(content, responseHeaders, HttpStatus.CREATED);
+        responseHeaders.set("Content-Type", avatar.getMimeType() );
+
+        return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.CREATED);
     }
 }
