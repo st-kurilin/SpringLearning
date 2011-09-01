@@ -1,6 +1,12 @@
 out
+
+.idea/*
 .idea
+
 target
+
 *.iws
+
 *.ipr
+
 *.iml
