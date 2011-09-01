@@ -4,7 +4,9 @@
 Place your content here
 <table>
     #foreach($user in $users)
-        <tr><td>${user.id}</td><td>${user.name}</td>
+    <tr>
+        <td>${user.id}</td>
+        <td>${user.name}</td>
     #end
 </table>
 </body>

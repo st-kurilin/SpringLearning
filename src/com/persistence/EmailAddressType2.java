@@ -28,10 +28,10 @@ public class EmailAddressType2 implements CompositeUserType {
 
     @Override
     public Object getPropertyValue(Object component, int property) throws HibernateException {
-        if(property != 0){
+        if (property != 0) {
             throw new IllegalArgumentException("0 expected but " + property + "passed");
         }
-        return ((EmailAddress)component).getValue();
+        return ((EmailAddress) component).getValue();
     }
 
     @Override
@@ -65,7 +65,7 @@ public class EmailAddressType2 implements CompositeUserType {
     public void nullSafeSet(PreparedStatement st, Object value, int index, SessionImplementor session) throws HibernateException, SQLException {
         System.out.println(st);
         System.out.println(value);
-        st.setString(index, ((EmailAddress)value).getValue());
+        st.setString(index, ((EmailAddress) value).getValue());
         //throw new UnsupportedOperationException("its immutable");
     }
 

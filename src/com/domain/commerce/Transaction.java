@@ -30,7 +30,7 @@ public class Transaction extends AbstractPersistable<Long> {
     }
 
     @PostLoad
-    public void normalize(){
+    public void normalize() {
         final Calendar calendar = GregorianCalendar.getInstance();
         calendar.roll(1, Calendar.WEEK_OF_YEAR);
         final Date weekAgo = calendar.getTime();

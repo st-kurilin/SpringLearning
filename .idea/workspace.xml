@@ -80,7 +80,7 @@
       <file leaf-file-name="UserController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="136" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.0">
+            <state line="72" column="136" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,20 +88,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/domain/customer/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="50" selection-start="203" selection-end="203" vertical-scroll-proportion="0.1734694">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sex.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/domain/customer/Sex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="35" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="23" column="23" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,34 +102,25 @@
       <file leaf-file-name="users.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/users.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="44" selection-start="796" selection-end="796" vertical-scroll-proportion="-10.653846">
+            <state line="28" column="79" selection-start="1000" selection-end="1000" vertical-scroll-proportion="-18.307692">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userForm.tag" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/userForm.tag">
+      <file leaf-file-name="usersEdit.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/usersEdit.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="43" selection-start="1751" selection-end="1751" vertical-scroll-proportion="-12.461538">
+            <state line="15" column="34" selection-start="480" selection-end="480" vertical-scroll-proportion="-9.807693">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <file leaf-file-name="userNew.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userNew.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="18" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="0" selection-start="5697" selection-end="5697" vertical-scroll-proportion="0.0">
+            <state line="13" column="5" selection-start="437" selection-end="437" vertical-scroll-proportion="0.47629312">
               <folding />
             </state>
           </provider>
@@ -156,10 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$MAVEN_REPOSITORY$/jmimemagic/jmimemagic/0.1.2/jmimemagic-0.1.2.pom" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/usersEdit.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/userNew.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/spring/jsp-view.cfg.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/messages.properties" />
         <option value="$PROJECT_DIR$/src/com/validators/DatePatternMode.java" />
         <option value="$PROJECT_DIR$/src/com/validators/DatePattern.java" />
@@ -168,10 +148,14 @@
         <option value="$PROJECT_DIR$/src/com/controller/UserController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/userView.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/tags/userForm.tag" />
         <option value="$PROJECT_DIR$/src/com/domain/customer/User.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/users.jsp" />
         <option value="$PROJECT_DIR$/src/com/domain/customer/Sex.java" />
+        <option value="$PROJECT_DIR$/web/resources/css/calendar_styles.css" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/tags/userForm.tag" />
+        <option value="$PROJECT_DIR$/web/qwerty.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/usersEdit.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/userNew.jsp" />
       </list>
     </option>
   </component>
@@ -312,6 +296,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jsp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringLearning" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -619,7 +651,7 @@
       </method>
     </configuration>
     <configuration default="false" name="Tomcat 7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/users" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="BankSys:war exploded">
@@ -733,7 +765,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25772357" sideWeight="0.1381346" order="2" side_tool="true" content_ui="tabs" />
@@ -752,8 +784,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1203252" sideWeight="0.6103896" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25772357" sideWeight="0.6103896" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38961038" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25772357" sideWeight="0.6103896" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38961038" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24845996" sideWeight="0.6082949" order="2" side_tool="false" content_ui="combo" />
@@ -841,64 +873,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.0.5.RELEASE/spring-web-3.0.5.RELEASE-sources.jar!/org/springframework/web/multipart/MultipartFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="41" selection-start="2052" selection-end="2052" vertical-scroll-proportion="0.36864406">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar!/javax/validation/constraints/NotNull.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="18" selection-start="1507" selection-end="1507" vertical-scroll-proportion="0.33262712">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/java/src.zip!/java/util/Date.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="13" selection-start="5183" selection-end="5183" vertical-scroll-proportion="0.32622603">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="0" selection-start="5697" selection-end="5697" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaEE/lib/javaee-impl.jar!/standardSchemas/web-common_3_0.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="777" column="6" selection-start="26909" selection-end="26909" vertical-scroll-proportion="0.33195022">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/domain/customer/Avatar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="39" selection-start="868" selection-end="868" vertical-scroll-proportion="0.4857143">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userView.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="760" selection-end="760" vertical-scroll-proportion="0.67713004">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/usersEdit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="631" selection-end="631" vertical-scroll-proportion="0.6961207">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.0-api/1.0.0.Final/hibernate-jpa-2.0-api-1.0.0.Final.jar!/javax/persistence/EnumType.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="25" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
@@ -915,23 +889,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="136" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.0">
+        <state line="72" column="136" selection-start="2712" selection-end="2712" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/userForm.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="43" selection-start="1751" selection-end="1751" vertical-scroll-proportion="-12.461538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="18" selection-start="641" selection-end="641" vertical-scroll-proportion="0.0">
+        <state line="14" column="18" selection-start="641" selection-end="641" vertical-scroll-proportion="0.4857143">
           <folding />
         </state>
       </provider>
@@ -945,23 +912,81 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/users.jsp">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="44" selection-start="796" selection-end="796" vertical-scroll-proportion="-10.653846">
+        <state line="162" column="0" selection-start="5697" selection-end="5697" vertical-scroll-proportion="0.5555556">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/js/jquery-ui-1.8.16.custom.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="4" selection-start="7876" selection-end="7876" vertical-scroll-proportion="0.33275262">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/js/jquery.ui.widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/domain/customer/Sex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="35" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
+        <state line="12" column="35" selection-start="272" selection-end="272" vertical-scroll-proportion="0.43220338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userView.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="721" selection-end="721" vertical-scroll-proportion="0.5156951">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/css/calendar_styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="1" selection-start="275" selection-end="275" vertical-scroll-proportion="0.54025424">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/userForm.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="34" selection-start="848" selection-end="848" vertical-scroll-proportion="-11.115385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/usersEdit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="34" selection-start="480" selection-end="480" vertical-scroll-proportion="-9.807693">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/users.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="79" selection-start="1000" selection-end="1000" vertical-scroll-proportion="-18.307692">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/domain/customer/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="50" selection-start="203" selection-end="203" vertical-scroll-proportion="0.1734694">
+        <state line="23" column="23" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userNew.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="5" selection-start="437" selection-end="437" vertical-scroll-proportion="0.47629312">
           <folding />
         </state>
       </provider>

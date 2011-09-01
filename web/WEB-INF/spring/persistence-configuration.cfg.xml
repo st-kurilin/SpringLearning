@@ -50,7 +50,7 @@
     <!--database configuration in db_connection.properties-->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="location" value="/WEB-INF/META-INF/db_connection.properties"/>
-     </bean>
+    </bean>
     <!-- -->
 
     <!-- DataSource configuration -->

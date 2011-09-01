@@ -16,5 +16,6 @@
     <input name="amount"/>
     <input type="submit" value="click"/>
 </form>
-Place your content here</body>
+Place your content here
+</body>
 </html>

@@ -4,11 +4,12 @@ ui-widget,
 ui-widget-content,
 ui-helper-clearfix,
 ui-corner-all,
-ui-datepicker-calendar{
+ui-datepicker-calendar {
     font-size: 12px;
 }
 
-body
-{
-     font-size: 12px;
+body {
+    font-size: 12px;
+    padding: 12px;
+    font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif";
 }

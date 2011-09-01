@@ -32,11 +32,12 @@ public class FinancialController {
     }
 
     @RequestMapping(value = "/transfer", method = RequestMethod.GET)
-    public String inputPage(Model model){
+    public String inputPage(Model model) {
         return "transfer";
     }
+
     @RequestMapping(value = "/transfer", method = RequestMethod.POST)
-    public String transfer(@RequestParam Long from, @RequestParam Long to, @RequestParam int amount){
+    public String transfer(@RequestParam Long from, @RequestParam Long to, @RequestParam int amount) {
         final User userFrom = userRepository.findOne(from);
         final User userTo = userRepository.findOne(to);
         service.transfer(userFrom, userTo, amount);

@@ -14,31 +14,33 @@ public class Avatar {
     private final byte[] content;
     private final String mimeType;
     private static final List<String> imageTypes;
-    static{
-        List<String> templist=new LinkedList<String>();
+
+    static {
+        List<String> templist = new LinkedList<String>();
         templist.add("image/bmp");
         templist.add("image/gif");
         templist.add("image/jpeg");
         templist.add("image/png");
-        imageTypes=Collections.unmodifiableList(templist);
+        imageTypes = Collections.unmodifiableList(templist);
     }
-    public Avatar(MultipartFile file){
-        String temp=file.getContentType();
-        if (imageTypes.contains(temp)){
+
+    public Avatar(MultipartFile file) {
+        String temp = file.getContentType();
+        if (imageTypes.contains(temp)) {
             try {
-                content=file.getBytes();
+                content = file.getBytes();
             } catch (IOException e) {
                 throw new RuntimeException("Wrong file");
             }
-            mimeType=temp;
-        }
-        else
-            throw new RuntimeException("Only images allowed, not "+ temp);
+            mimeType = temp;
+        } else
+            throw new RuntimeException("Only images allowed, not " + temp);
     }
 
     public byte[] getContent() {
         return content;
     }
+
     public String getMimeType() {
         return mimeType;
     }

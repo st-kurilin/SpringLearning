@@ -68,6 +68,7 @@ public class User extends AbstractPersistable<Long> {
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
+
     public void setId(Long id) {
         super.setId(id);
     }
@@ -75,6 +76,7 @@ public class User extends AbstractPersistable<Long> {
     public Sex getSex() {
         return sex;
     }
+
     public void setSex(Sex sex) {
         this.sex = sex;
     }

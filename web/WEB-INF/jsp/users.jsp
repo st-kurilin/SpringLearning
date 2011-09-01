@@ -14,11 +14,11 @@
 <body>
 Place your content here
 <table>
-   <tr>
-            <td>Id</td>
-            <td>Name</td>
-            <td>Email</td>
-            <td colspan=2>Links</td>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td colspan=2>Links</td>
     </tr>
     <c:forEach var="user" items="${users}">
         <tr>

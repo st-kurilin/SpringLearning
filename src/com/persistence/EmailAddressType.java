@@ -18,6 +18,7 @@ public class EmailAddressType implements UserType {
     Class wrapperClass = EmailAddress.class;
     Class valueClass = String.class;
     Class valueTypeClass = StringType.class;
+
     @Override
     public int[] sqlTypes() {
         return new int[]{
@@ -59,7 +60,7 @@ public class EmailAddressType implements UserType {
     public void nullSafeSet(PreparedStatement st, Object value, int index) throws HibernateException, SQLException {
         System.out.println(st);
         System.out.println(value);
-        st.setString(index, ((EmailAddress)value).getValue());
+        st.setString(index, ((EmailAddress) value).getValue());
     }
 
     @Override

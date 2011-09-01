@@ -10,25 +10,25 @@
 <html>
 <head><title>Simple jsp page</title></head>
 <body>
-    <table>
-        <tr>
-            <td>Id</td>
-            <td><c:out value="${user.id}"/></td>
-            <td><a href="<c:url value="/users/${user.id}/edit" />">Edit</a> </td>
-        </tr>
-        <tr>
-            <td>Name</td>
-            <td><c:out value="${user.name}"/></td>
-            <td><a href="<c:url value="/users" />">View all users</a></td>
-        </tr>
-        <tr>
-            <td>Sex</td>
-            <td><c:out value="${user.sex}"/></td>
-        </tr>
-        <tr>
-            <td>Email</td>
-            <td><c:out value="${user.email.value}"/></td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <td>Id</td>
+        <td><c:out value="${user.id}"/></td>
+        <td><a href="<c:url value="/users/${user.id}/edit" />">Edit</a></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td><c:out value="${user.name}"/></td>
+        <td><a href="<c:url value="/users" />">View all users</a></td>
+    </tr>
+    <tr>
+        <td>Sex</td>
+        <td><c:out value="${user.sex}"/></td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><c:out value="${user.email.value}"/></td>
+    </tr>
+</table>
 </body>
 </html>

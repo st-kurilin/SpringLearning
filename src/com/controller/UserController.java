@@ -34,6 +34,7 @@ public class UserController {
         this.repository = repository;
         this.avatarRepository = avatarRepository;
     }
+
     @InitBinder
     public void initBinder(WebDataBinder binder) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
@@ -75,18 +76,18 @@ public class UserController {
             return "userNew";
         }
 
-        Avatar avatar=null;
+        Avatar avatar = null;
         if (!file.isEmpty()) {
             try {
-                 avatar=new Avatar(file);
+                avatar = new Avatar(file);
             } catch (RuntimeException e) {
-                 return "userNew";
+                return "userNew";
             }
         }
 
         final User entity = repository.save(user);
 
-        if (avatar!=null) {
+        if (avatar != null) {
             avatarRepository.assign(entity.getId(), avatar);
         }
 
@@ -94,7 +95,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String edit(@PathVariable("id") Long id,@Valid User user, BindingResult bindingResult, Map<String, Object> model) {
+    public String edit(@PathVariable("id") Long id, @Valid User user, BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
             return "usersEdit";
         }
@@ -114,10 +115,10 @@ public class UserController {
 
     @RequestMapping(value = "/{id}/avatar", method = RequestMethod.GET)
     public ResponseEntity<byte[]> avatar(@PathVariable("id") Long id) {
-        Avatar avatar=avatarRepository.load(id);
+        Avatar avatar = avatarRepository.load(id);
 
         HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.set("Content-Type", avatar.getMimeType() );
+        responseHeaders.set("Content-Type", avatar.getMimeType());
 
         return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.CREATED);
     }

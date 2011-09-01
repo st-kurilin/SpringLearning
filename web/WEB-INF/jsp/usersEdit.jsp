@@ -5,6 +5,8 @@
   Time: 9:12 PM
   To change this template use File | Settings | File Templates.
 --%>
+<!DOCTYPE html>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -16,10 +18,10 @@
 
 </head>
 <body>
-    <c:url var="formSend" value="/users/${user.id}"/>
-    <tags:userForm formSend="${formSend}" user="${user}"/>
-    <a href="<c:url value="/users" />">Cancel and view all users</a>
-    <a href="<c:url value="/users/${user.id}" />">Cancel and view this user</a>
+<c:url var="formSend" value="/users/${user.id}"/>
+<tags:userForm formSend="${formSend}" user="${user}"/>
+<a href="<c:url value="/users" />">Cancel and view all users</a>
+<a href="<c:url value="/users/${user.id}" />">Cancel and view this user</a>
 
 2Place your content here
 </body>
