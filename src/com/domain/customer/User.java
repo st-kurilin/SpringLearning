@@ -6,11 +6,17 @@ import org.hibernate.annotations.TypeDef;
 import org.hibernate.validator.constraints.Length;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+<<<<<<< HEAD
 import javax.validation.constraints.Pattern;
+=======
+>>>>>>> d162b1a... Validation.
 import java.util.Date;
 
 
@@ -26,9 +32,12 @@ public class User extends AbstractPersistable<Long> {
     private String name;
 
     @Type(type = "com.domain.customer.EmailAddress")
+    @Valid
     private EmailAddress email;
 
     @Temporal(TemporalType.DATE)
+    @Valid
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @NotNull(message = "Birthday field can't be null")
     @Past(message = "Date should be in past time")
     private Date birthday;
