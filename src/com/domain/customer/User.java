@@ -33,6 +33,11 @@ public class User extends AbstractPersistable<Long> {
     @Past(message = "Date should be in past time")
     private Date birthday;
 
+
+    @Enumerated(EnumType.STRING)
+    @NotNull(message = "Please, select your sex")
+    private Sex sex;
+
     public User() {
     }
 
@@ -66,4 +71,12 @@ public class User extends AbstractPersistable<Long> {
     public void setId(Long id) {
         super.setId(id);
     }
+
+    public Sex getSex() {
+        return sex;
+    }
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
 }

@@ -32,6 +32,15 @@
                    <td><sf:errors path="birthday" cssClass="error"/></td>
                </tr>
                 <tr>
+                   <td>Sex:</td>
+                   <td><sf:select path="sex">
+                           <sf:option value="MALE">Male</sf:option>
+                           <sf:option value="FEMALE">Female</sf:option>
+                        </sf:select>
+                   </td>
+                   <td><sf:errors path="sex" cssClass="error"/></td>
+               </tr>
+                <tr>
                     <td>Avatar:</td>
                     <td><input type="file" name="avatar"/></td>
                 </tr>
