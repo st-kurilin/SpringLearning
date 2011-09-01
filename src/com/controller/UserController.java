@@ -1,7 +1,6 @@
 package com.controller;
 
 import com.domain.customer.*;
-import net.sf.jmimemagic.UnsupportedTypeException;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -79,8 +78,8 @@ public class UserController {
         Avatar avatar=null;
         if (!file.isEmpty()) {
             try {
-                 avatar=new Avatar(file.getBytes());
-            } catch (UnsupportedTypeException e) {
+                 avatar=new Avatar(file);
+            } catch (RuntimeException e) {
                  return "userNew";
             }
         }
