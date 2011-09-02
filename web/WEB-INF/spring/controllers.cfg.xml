@@ -26,14 +26,24 @@
         <property name="basenames">
             <list>
                 <value>errors</value>
+                <value>validation</value>
             </list>
         </property>
     </bean>
-    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+    <bean id="conversionService"
+        class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
-            <set>
-                <bean class="com.controller.AvatarConverter"/>
-            </set>
+           <set>
+              <bean class="com.converters.FileToAvatarConverter"/>
+           </set>
         </property>
     </bean>
+
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" >
+        <property name="defaultErrorView" value="errors/error500"/>
+    </bean>
+
 </beans>

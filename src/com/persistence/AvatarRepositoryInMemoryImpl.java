@@ -10,6 +10,7 @@ import java.util.Map;
 /**
  * @author Stanislav Kurilin
  */
+
 public class AvatarRepositoryInMemoryImpl implements AvatarRepository {
     private final Map<Long, Avatar> avatars = new HashMap<Long, Avatar>();
 

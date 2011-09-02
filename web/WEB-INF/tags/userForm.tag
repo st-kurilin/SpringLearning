@@ -50,8 +50,8 @@
             </tr>
             <tr>
                 <td>Avatar:</td>
-                <td><input type="file" name="avatar"/>
-                <sf:errors path="avatar" cssClass="error"/></td>
+                <td><input type="file" name="avatarFile"/>
+                <sf:errors path="avatarFile" cssClass="error"/></td>
             </tr>
             <tr>
                 <td colspan=3><input type="submit"/></td>

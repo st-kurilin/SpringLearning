@@ -1,6 +1,7 @@
 package com.domain.customer;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Column;
@@ -12,9 +13,8 @@ import javax.validation.constraints.NotNull;
 
 public final class EmailAddress {
     @Column(name = "email")
-    @Email(message = "yahoo")
-    @NotNull
-    @NotEmpty
+    @Email
+    @NotBlank
     private final String value;
 
     public EmailAddress(String value) {

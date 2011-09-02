@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.domain.customer.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import javax.jws.soap.SOAPBinding;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -62,7 +64,7 @@ public class UserController {
 
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String editPage(@PathVariable("id") Long id, Map<String, Object> model) {
-        model.put("user", repository.findOne(id));
+        model.put("userForm", new UserForm(repository.findOne(id),null));
         return "usersEdit";
     }
 
@@ -85,18 +87,11 @@ public class UserController {
 //        avatarRepository.assign(entity.getId(), avatar);
 //        return "redirect:/users/" + entity.getId();
 //    }
+    //PathVariable
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@ModelAttribute @Valid UserForm userForm, BindingResult bindingResult) throws IOException {
-        final Avatar file = userForm.getAvatar();
         final User user = userForm.getUser();
-        Avatar avatar = file;
-        /*if (!file.isEmpty()) {
-            try {
-                avatar = new Avatar(file.getBytes(), file.getContentType());
-            } catch (RuntimeException e) {
-                bindingResult.addError(new ObjectError("avatar", "ass"));
-            }
-        }    */
+        final Avatar avatar = userForm.getAvatar();
         if (bindingResult.hasErrors()) {
             return "userNew";
         }

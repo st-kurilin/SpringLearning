@@ -1,5 +1,6 @@
 package com.domain.customer;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -7,7 +8,7 @@ import java.util.List;
 /**
  * @author Stanislav Kurilin
  */
-public class Avatar {
+public class Avatar implements Serializable{
     //TODO: move to binder
     private static final List<String> imageTypes;
 

@@ -2,7 +2,7 @@ package com.controller;
 
 import com.domain.customer.Avatar;
 import com.domain.customer.User;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.validation.Valid;
 
@@ -13,14 +13,14 @@ public class UserForm {
     @Valid
     private User user;
     @Valid
-    private Avatar avatar;
+    private CommonsMultipartFile avatarFile;
 
     public UserForm() {
     }
 
-    public UserForm(User user, Avatar avatar) {
+    public UserForm(User user, CommonsMultipartFile avatarFile) {
         this.user = user;
-        this.avatar = avatar;
+        this.avatarFile = avatarFile;
     }
 
     public User getUser() {
@@ -31,11 +31,18 @@ public class UserForm {
         this.user = user;
     }
 
-    public Avatar getAvatar() {
-        return avatar;
+    public CommonsMultipartFile getAvatarFile() {
+        return avatarFile;
     }
 
-    public void setAvatar(Avatar avatar) {
-        this.avatar = avatar;
+    public void setAvatarFile(CommonsMultipartFile avatarFile) {
+        this.avatarFile = avatarFile;
     }
+    public Avatar getAvatar(){
+        if(avatarFile.isEmpty()){
+            return null;
+        }
+        return new Avatar(avatarFile.getBytes(), avatarFile.getContentType());
+    }
+
 }

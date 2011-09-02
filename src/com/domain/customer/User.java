@@ -22,7 +22,7 @@ import java.util.Date;
 @TypeDef(name = "com.domain.customer.EmailAddress", typeClass = EmailAddressType2.class)
 public class User extends AbstractPersistable<Long> {
 
-    @Length(min = 6, max = 14, message = "Length should be from 6 to 14")
+    @Length(min = 6, max = 14)
     private String name;
 
     @Type(type = "com.domain.customer.EmailAddress")
@@ -32,13 +32,13 @@ public class User extends AbstractPersistable<Long> {
     @Temporal(TemporalType.DATE)
     @Valid
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    @NotNull(message = "Birthday field can't be null")
-    @Past(message = "Date should be in past time")
+    @NotNull
+    @Past
     private Date birthday;
 
 
     @Enumerated(EnumType.STRING)
-    @NotNull(message = "Please, select your sex")
+    @NotNull
     private Sex sex;
 
     public User() {
