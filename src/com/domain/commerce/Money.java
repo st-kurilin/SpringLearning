@@ -1,7 +1,5 @@
 package com.domain.commerce;
 
-import org.hibernate.annotations.Immutable;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;

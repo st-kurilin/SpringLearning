@@ -1,10 +1,8 @@
 package com.domain.customer;
 
+import com.sun.istack.internal.Nullable;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.stereotype.Repository;
-
-import java.net.URI;
-import java.net.URL;
 
 /**
  * @author Stanislav Kurilin
@@ -13,7 +11,7 @@ import java.net.URL;
 @NoRepositoryBean
 public interface AvatarRepository {
     //TODO:  Long -> UserId
-    void assign(Long user, Avatar avatar);
+    void assign(Long user, @Nullable Avatar avatar);
 
     Avatar load(Long user);
 }

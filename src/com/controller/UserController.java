@@ -7,10 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.DataBinder;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -51,7 +49,7 @@ public class UserController {
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String createPage(Map<String, Object> model) {
-        model.put("user", new User());
+        model.put("userForm", new UserForm(new User(), null));
         return "userNew";
     }
 
@@ -68,28 +66,42 @@ public class UserController {
         return "usersEdit";
     }
 
+    //    @RequestMapping(value = "/new", method = RequestMethod.POST)
+//    public String create(@ModelAttribute @Valid UserForm userForm, BindingResult bindingResult) throws IOException {
+//        final MultipartFile file = userForm.getAvatar();
+//        final User user = userForm.getUser();
+//        Avatar avatar = null;
+//        if (!file.isEmpty()) {
+//            try {
+//                avatar = new Avatar(file.getBytes(), file.getContentType());
+//            } catch (RuntimeException e) {
+//                bindingResult.addError(new ObjectError("avatar", "ass"));
+//            }
+//        }
+//        if (bindingResult.hasErrors()) {
+//            return "userNew";
+//        }
+//        final User entity = repository.save(user);
+//        avatarRepository.assign(entity.getId(), avatar);
+//        return "redirect:/users/" + entity.getId();
+//    }
     @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public String create(@Valid User user, BindingResult bindingResult, @RequestParam("avatar") MultipartFile file, Map<String, Object> model) throws IOException {
-
+    public String create(@ModelAttribute @Valid UserForm userForm, BindingResult bindingResult) throws IOException {
+        final Avatar file = userForm.getAvatar();
+        final User user = userForm.getUser();
+        Avatar avatar = file;
+        /*if (!file.isEmpty()) {
+            try {
+                avatar = new Avatar(file.getBytes(), file.getContentType());
+            } catch (RuntimeException e) {
+                bindingResult.addError(new ObjectError("avatar", "ass"));
+            }
+        }    */
         if (bindingResult.hasErrors()) {
             return "userNew";
         }
-
-        Avatar avatar = null;
-        if (!file.isEmpty()) {
-            try {
-                avatar = new Avatar(file);
-            } catch (RuntimeException e) {
-                return "userNew";
-            }
-        }
-
         final User entity = repository.save(user);
-
-        if (avatar != null) {
-            avatarRepository.assign(entity.getId(), avatar);
-        }
-
+        avatarRepository.assign(entity.getId(), avatar);
         return "redirect:/users/" + entity.getId();
     }
 
@@ -117,8 +129,8 @@ public class UserController {
         Avatar avatar = avatarRepository.load(id);
 
         HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.set("Content-Type", avatar.getMimeType());
+        responseHeaders.set("Content-Type", avatar.getContentType());
 
-        return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.CREATED);
+        return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.OK);
     }
 }

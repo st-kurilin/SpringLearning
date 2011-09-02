@@ -2,10 +2,8 @@ package com.persistence;
 
 import com.domain.customer.Avatar;
 import com.domain.customer.AvatarRepository;
-import com.domain.customer.User;
+import com.sun.istack.internal.Nullable;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +14,10 @@ public class AvatarRepositoryInMemoryImpl implements AvatarRepository {
     private final Map<Long, Avatar> avatars = new HashMap<Long, Avatar>();
 
     @Override
-    public void assign(Long user, Avatar avatar) {
+    public void assign(Long user, @Nullable Avatar avatar) {
+        if (avatar == null) {
+            return;
+        }
         avatars.put(user, avatar);
     }
 

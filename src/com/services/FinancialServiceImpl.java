@@ -1,10 +1,10 @@
 package com.services;
 
 import com.domain.commerce.FinancialService;
-import com.domain.commerce.Transaction;
 import com.domain.commerce.Money;
-import com.domain.customer.User;
+import com.domain.commerce.Transaction;
 import com.domain.commerce.TransactionRepository;
+import com.domain.customer.User;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;

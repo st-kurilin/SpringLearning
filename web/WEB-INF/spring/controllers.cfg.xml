@@ -29,4 +29,11 @@
             </list>
         </property>
     </bean>
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.controller.AvatarConverter"/>
+            </set>
+        </property>
+    </bean>
 </beans>

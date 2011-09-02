@@ -1,8 +1,8 @@
 package com.controller;
 
 import com.domain.commerce.FinancialService;
-import com.domain.customer.User;
 import com.domain.commerce.TransactionRepository;
+import com.domain.customer.User;
 import com.domain.customer.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

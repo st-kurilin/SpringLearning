@@ -1,6 +1,5 @@
 package com.domain.commerce;
 
-import com.domain.commerce.Transaction;
 import org.springframework.data.repository.CrudRepository;
 
 /**
