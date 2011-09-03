@@ -37,13 +37,13 @@
         class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
            <set>
-              <bean class="com.converters.FileToAvatarConverter"/>
+              <bean class="com.controller.CommonsMultipartFileToAvatar"/>
            </set>
         </property>
     </bean>
 
-    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" >
+    <!--<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" >
         <property name="defaultErrorView" value="errors/error500"/>
-    </bean>
+    </bean>-->
 
 </beans>

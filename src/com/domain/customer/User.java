@@ -1,6 +1,7 @@
 package com.domain.customer;
 
-import com.persistence.EmailAddressType2;
+import com.persistence.EmailAddressType;
+import com.persistence.EmailType;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.validator.constraints.Length;
@@ -19,7 +20,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "USERS")
-@TypeDef(name = "com.domain.customer.EmailAddress", typeClass = EmailAddressType2.class)
+@TypeDef(name = "com.domain.customer.EmailAddress", typeClass = EmailType.class)
 public class User extends AbstractPersistable<Long> {
 
     @Length(min = 6, max = 14)
