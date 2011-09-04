@@ -84,7 +84,7 @@
             <list>
                 <bean class="org.springframework.orm.hibernate3.TypeDefinitionBean">
                     <property name="typeName" value="com.domain.customer.EmailAddress"/>
-                    <property name="typeClass" value="com.persistence.EmailAddressType2"/>
+                    <property name="typeClass" value="com.persistence.EmailType"/>
                 </bean>
             </list>
         </property>
@@ -96,9 +96,10 @@
         </property>
     </bean>
 
-    <jpa:repositories base-package="com.domain">
+    <jpa:repositories base-package="com.domain" >
         <!--<repo:include-filter type="assignable" expression="org.springframework.data.repository.Repository"/>
         <repo:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>-->
     </jpa:repositories>
     <bean class="com.persistence.AvatarRepositoryInMemoryImpl"/>
+
 </beans>

@@ -1,15 +1,12 @@
 package com.domain.customer;
 
 /**
- * Created by IntelliJ IDEA.
  * User: andrii.loboda
- * Date: 01.09.11
- * Time: 18:19
- * To change this template use File | Settings | File Templates.
  */
+//TODO: [stas] Let's neutralize it. Use gender instead.
 public enum Sex {
-    MALE("Male"), FEMALE("Female");
-
+    MALE("Male"), FEMALE("Female");     //should think: Male/female vs masculine/feminine
+    //TODO: I don't believe we need it
     private final String value;
 
     Sex(String value) {
@@ -17,10 +14,12 @@ public enum Sex {
     }
 
     @Override
+    //TODO: [stas] I believe overriding to string isn't worth thing. Please consult doc.
     public String toString() {
         return value;
     }
 
+    //TODO: I don't believe we need it
     public String getValue() {
         return value;
     }

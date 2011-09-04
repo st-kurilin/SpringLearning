@@ -10,7 +10,7 @@
 <html>
 <head><title>Simple jsp page</title></head>
 <body>
-        Error 500
-    <c:out value="${error.message}"/>
+Error 500
+<c:out value="${error.message}"/>
 </body>
 </html>

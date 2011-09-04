@@ -1,7 +1,6 @@
 package com.controller;
 
 import com.domain.customer.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
-import javax.jws.soap.SOAPBinding;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -58,57 +56,39 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showPage(@PathVariable("id") Long id, Map<String, Object> model) {
         model.put("user", repository.findOne(id));
-        System.out.println(repository.findOne(id));
         return "userView";
     }
 
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String editPage(@PathVariable("id") Long id, Map<String, Object> model) {
-        model.put("userForm", new UserForm(repository.findOne(id),null));
+        model.put("userForm", new UserForm(repository.findOne(id), null));
+        model.put("id", id);
         return "usersEdit";
     }
 
-    //    @RequestMapping(value = "/new", method = RequestMethod.POST)
-//    public String create(@ModelAttribute @Valid UserForm userForm, BindingResult bindingResult) throws IOException {
-//        final MultipartFile file = userForm.getAvatar();
-//        final User user = userForm.getUser();
-//        Avatar avatar = null;
-//        if (!file.isEmpty()) {
-//            try {
-//                avatar = new Avatar(file.getBytes(), file.getContentType());
-//            } catch (RuntimeException e) {
-//                bindingResult.addError(new ObjectError("avatar", "ass"));
-//            }
-//        }
-//        if (bindingResult.hasErrors()) {
-//            return "userNew";
-//        }
-//        final User entity = repository.save(user);
-//        avatarRepository.assign(entity.getId(), avatar);
-//        return "redirect:/users/" + entity.getId();
-//    }
-    //PathVariable
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@ModelAttribute @Valid UserForm userForm, BindingResult bindingResult) throws IOException {
-        final User user = userForm.getUser();
-        final Avatar avatar = userForm.getAvatar();
         if (bindingResult.hasErrors()) {
             return "userNew";
         }
+        final User user = userForm.getUser();
+        final Avatar avatar = userForm.getAvatar();
         final User entity = repository.save(user);
         avatarRepository.assign(entity.getId(), avatar);
         return "redirect:/users/" + entity.getId();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String edit(@PathVariable("id") Long id, @Valid User user, BindingResult bindingResult, Map<String, Object> model) {
+    public String edit(@PathVariable("id") Long id, @Valid UserForm userForm, BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
+            model.put("id", id);
             return "usersEdit";
         }
-        user.setId(id);
-        repository.save(user);
+        repository.updateEntity(id, userForm.getUser());
+        avatarRepository.assign(id, userForm.getAvatar());
         return "redirect:/users/" + id;
     }
+
 
     @RequestMapping(value = "/findByEmail", method = RequestMethod.GET, params = "email")
     public String findByEmail(@RequestParam("email") EmailAddress email) {

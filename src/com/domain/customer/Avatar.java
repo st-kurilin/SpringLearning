@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author Stanislav Kurilin
  */
-public class Avatar implements Serializable{
+public class Avatar implements Serializable {
     //TODO: move to binder
     private static final List<String> imageTypes;
 

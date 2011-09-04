@@ -34,11 +34,11 @@
     <mvc:annotation-driven conversion-service="conversionService"/>
 
     <bean id="conversionService"
-        class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+          class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
-           <set>
-              <bean class="com.controller.CommonsMultipartFileToAvatar"/>
-           </set>
+            <set>
+                <bean class="com.controller.CommonsMultipartFileToAvatar"/>
+            </set>
         </property>
     </bean>
 

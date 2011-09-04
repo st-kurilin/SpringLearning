@@ -1,7 +1,5 @@
 package com.domain.customer;
 
-import com.persistence.EmailAddressType;
-import com.persistence.EmailType;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.validator.constraints.Length;
@@ -20,13 +18,13 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "USERS")
-@TypeDef(name = "com.domain.customer.EmailAddress", typeClass = EmailType.class)
+@TypeDef(name = "com.persistence.EmailAddressType", typeClass = com.persistence.EmailAddressType.class)
 public class User extends AbstractPersistable<Long> {
-
     @Length(min = 6, max = 14)
     private String name;
 
-    @Type(type = "com.domain.customer.EmailAddress")
+
+    @Type(type = "com.persistence.EmailAddressType")
     @Valid
     private EmailAddress email;
 
@@ -39,7 +37,7 @@ public class User extends AbstractPersistable<Long> {
 
 
     @Enumerated(EnumType.STRING)
-    @NotNull
+    @NotNull //TODO: [stas] there are should be case with unspecified gender. BTW, I think it should be radiobuttons on UI
     private Sex sex;
 
     public User() {
@@ -73,10 +71,6 @@ public class User extends AbstractPersistable<Long> {
         this.birthday = birthday;
     }
 
-    public void setId(Long id) {
-        super.setId(id);
-    }
-
     public Sex getSex() {
         return sex;
     }
@@ -85,4 +79,18 @@ public class User extends AbstractPersistable<Long> {
         this.sex = sex;
     }
 
+    public void setId(Long id) {
+        super.setId(id);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + getId() + '\'' +
+                "name='" + name + '\'' +
+                ", email=" + email +
+                ", birthday=" + birthday +
+                ", sex=" + sex +
+                '}';
+    }
 }

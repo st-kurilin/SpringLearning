@@ -38,8 +38,9 @@ public class UserForm {
     public void setAvatarFile(CommonsMultipartFile avatarFile) {
         this.avatarFile = avatarFile;
     }
-    public Avatar getAvatar(){
-        if(avatarFile.isEmpty()){
+
+    public Avatar getAvatar() {
+        if (avatarFile.isEmpty()) {
             return null;
         }
         return new Avatar(avatarFile.getBytes(), avatarFile.getContentType());

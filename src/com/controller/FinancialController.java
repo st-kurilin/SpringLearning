@@ -2,13 +2,11 @@ package com.controller;
 
 import com.domain.commerce.FinancialService;
 import com.domain.commerce.TransactionRepository;
-import com.domain.customer.User;
 import com.domain.customer.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.inject.Inject;
 
@@ -36,12 +34,12 @@ public class FinancialController {
         return "transfer";
     }
 
-    @RequestMapping(value = "/transfer", method = RequestMethod.POST)
-    public String transfer(@RequestParam Long from, @RequestParam Long to, @RequestParam int amount) {
-        final User userFrom = userRepository.findOne(from);
-        final User userTo = userRepository.findOne(to);
-        service.transfer(userFrom, userTo, amount);
-        return "transfer";
-    }
+//    @RequestMapping(value = "/transfer", method = RequestMethod.POST)
+//    public String transfer(@RequestParam Long from, @RequestParam Long to, @RequestParam int amount) {
+//        final User userFrom = userRepository.findOne(from);
+//        final User userTo = userRepository.findOne(to);
+//        service.transfer(userFrom, userTo, amount);
+//        return "transfer";
+//    }
 
 }
