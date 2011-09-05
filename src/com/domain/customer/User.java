@@ -26,6 +26,7 @@ public class User extends AbstractPersistable<Long> {
 
     @Type(type = "com.persistence.EmailAddressType")
     @Valid
+
     private EmailAddress email;
 
     @Temporal(TemporalType.DATE)

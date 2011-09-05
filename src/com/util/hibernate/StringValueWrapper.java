@@ -50,7 +50,8 @@ public abstract class StringValueWrapper<T extends Serializable> implements Comp
 
     @Override
     public Class returnedClass() {
-        return this.getClass().getGenericInterfaces()[0].getClass();
+        return EmailAddress.class;
+        //return this.getClass().getGenericInterfaces()[0].getClass();
     }
 
     @Override

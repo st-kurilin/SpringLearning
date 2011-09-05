@@ -15,6 +15,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -107,5 +108,19 @@ public class UserController {
         responseHeaders.set("Content-Type", avatar.getContentType());
 
         return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/isEmailAvailable", method = RequestMethod.GET)
+    @ResponseBody
+    public String isEmailAvailable(@RequestParam String email) {
+        if (email.isEmpty()){
+           return Boolean.FALSE.toString();
+        }
+        User user=repository.findByEmail(new EmailAddress(email));
+        if (user==null){
+           return Boolean.TRUE.toString();
+        }else{
+           return Boolean.FALSE.toString();
+        }
     }
 }
