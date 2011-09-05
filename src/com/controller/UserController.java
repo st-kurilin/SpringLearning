@@ -1,6 +1,8 @@
 package com.controller;
 
 import com.domain.customer.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -27,6 +29,8 @@ public class UserController {
     private final UserRepository repository;
     private final AvatarRepository avatarRepository;
 
+    private final Logger logger= LoggerFactory.getLogger(UserController.class);
+
     @Inject
     public UserController(UserRepository repository, AvatarRepository avatarRepository) {
         this.repository = repository;
@@ -44,7 +48,6 @@ public class UserController {
     @RequestMapping(method = RequestMethod.GET)
     public String showAll(Map<String, Object> model) {
         model.put("users", repository.findAll());
-        System.out.println(repository.findAll());
         return "users";
     }
 
@@ -68,7 +71,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public String create(@ModelAttribute @Valid UserForm userForm, BindingResult bindingResult) throws IOException {
+    public String create(@ModelAttribute @Valid UserForm userForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "userNew";
         }
@@ -123,4 +126,10 @@ public class UserController {
            return Boolean.FALSE.toString();
         }
     }
+
+    @RequestMapping(value = "/throwError", method = RequestMethod.GET)
+    public String throwError() {
+        throw new RuntimeException("All right");
+    }
+
 }

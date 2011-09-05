@@ -42,8 +42,21 @@
         </property>
     </bean>
 
-    <!--<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver" >
-        <property name="defaultErrorView" value="errors/error500"/>
-    </bean>-->
+
+	<!--<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">errors/error500</prop>
+			</props>
+		</property>
+	</bean> -->
+    <bean id="exceptionResolver" class="com.logging.LoggingExceptionResolver" >
+        <property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">errors/error500</prop>
+			</props>
+		</property>
+    </bean>
 
 </beans>

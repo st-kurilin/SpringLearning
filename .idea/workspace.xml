@@ -95,25 +95,68 @@
       <file leaf-file-name="UserController.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="124" column="0" selection-start="4643" selection-end="4643" vertical-scroll-proportion="0.0">
+            <state line="61" column="54" selection-start="2161" selection-end="2161" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoggingExceptionResolver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/logging/LoggingExceptionResolver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="24" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+            <state />
+          </provider>
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="36" selection-start="683" selection-end="683" vertical-scroll-proportion="0.6017699">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error404.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/static/error404.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="20" selection-start="291" selection-end="291" vertical-scroll-proportion="-6.5384617">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="userForm.tag" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/userForm.tag">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="0" selection-start="2948" selection-end="2948" vertical-scroll-proportion="-23.884615">
+            <state line="186" column="0" selection-start="6407" selection-end="6407" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="validation_styles.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/resources/css/validation_styles.css">
+      <file leaf-file-name="controllers.cfg.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/controllers.cfg.xml">
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="81" selection-start="117" selection-end="117" vertical-scroll-proportion="0.03469388">
+            <state line="56" column="39" selection-start="2203" selection-end="2203" vertical-scroll-proportion="-19.25">
               <folding />
             </state>
           </provider>
@@ -133,22 +176,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/controller/ErrorControler.java" />
-        <option value="$PROJECT_DIR$/src/com/controller/ExceptionController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/META-INF/web.xml" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/com/logging/LogConfig.java.java" />
+        <option value="$PROJECT_DIR$/src/com/logging/LoggingFactoryBean.java" />
+        <option value="$PROJECT_DIR$/src/com/logging/LoggerFactoryForSl4j.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/com/logging/LoggerConfig.java" />
+        <option value="$PROJECT_DIR$/src/com/logging/LoggerFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/logging/LoggerBeanFactory2.java" />
+        <option value="$PROJECT_DIR$/src/com/logging/LoggerBeanFactory.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/spring/controllers.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/com/persistence/AvatarRepositoryInMemoryImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/domain/customer/Avatar.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/spring/persistence-configuration.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/com/persistence/AvatarRepositoryOnHardDrive.java" />
-        <option value="$PROJECT_DIR$/src/com/domain/customer/User.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/META-INF/db_connection.properties" />
-        <option value="$PROJECT_DIR$/src/com/domain/customer/UserRepository.java" />
-        <option value="$PROJECT_DIR$/src/com/util/hibernate/StringValueWrapper.java" />
+        <option value="$PROJECT_DIR$/src/log4j.properties" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/jsp/errors/error500.jsp" />
         <option value="$PROJECT_DIR$/src/com/controller/UserController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/tags/userForm.tag" />
-        <option value="$PROJECT_DIR$/web/resources/css/validation_styles.css" />
+        <option value="$PROJECT_DIR$/src/com/logging/LoggingExceptionResolver.java" />
+        <option value="$PROJECT_DIR$/src/com/persistence/AvatarRepositoryOnHardDrive.java" />
+        <option value="$PROJECT_DIR$/web/error404.jsp" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
       </list>
     </option>
   </component>
@@ -282,33 +325,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringLearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -323,116 +340,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringLearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringLearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringLearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hibernate" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringLearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="persistence" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringLearning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -444,13 +351,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.externalResources" />
+    <property name="options.lastSelected" value="editor.preferences.import" />
     <property name="project.structure.side.proportion" value="0.28142077" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -463,7 +370,12 @@
     <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.logging" />
+      <recent name="com.logging.logging" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\all\projects\git\SpringLearning\src\com\logging" />
       <recent name="D:\all\projects\git\SpringLearning\web\WEB-INF\jsp\errors" />
       <recent name="D:\all\projects\git\SpringLearning\web\resources\css" />
       <recent name="D:\all\projects\git\SpringLearning\web\WEB-INF\jsp" />
@@ -765,6 +677,7 @@
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25772357" sideWeight="0.1381346" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25383708" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24878049" sideWeight="0.60092163" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39905548" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -781,7 +694,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38961038" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25383708" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24845996" sideWeight="0.6082949" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -867,118 +779,135 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/domain/customer/AvatarRepository.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/spring-context.xml">
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="56" selection-start="285" selection-end="285" vertical-scroll-proportion="0.32415253">
+        <state line="16" column="44" selection-start="793" selection-end="793" vertical-scroll-proportion="0.61959">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/META-INF/db_connection.properties">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.0.5.RELEASE/spring-context-3.0.5.RELEASE-sources.jar!/org/springframework/context/annotation/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="18" selection-start="131" selection-end="131" vertical-scroll-proportion="0.108050846">
+        <state line="64" column="18" selection-start="2381" selection-end="2381" vertical-scroll-proportion="0.33262712">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/css/calendar_styles.css">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-validator/4.2.0.Final/hibernate-validator-4.2.0.Final-sources.jar!/org/hibernate/validator/util/LoggerFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="277" selection-end="277" vertical-scroll-proportion="0.5042373">
+        <state line="19" column="23" selection-start="837" selection-end="853" vertical-scroll-proportion="0.6591837">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/domain/shop/Product.java">
+    <entry file="file://$PROJECT_DIR$/src/log4j.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="119" selection-end="119" vertical-scroll-proportion="0.25211865">
+        <state line="6" column="0" selection-start="180" selection-end="180" vertical-scroll-proportion="0.21610169">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/util/hibernate/StringValueWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="37" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.3327338">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/util/StreamCloser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="38" selection-start="328" selection-end="328" vertical-scroll-proportion="0.40545145">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/persistence/AvatarRepositoryOnHardDrive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="38" selection-start="1477" selection-end="1477" vertical-scroll-proportion="1.6927966">
+        <state line="58" column="29" selection-start="1713" selection-end="1713" vertical-scroll-proportion="1.4054514">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/controller/AvatarConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="56" selection-start="814" selection-end="826" vertical-scroll-proportion="0.5404959">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/domain/customer/Avatar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="192" selection-end="198" vertical-scroll-proportion="-0.31779662">
+        <state line="34" column="37" selection-start="978" selection-end="978" vertical-scroll-proportion="0.49421486">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/domain/customer/EmailAddress.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/spring/controllers.cfg.xml">
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="3" selection-start="323" selection-end="344" vertical-scroll-proportion="0.3601695">
+        <state line="56" column="39" selection-start="2203" selection-end="2203" vertical-scroll-proportion="-19.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/domain/customer/User.java">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/errors/error500.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="18" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0">
+        <state line="14" column="47" selection-start="436" selection-end="436" vertical-scroll-proportion="0.41105354">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/domain/shop/ProductRepository.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="138" selection-end="138" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/domain/customer/UpdateableUserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="375" selection-end="375" vertical-scroll-proportion="0.2881356">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons-core/1.1.0.RELEASE/spring-data-commons-core-1.1.0.RELEASE-sources.jar!/org/springframework/data/repository/CrudRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="35" selection-start="833" selection-end="833" vertical-scroll-proportion="0.22457626">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/domain/customer/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="151" selection-end="151" vertical-scroll-proportion="0.3122449">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/util/hibernate/StringValueWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="48" selection-start="1581" selection-end="1581" vertical-scroll-proportion="0.39203355">
+        <state line="186" column="0" selection-start="6407" selection-end="6407" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="0" selection-start="4643" selection-end="4643" vertical-scroll-proportion="0.0">
+        <state line="61" column="54" selection-start="2161" selection-end="2161" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/logging/LoggingExceptionResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="24" selection-start="866" selection-end="866" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/error404.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="20" selection-start="291" selection-end="291" vertical-scroll-proportion="-6.5384617">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/userForm.tag">
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2948" selection-end="2948" vertical-scroll-proportion="-23.884615">
+        <state line="16" column="36" selection-start="683" selection-end="683" vertical-scroll-proportion="0.6017699">
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/resources/css/validation_styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="81" selection-start="117" selection-end="117" vertical-scroll-proportion="0.03469388">
-          <folding />
-        </state>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+        <state />
       </provider>
     </entry>
   </component>

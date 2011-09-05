@@ -44,7 +44,7 @@ public class AvatarRepositoryOnHardDrive implements AvatarRepository {
             objectStream.writeObject(avatar);
 
         } catch (IOException e) {
-            //TODO: log it
+            throw new RuntimeException(e);
         } finally {
             close(objectStream);
         }
@@ -56,7 +56,6 @@ public class AvatarRepositoryOnHardDrive implements AvatarRepository {
             objectStream = new ObjectInputStream(new FileInputStream(location));
             return (Avatar) objectStream.readObject();
         } catch (Throwable e) {
-            //TODO: log exceptions.
             throw new RuntimeException(e);
         } finally {
             close(objectStream);
