@@ -24,15 +24,15 @@ public class LoggingExceptionResolver extends SimpleMappingExceptionResolver {
 
     @Override
     public ModelAndView resolveException(HttpServletRequest request,
-        HttpServletResponse response, Object handler, Exception ex) {
+                                         HttpServletResponse response, Object handler, Exception ex) {
         log.error(getStackTrace(ex));
         return super.resolveException(request, response, handler, ex);
     }
 
     /**
-    * @param throwable, Throwable
-    * @return String of the exception
-    */
+     * @param throwable, Throwable
+     * @return String of the exception
+     */
     public String getStackTrace(Throwable throwable) {
         StringWriter stringWritter = new StringWriter();
         PrintWriter printWritter = new PrintWriter(stringWritter, true);

@@ -1,7 +1,5 @@
 package com.domain.shop;
 
-import com.sun.xml.internal.bind.v2.TODO;
-
 /**
  * @author Stanislav Kurilin
  */

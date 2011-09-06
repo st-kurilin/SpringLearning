@@ -1,13 +1,10 @@
 package com.domain.customer;
 
-import com.domain.customer.UpdateableUserRepository;
-import com.domain.customer.User;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.orm.jpa.support.JpaDaoSupport;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManagerFactory;
-import java.io.Serializable;
 
 /**
  * @author Stanislav Kurilin

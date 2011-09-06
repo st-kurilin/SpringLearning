@@ -14,10 +14,8 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,10 +24,11 @@ import java.util.Map;
 @Controller
 @RequestMapping("/users")
 public class UserController {
+
     private final UserRepository repository;
     private final AvatarRepository avatarRepository;
 
-    private final Logger logger= LoggerFactory.getLogger(UserController.class);
+    private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Inject
     public UserController(UserRepository repository, AvatarRepository avatarRepository) {
@@ -116,14 +115,14 @@ public class UserController {
     @RequestMapping(value = "/isEmailAvailable", method = RequestMethod.GET)
     @ResponseBody
     public String isEmailAvailable(@RequestParam String email) {
-        if (email.isEmpty()){
-           return Boolean.FALSE.toString();
+        if (email.isEmpty()) {
+            return Boolean.FALSE.toString();
         }
-        User user=repository.findByEmail(new EmailAddress(email));
-        if (user==null){
-           return Boolean.TRUE.toString();
-        }else{
-           return Boolean.FALSE.toString();
+        User user = repository.findByEmail(new EmailAddress(email));
+        if (user == null) {
+            return Boolean.TRUE.toString();
+        } else {
+            return Boolean.FALSE.toString();
         }
     }
 

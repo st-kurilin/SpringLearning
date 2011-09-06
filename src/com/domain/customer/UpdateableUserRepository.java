@@ -1,6 +1,5 @@
 package com.domain.customer;
 
-import com.domain.customer.User;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.data.repository.Repository;

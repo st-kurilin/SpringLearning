@@ -38,7 +38,8 @@ public class User extends AbstractPersistable<Long> {
 
 
     @Enumerated(EnumType.STRING)
-    @NotNull //TODO: [stas] there are should be case with unspecified gender. BTW, I think it should be radiobuttons on UI
+    @NotNull
+    //TODO: [stas] there are should be case with unspecified gender. BTW, I think it should be radiobuttons on UI
     private Sex sex;
 
     public User() {

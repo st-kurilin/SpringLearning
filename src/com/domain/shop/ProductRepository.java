@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author Stanislav Kurilin
  */
-public interface ProductRepository  {
+public interface ProductRepository {
     //TODO: [stas] make it pageable
     List<Product> findBySeller(User user);
     //TODO: [stas] all crud operations

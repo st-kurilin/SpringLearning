@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @author Stanislav Kurilin
  */
 
-public final class EmailAddress implements Serializable{
+public final class EmailAddress implements Serializable {
     @Column(name = "email")
     @Email
     @NotBlank

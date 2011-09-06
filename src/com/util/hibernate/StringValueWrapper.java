@@ -91,7 +91,7 @@ public abstract class StringValueWrapper<T extends Serializable> implements Comp
     @Override
     @SuppressWarnings("unchecked") //can't generalize hibernate class
     public Serializable disassemble(Object value, SessionImplementor session) throws HibernateException {
-        return (T)value;
+        return (T) value;
     }
 
     @Override
