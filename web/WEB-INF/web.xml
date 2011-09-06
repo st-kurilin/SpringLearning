@@ -23,5 +23,5 @@
     <error-page>
         <error-code>404</error-code>
         <location>/static/error404.jsp</location>
-</error-page>
+    </error-page>
 </web-app>

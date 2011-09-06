@@ -91,6 +91,7 @@
         <property name="annotatedClasses">
             <list>
                 <value>com.domain.customer.User</value>
+                <value>com.domain.shop.Product</value>
                 <value>com.domain.commerce.Transaction</value>
             </list>
         </property>

@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.domain.customer.*;
+import com.domain.shop.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -27,13 +28,15 @@ public class UserController {
 
     private final UserRepository repository;
     private final AvatarRepository avatarRepository;
+    private final ProductRepository productRepository;
 
     private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @Inject
-    public UserController(UserRepository repository, AvatarRepository avatarRepository) {
+    public UserController(UserRepository repository, AvatarRepository avatarRepository, ProductRepository productRepository) {
         this.repository = repository;
         this.avatarRepository = avatarRepository;
+        this.productRepository = productRepository;
     }
 
     @InitBinder
@@ -58,7 +61,9 @@ public class UserController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showPage(@PathVariable("id") Long id, Map<String, Object> model) {
-        model.put("user", repository.findOne(id));
+        final User user=repository.findOne(id);
+        model.put("user", user);
+        model.put("products", productRepository.findByUser(user));
         return "userView";
     }
 
@@ -115,9 +120,6 @@ public class UserController {
     @RequestMapping(value = "/isEmailAvailable", method = RequestMethod.GET)
     @ResponseBody
     public String isEmailAvailable(@RequestParam String email) {
-        if (email.isEmpty()) {
-            return Boolean.FALSE.toString();
-        }
         User user = repository.findByEmail(new EmailAddress(email));
         if (user == null) {
             return Boolean.TRUE.toString();
@@ -125,10 +127,4 @@ public class UserController {
             return Boolean.FALSE.toString();
         }
     }
-
-    @RequestMapping(value = "/throwError", method = RequestMethod.GET)
-    public String throwError() {
-        throw new RuntimeException("All right");
-    }
-
 }

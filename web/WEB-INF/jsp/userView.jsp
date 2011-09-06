@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head><title>Simple jsp page</title></head>
 <body>
@@ -28,6 +29,26 @@
     <tr>
         <td>Email</td>
         <td><c:out value="${user.email.value}"/></td>
+    </tr>
+    <tr>
+        <td>Products of this user</td>
+        <td>
+            <c:if test="${fn:length(products)!=0}">
+                <table>
+                    <tr>
+                        <td>Title</td>
+                        <td>Link</td>
+                    </tr>
+
+                    <c:forEach var="product" items="${products}">
+                        <tr>
+                            <td>${product.title}</td>
+                            <td><a href="<c:url value="/products/${product.title}"/>">View</a></td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            </c:if>
+        </td>
     </tr>
 </table>
 </body>

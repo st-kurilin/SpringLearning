@@ -1,5 +1,6 @@
 package com.domain.customer;
 
+import com.domain.shop.Product;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.validator.constraints.Length;
@@ -11,6 +12,8 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -41,6 +44,7 @@ public class User extends AbstractPersistable<Long> {
     @NotNull
     //TODO: [stas] there are should be case with unspecified gender. BTW, I think it should be radiobuttons on UI
     private Sex sex;
+
 
     public User() {
     }
