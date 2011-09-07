@@ -1,9 +1,6 @@
 <%--
-  Created by IntelliJ IDEA.
   User: stanislav.kurilin
   Date: 8/25/11
-  Time: 9:12 PM
-  To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE html>
 

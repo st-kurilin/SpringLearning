@@ -5,6 +5,7 @@ import com.domain.shop.Product;
 import com.domain.shop.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,8 @@ public class ProductController {
 
     private final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
+    private final String DEFAULT_PAGE_SIZE = "1";
+
     @Inject
     public ProductController(ProductRepository repository, UserRepository userRepository) {
         this.repository = repository;
@@ -32,8 +35,10 @@ public class ProductController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showAll(Map<String, Object> model) {
-        model.put("products", repository.findAll());
+    public String showAll(@RequestParam(value = "page", defaultValue = "0") Integer page,
+                          @RequestParam(value = "pageSize", defaultValue = DEFAULT_PAGE_SIZE) Integer size,
+                          Map<String, Object> model) {
+        model.put("pageOfProducts", repository.findAll(new PageRequest(page, size)));
         return "products";
     }
 

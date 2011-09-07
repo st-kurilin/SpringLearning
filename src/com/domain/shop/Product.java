@@ -65,6 +65,7 @@ public class Product extends AbstractPersistable<Long> {
     //price should be placed in separate immutable class
     /*
     * show products only of this user
+    * Add on market
     * paginator
     * filter
     * */
