@@ -110,19 +110,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pagesView.tag" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pagesView.tag" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/pagesView.tag">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="34" selection-start="333" selection-end="342" vertical-scroll-proportion="0.0">
+            <state line="13" column="46" selection-start="539" selection-end="539" vertical-scroll-proportion="0.44827586">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="offsetPages.tag" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="offsetPages.tag" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/offsetPages.tag">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="22" selection-start="633" selection-end="633" vertical-scroll-proportion="0.2246696">
+            <state line="6" column="20" selection-start="321" selection-end="321" vertical-scroll-proportion="-3.9230769">
               <folding />
             </state>
           </provider>
@@ -156,8 +156,8 @@
         <option value="$PROJECT_DIR$/src/com/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/users.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/jsp/products.jsp" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/tags/pagesView.tag" />
         <option value="$PROJECT_DIR$/web/WEB-INF/tags/offsetPages.tag" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/tags/pagesView.tag" />
       </list>
     </option>
   </component>
@@ -202,7 +202,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -217,6 +217,35 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BankSys" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,35 +342,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BankSys" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -361,9 +361,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -475,30 +475,6 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
-      <option name="LOCAL" value="false" />
-      <server-settings>
-        <option name="DEPLOY_TOMCAT_APPS" value="false" />
-        <option name="BASE_DIRECTORY_NAME" value="_BankSys_2" />
-      </server-settings>
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <extension name="coverage" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="65402" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="false" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="PhingTarget" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080//" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -545,6 +521,30 @@
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
       </ConfigurationWrapper>
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+        <option name="PhingTarget" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote">
+      <option name="LOCAL" value="false" />
+      <server-settings>
+        <option name="DEPLOY_TOMCAT_APPS" value="false" />
+        <option name="BASE_DIRECTORY_NAME" value="_BankSys_2" />
+      </server-settings>
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <extension name="coverage" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="65402" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -683,10 +683,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293979" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25772357" sideWeight="0.1381346" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25772357" sideWeight="0.1381346" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1398374" sideWeight="0.61393154" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14227642" sideWeight="0.61393154" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25772357" sideWeight="0.61393154" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25772357" sideWeight="0.61393154" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38606846" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -798,9 +798,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/usersEdit.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="5" selection-end="5" vertical-scroll-proportion="0.036480688">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="5" selection-end="5" vertical-scroll-proportion="0.036480688" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/userForm.tag">
@@ -810,44 +808,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/users.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="34" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.7276786">
-          <folding />
-        </state>
+        <state line="35" column="34" selection-start="1326" selection-end="1326" vertical-scroll-proportion="0.7276786" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons-core/1.1.0.RELEASE/spring-data-commons-core-1.1.0.RELEASE-sources.jar!/org/springframework/data/domain/Page.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="17" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="28" column="17" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons-core/1.1.0.RELEASE/spring-data-commons-core-1.1.0.RELEASE-sources.jar!/org/springframework/data/repository/PagingAndSortingRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="7" selection-start="1537" selection-end="1537" vertical-scroll-proportion="0.71308017">
-          <folding />
-        </state>
+        <state line="53" column="7" selection-start="1537" selection-end="1537" vertical-scroll-proportion="0.71308017" />
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons-core/1.1.0.RELEASE/spring-data-commons-core-1.1.0.RELEASE-sources.jar!/org/springframework/data/domain/PageRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="9" selection-start="1137" selection-end="1139" vertical-scroll-proportion="0.3227848">
-          <folding />
-        </state>
+        <state line="38" column="9" selection-start="1137" selection-end="1139" vertical-scroll-proportion="0.3227848" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="41" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.67432153">
-          <folding />
-        </state>
+        <state line="40" column="41" selection-start="1370" selection-end="1370" vertical-scroll-proportion="0.67432153" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/jsp/lib/jsp-impl.jar!/standardSchemas/jspdirectives2_1.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="6" selection-start="7734" selection-end="7734" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="210" column="6" selection-start="7734" selection-end="7734" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/domain/shop/Product.java">
@@ -857,21 +843,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/products.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="22" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0">
+        <state line="45" column="22" selection-start="1648" selection-end="1648" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/offsetPages.tag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="20" selection-start="321" selection-end="321" vertical-scroll-proportion="-3.9230769">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/pagesView.tag">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="34" selection-start="333" selection-end="342" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/tags/offsetPages.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="22" selection-start="633" selection-end="633" vertical-scroll-proportion="0.2246696">
+        <state line="13" column="46" selection-start="539" selection-end="539" vertical-scroll-proportion="0.44827586">
           <folding />
         </state>
       </provider>

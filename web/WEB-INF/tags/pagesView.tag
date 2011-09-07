@@ -8,17 +8,17 @@
     <c:when test="${page.firstPage}">
         First
         <c:out value="${page.number}"/>
-        <tags:offsetPages page="${page}" root="${root}" asc="true" range="${range}"/>
+        <tags:offsetPages page="${page}" root="${root}" desc="false" range="${range}"/>
     </c:when>
 
     <c:when test="${page.lastPage}">
-        <tags:offsetPages page="${page}" root="${root}" asc="false" range="${range}"/>
+        <tags:offsetPages page="${page}" root="${root}" desc="true" range="${range}"/>
         <c:out value="${page.number}"/>
         Last
     </c:when>
     <c:otherwise>
-        <tags:offsetPages page="${page}" root="${root}" asc="false" range="${range}"/>
+        <tags:offsetPages page="${page}" root="${root}" desc="true" range="${range}"/>
         <c:out value="${page.number}"/>
-        <tags:offsetPages page="${page}" root="${root}" asc="true" range="${range}"/>
+        <tags:offsetPages page="${page}" root="${root}" desc="false" range="${range}"/>
     </c:otherwise>
 </c:choose>

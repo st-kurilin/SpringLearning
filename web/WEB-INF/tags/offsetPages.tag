@@ -1,10 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ attribute name="page" required="true" type="org.springframework.data.domain.Page" %>
 <%@ attribute name="root" required="true" %>
-<%@ attribute name="asc" required="true" %>
+<%@ attribute name="desc" required="true" %>
 <%@ attribute name="range" required="true" %>
 <c:choose>
-    <c:when test="${!asc}">
+    <c:when test="${desc}">
         <c:if test="${!page.firstPage}">
             <a href="<c:url value="${root}?page=0"/>">First</a>
             <a href="<c:url value="${root}?page=${page.number-1}"/>">Previous</a>
