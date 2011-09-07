@@ -11,6 +11,7 @@ import java.util.List;
 public interface ProductRepository extends CrudRepository<Product, Long> {
     //TODO: [stas] make it pageable
     List<Product> findByUser(User user);
+
     Product findByTitle(String title);
     //TODO: [stas] all crud operations
     //TODO: [stas] pageable retrieve with custom soring (by price/date)

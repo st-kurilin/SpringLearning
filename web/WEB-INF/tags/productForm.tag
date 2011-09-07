@@ -56,6 +56,11 @@
                 <td><sf:errors path="price" cssClass="error"/></td>
             </tr>
             <tr>
+                <td>Description:</td>
+                <td><sf:textarea path="description" size="10" rows="10"/></td>
+                <td><sf:errors path="description" cssClass="error"/></td>
+            </tr>
+            <tr>
                 <td colspan=3><input type="submit"/></td>
             </tr>
         </table>

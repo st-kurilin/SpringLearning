@@ -33,21 +33,24 @@
     <tr>
         <td>Products of this user</td>
         <td>
-            <c:if test="${fn:length(products)!=0}">
-                <table>
-                    <tr>
-                        <td>Title</td>
-                        <td>Link</td>
-                    </tr>
-
-                    <c:forEach var="product" items="${products}">
+            <c:choose>
+                <c:when test="${fn:length(products)!=0}">
+                    <table>
                         <tr>
-                            <td>${product.title}</td>
-                            <td><a href="<c:url value="/products/${product.title}"/>">View</a></td>
+                            <td>Title</td>
+                            <td>Link</td>
                         </tr>
-                    </c:forEach>
-                </table>
-            </c:if>
+
+                        <c:forEach var="product" items="${products}">
+                            <tr>
+                                <td>${product.title}</td>
+                                <td><a href="<c:url value="/products/${product.title}"/>">View</a></td>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </c:when>
+                <c:otherwise>No products</c:otherwise>
+            </c:choose>
         </td>
     </tr>
 </table>

@@ -23,7 +23,24 @@
     </tr>
     <tr>
         <td>User</td>
-        <td><c:out value="${product.user.name}"/></td>
+        <td>
+            <a href="<c:url value="/users/${product.user.id}"/>">
+                <c:out value="${product.user.name}"/>
+            </a>
+        </td>
+    </tr>
+     <tr>
+        <td>Description</td>
+        <td>
+            <c:choose>
+                <c:when test="${empty product.description}">
+                      No description available.
+                </c:when>
+                <c:otherwise>
+                    <c:out value="${product.description}"/>
+                </c:otherwise>
+            </c:choose>
+        </td>
     </tr>
 </table>
 </body>

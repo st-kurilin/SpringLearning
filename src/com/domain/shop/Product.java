@@ -20,6 +20,8 @@ public class Product extends AbstractPersistable<Long> {
     @NotNull
     private BigDecimal price;
 
+    private String description;
+
     @ManyToOne
     private User user;
 
@@ -49,8 +51,21 @@ public class Product extends AbstractPersistable<Long> {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
     //TODO: [stas] should contain title, seller, description, list of photo, price.
     //photo should be uploaded through ajax
     //first title should be used as id (you can edit title, but can't change id)
     //price should be placed in separate immutable class
+    /*
+    * show products only of this user
+    * paginator
+    * filter
+    * */
 }

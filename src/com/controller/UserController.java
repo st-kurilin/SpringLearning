@@ -61,7 +61,7 @@ public class UserController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showPage(@PathVariable("id") Long id, Map<String, Object> model) {
-        final User user=repository.findOne(id);
+        final User user = repository.findOne(id);
         model.put("user", user);
         model.put("products", productRepository.findByUser(user));
         return "userView";
