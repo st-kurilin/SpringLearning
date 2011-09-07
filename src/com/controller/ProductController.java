@@ -38,7 +38,7 @@ public class ProductController {
     public String showAll(@RequestParam(value = "page", defaultValue = "0") Integer page,
                           @RequestParam(value = "pageSize", defaultValue = DEFAULT_PAGE_SIZE) Integer size,
                           Map<String, Object> model) {
-        model.put("pageOfProducts", repository.findAll(new PageRequest(page, size)));
+        model.put("page", repository.findAll(new PageRequest(page, size)));
         return "products";
     }
 

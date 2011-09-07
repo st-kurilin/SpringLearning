@@ -29,12 +29,12 @@
             </a>
         </td>
     </tr>
-     <tr>
+    <tr>
         <td>Description</td>
         <td>
             <c:choose>
                 <c:when test="${empty product.description}">
-                      No description available.
+                    No description available.
                 </c:when>
                 <c:otherwise>
                     <c:out value="${product.description}"/>

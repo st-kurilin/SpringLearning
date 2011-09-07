@@ -33,8 +33,8 @@
             </c:forEach>
         </table>
     </c:when>
-    <c:otherwise>There is no users</c:otherwise>
+    <c:otherwise>There are no any users</c:otherwise>
 </c:choose>
-       <a href="<c:url value="/users/new" />"> Add new user</a>
+<a href="<c:url value="/users/new" />"> Add new user</a>
 </body>
 </html>

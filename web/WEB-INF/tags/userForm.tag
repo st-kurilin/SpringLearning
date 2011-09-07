@@ -13,60 +13,60 @@
         $("#user\\.birthday").datepicker();
 
         $("#userForm").validate({
-                rules:{
-                  "user.name":{
-                      required: true,
-                      minlength:6,
-                      maxlength:12
-                  },
-                  "user.email":{
-                      required:true,
-                      email:true,
-                      remote:{
-                          url:location.href.substring(0,location.href.lastIndexOf('users/'))+"users/isEmailAvailable",
-                          type:"GET",
-                          data:{
-                               email:function() {
-                                            return $("#user\\.email").val()
-                                    }
-                          }
-                      }
-                  },
-                  "user.birthday":{
-                      required:true,
-                      date:true
-                  },
-                  avatarFile:{
-                      accept: "png|jpe?g|gif|bmp"
-                  },
-                  "user.sex":{
-                      required:true
-                  }
+            rules:{
+                "user.name":{
+                    required: true,
+                    minlength:6,
+                    maxlength:12
                 },
-                messages:{
-                   "user.name":{
-                       required: "Enter the name, please.",
-                       minlength:"Length of the name should be at least 6 symbols",
-                       maxlength:"Length of the name should be at most 12 symbols"
-                   },
-                   "user.email":{
-                         required: "Enter the mail, please.",
-                         email:"Email is not valid",
-                         remote:"Email is not availiable."
-                    },
-                    "user.birthday":{
-                         required: "Enter the birthday, please.",
-                         date:"Date is not valid"
-                    },
-                    avatarFile:{
-                       accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"
-                    },
-                    "user.sex":{
-                          required: "Are you Women or Man?"
+                "user.email":{
+                    required:true,
+                    email:true,
+                    remote:{
+                        url:location.href.substring(0, location.href.lastIndexOf('users/')) + "users/isEmailAvailable",
+                        type:"GET",
+                        data:{
+                            email:function() {
+                                return $("#user\\.email").val()
+                            }
+                        }
                     }
-
+                },
+                "user.birthday":{
+                    required:true,
+                    date:true
+                },
+                avatarFile:{
+                    accept: "png|jpe?g|gif|bmp"
+                },
+                "user.sex":{
+                    required:true
                 }
-            })
+            },
+            messages:{
+                "user.name":{
+                    required: "Enter the name, please.",
+                    minlength:"Length of the name should be at least 6 symbols",
+                    maxlength:"Length of the name should be at most 12 symbols"
+                },
+                "user.email":{
+                    required: "Enter the mail, please.",
+                    email:"Email is not valid",
+                    remote:"Email is not availiable."
+                },
+                "user.birthday":{
+                    required: "Enter the birthday, please.",
+                    date:"Date is not valid"
+                },
+                avatarFile:{
+                    accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"
+                },
+                "user.sex":{
+                    required: "Are you Women or Man?"
+                }
+
+            }
+        })
     });
 </script>
 

@@ -32,7 +32,7 @@
         </property>
     </bean>
 
-      <!--<mvc:annotation-driven conversion-service="conversionService"/>
+    <!--<mvc:annotation-driven conversion-service="conversionService"/>
 
   <bean id="conversionService"
           class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
@@ -43,12 +43,12 @@
         </property>
     </bean>-->
 
-    <bean id="exceptionResolver" class="com.logging.LoggingExceptionResolver" >
+    <bean id="exceptionResolver" class="com.logging.LoggingExceptionResolver">
         <property name="exceptionMappings">
-			<props>
-				<prop key="java.lang.Exception">errors/error500</prop>
-			</props>
-		</property>
+            <props>
+                <prop key="java.lang.Exception">errors/error500</prop>
+            </props>
+        </property>
     </bean>
 
     <mvc:interceptors>

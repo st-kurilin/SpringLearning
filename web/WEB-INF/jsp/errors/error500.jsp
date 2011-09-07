@@ -8,13 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-    <head><title>Simple jsp page</title></head>
-    <body>
-    Error 500<br/>
-    Sorry, Error has happened. Please, try again later.
-    <br/>
-    For developers:<br/>
-    Message:<c:out value="${exception.message}"/><br/>
+<head><title>Simple jsp page</title></head>
+<body>
+Error 500<br/>
+Sorry, Error has happened. Please, try again later.
+<br/>
+For developers:<br/>
+Message:<c:out value="${exception.message}"/><br/>
 
-    </body>
+</body>
 </html>

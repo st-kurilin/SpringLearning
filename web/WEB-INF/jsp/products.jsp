@@ -13,11 +13,11 @@
 <body>
 
 <c:choose>
-    <c:when test="${pageOfProducts.totalPages==0}">
-        There is no products
+    <c:when test="${page.totalPages==0}">
+        There are no any products.
     </c:when>
-    <c:when test="${pageOfProducts.number>=pageOfProducts.totalPages}">
-        Please , return to <a href="<c:url value="/products" />">All products</a>
+    <c:when test="${page.number>=page.totalPages}">
+        Please, return to <a href="<c:url value="/products" />">All products</a>
     </c:when>
     <c:otherwise>
         <table>
@@ -28,7 +28,7 @@
                 <td>User</td>
                 <td>Links</td>
             </tr>
-            <c:forEach var="product" items="${pageOfProducts.content}">
+            <c:forEach var="product" items="${page.content}">
                 <tr>
                     <td><c:out value="${product.id}"/></td>
                     <td><c:out value="${product.title}"/></td>
@@ -43,10 +43,10 @@
             </c:forEach>
         </table>
         <br/>
-        <tags:pagesView pageOfElements="${pageOfProducts}"/>
-</c:otherwise>
+        <tags:pagesView root="/products" page="${page}" range="3"/>
+    </c:otherwise>
 </c:choose>
- <br/>
+<br/>
 <a href="<c:url value="/products/new" />"> Add new product</a>
 </body>
 </html>
