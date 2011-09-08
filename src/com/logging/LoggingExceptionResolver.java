@@ -18,10 +18,6 @@ public class LoggingExceptionResolver extends SimpleMappingExceptionResolver {
 
     private static Logger log = LoggerFactory.getLogger(LoggingExceptionResolver.class);
 
-    public LoggingExceptionResolver() {
-        super();
-    }
-
     @Override
     public ModelAndView resolveException(HttpServletRequest request,
                                          HttpServletResponse response, Object handler, Exception ex) {
