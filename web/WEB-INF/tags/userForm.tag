@@ -1,5 +1,5 @@
 <%@ attribute name="formSend" required="true" %>
-<%@ attribute name="userForm" required="true" type="com.controller.UserForm" %>
+<%@ attribute name="userForm" required="true" type="com.controller.UserController.UserForm" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script src="<c:url value="/resources/js/jquery-ui-1.8.16.custom.min.js" />"></script>

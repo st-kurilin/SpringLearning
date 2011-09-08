@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -132,4 +133,45 @@ public class UserController {
             return Boolean.FALSE.toString();
         }
     }
+
+    public static class UserForm {
+        @Valid
+        private User user;
+        @Valid
+        private CommonsMultipartFile avatarFile;
+
+        public UserForm() {
+        }
+
+        public UserForm(User user, CommonsMultipartFile avatarFile) {
+            this.user = user;
+            this.avatarFile = avatarFile;
+        }
+
+        public User getUser() {
+            return user;
+        }
+
+        public void setUser(User user) {
+            this.user = user;
+        }
+
+        public CommonsMultipartFile getAvatarFile() {
+            return avatarFile;
+        }
+
+        public void setAvatarFile(CommonsMultipartFile avatarFile) {
+            this.avatarFile = avatarFile;
+        }
+
+        public Avatar getAvatar() {
+            if (avatarFile.isEmpty()) {
+                return null;
+            }
+            return new Avatar(avatarFile.getBytes(), avatarFile.getContentType());
+        }
+
+    }
 }
+
+
