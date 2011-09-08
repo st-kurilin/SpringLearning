@@ -29,6 +29,7 @@ public class User extends AbstractPersistable<Long> {
 
     private EmailAddress email;
 
+
     @Temporal(TemporalType.DATE)
     @Valid
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
@@ -40,7 +41,7 @@ public class User extends AbstractPersistable<Long> {
     @Enumerated(EnumType.STRING)
     @NotNull
     //TODO: [stas] there are should be case with unspecified gender. BTW, I think it should be radiobuttons on UI
-    private Sex sex;
+    private Gender gender;
 
 
     public User() {
@@ -74,16 +75,18 @@ public class User extends AbstractPersistable<Long> {
         this.birthday = birthday;
     }
 
-    public Sex getSex() {
-        return sex;
-    }
-
-    public void setSex(Sex sex) {
-        this.sex = sex;
-    }
 
     public void setId(Long id) {
         super.setId(id);
+    }
+
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     @Override
@@ -93,7 +96,7 @@ public class User extends AbstractPersistable<Long> {
                 "name='" + name + '\'' +
                 ", email=" + email +
                 ", birthday=" + birthday +
-                ", sex=" + sex +
+                ", gender=" + gender +
                 '}';
     }
 }

@@ -39,7 +39,7 @@
                 avatarFile:{
                     accept: "png|jpe?g|gif|bmp"
                 },
-                "user.sex":{
+                "user.gender":{
                     required:true
                 }
             },
@@ -61,7 +61,7 @@
                 avatarFile:{
                     accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"
                 },
-                "user.sex":{
+                "user.gender":{
                     required: "Are you Women or Man?"
                 }
 
@@ -93,14 +93,14 @@
                 <td><sf:errors path="user.birthday" cssClass="error"/></td>
             </tr>
             <tr>
-                <td>Sex:</td>
+                <td>Gender:</td>
                 <td>
-                    <sf:select path="user.sex">
+                    <sf:select path="user.gender">
                         <sf:option value="MALE">Male</sf:option>
                         <sf:option value="FEMALE">Female</sf:option>
                     </sf:select>
                 </td>
-                <td><sf:errors path="user.sex" cssClass="error"/></td>
+                <td><sf:errors path="user.gender" cssClass="error"/></td>
             </tr>
             <tr>
                 <td>Avatar:</td>

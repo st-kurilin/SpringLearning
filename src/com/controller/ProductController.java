@@ -1,7 +1,7 @@
 package com.controller;
 
 import com.domain.customer.EmailAddress;
-import com.domain.customer.Sex;
+import com.domain.customer.Gender;
 import com.domain.customer.User;
 import com.domain.customer.UserRepository;
 import com.domain.shop.Product;
@@ -121,7 +121,7 @@ public class ProductController {
         user.setName("Vasyaa");
         user.setEmail(new EmailAddress("alsd@asd.as"));
         user.setBirthday(new Date());
-        user.setSex(Sex.MALE);
+        user.setGender(Gender.MALE);
 
         User userId = userRepository.save(user);
         Product product;

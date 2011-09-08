@@ -23,8 +23,8 @@
         <td><a href="<c:url value="/users" />">View all users</a></td>
     </tr>
     <tr>
-        <td>Sex</td>
-        <td><c:out value="${user.sex}"/></td>
+        <td>Gender</td>
+        <td><c:out value="${user.gender}"/></td>
     </tr>
     <tr>
         <td>Email</td>

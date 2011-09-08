@@ -7,8 +7,6 @@ import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 
 /**
  * @author: Andrey Loboda
@@ -21,6 +19,7 @@ public class LoggingExceptionResolver extends SimpleMappingExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest request,
                                          HttpServletResponse response, Object handler, Exception ex) {
+        log.error(ex.getMessage());
         log.error(getStackTrace(ex));
         return super.resolveException(request, response, handler, ex);
     }
@@ -30,12 +29,12 @@ public class LoggingExceptionResolver extends SimpleMappingExceptionResolver {
      * @return String of the exception
      */
     public String getStackTrace(Throwable throwable) {
-        StringWriter stringWritter = new StringWriter();
-        PrintWriter printWritter = new PrintWriter(stringWritter, true);
-        throwable.printStackTrace(printWritter);
-        printWritter.flush();
-        stringWritter.flush();
-        return stringWritter.toString();
+        StringBuilder sb = new StringBuilder();
+        for (StackTraceElement element : throwable.getStackTrace()) {
+            sb.append(element.toString());
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }
 

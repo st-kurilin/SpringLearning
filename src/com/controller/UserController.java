@@ -117,6 +117,11 @@ public class UserController {
         return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/throwException", method = RequestMethod.GET)
+    public void throwException(@PathVariable("id") Long id) {
+        throw new IllegalArgumentException("bl bla");
+    }
+
     @RequestMapping(value = "/isEmailAvailable", method = RequestMethod.GET)
     @ResponseBody
     public String isEmailAvailable(@RequestParam String email) {
