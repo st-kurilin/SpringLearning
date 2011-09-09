@@ -20,7 +20,7 @@ import java.util.Date;
 @Table(name = "USERS")
 @TypeDef(name = "com.persistence.EmailAddressType", typeClass = com.persistence.EmailAddressType.class)
 public class User extends AbstractPersistable<Long> {
-    @Length(min = 6, max = 14)
+    @Length(min = 2, max = 14)
     private String name;
 
     @Type(type = "com.persistence.EmailAddressType")

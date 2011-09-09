@@ -11,7 +11,7 @@
 <html>
 <head>
     <title>Simple jsp page</title>
-    <script src="<c:url value="/resources/js/jquery-1.6.2.min.js" />"></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/jquery-1.6.2.min.js" />"></script>
 
 </head>
 <body>

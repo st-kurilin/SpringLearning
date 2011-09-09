@@ -27,7 +27,7 @@ public class ProductController {
 
     private final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
-    private final String DEFAULT_PAGE_SIZE = "10";
+    private final String DEFAULT_PAGE_SIZE = "4";
     private final String DEFAULT_SORT_BY = "title";
     private final String DEFAULT_DIRECTION = "ASC";
 
@@ -59,14 +59,6 @@ public class ProductController {
         return "productView";
     }
 
-    /*
-    @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
-    public String editPage(@PathVariable("id") Long id, Map<String, Object> model) {
-        model.put("userForm", new UserForm(repository.findOne(id), null));
-        model.put("id", id);
-        return "usersEdit";
-    }
-    */
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@ModelAttribute @Valid Product product, BindingResult bindingResult) {
         product.setUser(userRepository.findOne(1l));// get user from id
@@ -77,38 +69,6 @@ public class ProductController {
         return "redirect:/products/" + entity.getTitle();
     }
 
-    /*
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST)
-    public String edit(@PathVariable("id") Long id, @Valid UserForm userForm, BindingResult bindingResult, Map<String, Object> model) {
-        if (bindingResult.hasErrors()) {
-            model.put("id", id);
-            return "usersEdit";
-        }
-        repository.updateEntity(id, userForm.getUser());
-        avatarRepository.assign(id, userForm.getAvatar());
-        return "redirect:/users/" + id;
-    }
-
-
-    @RequestMapping(value = "/findByEmail", method = RequestMethod.GET, params = "email")
-    public String findByEmail(@RequestParam("email") EmailAddress email) {
-        final User user = repository.findByEmail(email);
-        if (user == null) {
-            return "redirect:/users/";
-        }
-        return "redirect:/users/" + user.getId();
-    }
-
-    @RequestMapping(value = "/{id}/avatar", method = RequestMethod.GET)
-    public ResponseEntity<byte[]> avatar(@PathVariable("id") Long id) {
-        Avatar avatar = avatarRepository.load(id);
-
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.set("Content-Type", avatar.getContentType());
-
-        return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.OK);
-    }
-    */
 
 
     @RequestMapping(value = "/isTitleAvailable", method = RequestMethod.GET)

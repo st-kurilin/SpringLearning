@@ -3,12 +3,12 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<script src="<c:url value="/resources/js/jquery-ui-1.8.16.custom.min.js" />"></script>
-<script src="<c:url value="/resources/js/jquery.ui.widget.js"/>"></script>
-<script src="<c:url value="/resources/js/jquery.ui.core.js"/>"></script>
-<script src="<c:url value="/resources/js/jquery.validate.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery-ui-1.8.16.custom.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.widget.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.core.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.validate.js" />"></script>
 
-<script>
+<script type="text/javascript">
     $(function() {
 
         $("#product").validate({

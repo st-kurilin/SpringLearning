@@ -50,7 +50,7 @@
             rules:{
                 "user.name":{
                     required: true,
-                    minlength:6,
+                    minlength:2,
                     maxlength:12
                 },
                 "user.email":{
