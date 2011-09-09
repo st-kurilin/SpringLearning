@@ -32,6 +32,7 @@
         </property>
     </bean>
 
+
     <!--<mvc:annotation-driven conversion-service="conversionService"/>
 
   <bean id="conversionService"
@@ -43,7 +44,7 @@
         </property>
     </bean>-->
 
-    <bean id="exceptionResolver" class="com.logging.LoggingExceptionResolver">
+    <bean id="exceptionResolver" class="com.controller.logging.LoggingExceptionResolver">
         <property name="exceptionMappings">
             <props>
                 <prop key="java.lang.Exception">errors/error500</prop>
@@ -52,7 +53,7 @@
     </bean>
 
     <mvc:interceptors>
-        <bean class="com.logging.LogControllers"/>
+        <bean class="com.controller.logging.LogControllers"/>
     </mvc:interceptors>
 
 </beans>

@@ -23,15 +23,11 @@ public class User extends AbstractPersistable<Long> {
     @Length(min = 6, max = 14)
     private String name;
 
-
     @Type(type = "com.persistence.EmailAddressType")
     @Valid
-
     private EmailAddress email;
 
-
     @Temporal(TemporalType.DATE)
-    @Valid
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
     @NotNull
     @Past

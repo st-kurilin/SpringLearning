@@ -1,8 +1,5 @@
 package com.controller;
 
-import com.domain.customer.EmailAddress;
-import com.domain.customer.Gender;
-import com.domain.customer.User;
 import com.domain.customer.UserRepository;
 import com.domain.shop.Product;
 import com.domain.shop.ProductRepository;
@@ -16,8 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -115,26 +110,7 @@ public class ProductController {
         return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.OK);
     }
     */
-    @RequestMapping(value = "/generateContent", method = RequestMethod.GET)
-    public String generateContent(Map<String, Object> model) {
-        User user = new User();
-        user.setName("Vasyaa");
-        user.setEmail(new EmailAddress("alsd@asd.as"));
-        user.setBirthday(new Date());
-        user.setGender(Gender.MALE);
 
-        User userId = userRepository.save(user);
-        Product product;
-        for (int i = 0; i < 50; i++) {
-            product = new Product();
-            product.setTitle("generated".intern());
-            product.setPrice(new BigDecimal(50 - i));
-            product.setUser(userId);
-            repository.save(product);
-        }
-        model.put("page", repository.findAll());
-        return "redirect:/products/";
-    }
 
     @RequestMapping(value = "/isTitleAvailable", method = RequestMethod.GET)
     @ResponseBody

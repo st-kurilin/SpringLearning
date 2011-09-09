@@ -15,4 +15,5 @@
     <import resource="controllers.cfg.xml"/>
     <import resource="jsp-view.cfg.xml"/>
     <import resource="services.cfg.xml"/>
+    <import resource="sample-data-creation.cfg.xml"/>
 </beans>

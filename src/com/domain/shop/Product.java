@@ -1,5 +1,6 @@
 package com.domain.shop;
 
+import com.domain.commerce.Money;
 import com.domain.customer.User;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
@@ -7,7 +8,6 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
 
 /**
  * @author Stanislav Kurilin
@@ -18,12 +18,12 @@ public class Product extends AbstractPersistable<Long> {
     private String title;
 
     @NotNull
-    private BigDecimal price;
+    private Money price;
 
     private String description;
 
     @ManyToOne
-    private User user;
+    private User seller;
 
     public Product() {
     }
@@ -36,20 +36,20 @@ public class Product extends AbstractPersistable<Long> {
         this.title = title;
     }
 
-    public BigDecimal getPrice() {
+    public Money getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Money price) {
         this.price = price;
     }
 
     public User getUser() {
-        return user;
+        return seller;
     }
 
     public void setUser(User user) {
-        this.user = user;
+        this.seller = user;
     }
 
     public String getDescription() {

@@ -64,7 +64,7 @@ public class UserController {
     public String showPage(@PathVariable("id") Long id, Map<String, Object> model) {
         final User user = repository.findOne(id);
         model.put("user", user);
-        model.put("products", productRepository.findByUser(user));
+        model.put("products", productRepository.findBySeller(user));
         return "userView";
     }
 
