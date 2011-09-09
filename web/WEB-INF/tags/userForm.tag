@@ -1,15 +1,49 @@
-<%@ attribute name="formSend" required="true" %>
 <%@ attribute name="userForm" required="true" type="com.controller.UserController.UserForm" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script src="<c:url value="/resources/js/jquery-ui-1.8.16.custom.min.js" />"></script>
-<script src="<c:url value="/resources/js/jquery.ui.datepicker.js"/>"></script>
-<script src="<c:url value="/resources/js/jquery.ui.widget.js"/>"></script>
-<script src="<c:url value="/resources/js/jquery.ui.core.js"/>"></script>
-<script src="<c:url value="/resources/js/jquery.validate.js" />"></script>
+<c:choose>
+    <c:when test="${userForm.user.isNew()}">
+        <c:url var="formSend" value="/users/new"/>
+    </c:when>
+    <c:otherwise>
+        <c:url var="formSend" value="/users/${userForm.user.id}"/>
+    </c:otherwise>
+</c:choose>
 
-<script>
+
+<script type="text/javascript" src="<c:url value="/resources/js/jquery-ui-1.8.16.custom.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.datepicker.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.widget.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.core.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.validate.js" />"></script>
+<script type="text/javascript">
+ /*
+ * url is absolute - can be trouble with changing context
+ * */
+
     $(function() {
+        $.validator.addMethod("serverCheck", function() {
+            var retResp;
+            if ($("#initialMail").val() == $("#user\\.email").val()) {
+                retResp = "true";
+            } else {
+                $.ajax({
+                    url:  "/users/isEmailAvailable",
+                    type:"GET",
+                    async:false,
+                    data: {
+                        email:function() {
+                            return $("#user\\.email").val()
+                        }
+                    },
+                    success: function(data) {
+                        retResp = data;
+                    }
+                });
+            }
+            return retResp == "true";
+        });
+
         $("#user\\.birthday").datepicker();
 
         $("#userForm").validate({
@@ -22,15 +56,7 @@
                 "user.email":{
                     required:true,
                     email:true,
-                    remote:{
-                        url:location.href.substring(0, location.href.lastIndexOf('users/')) + "users/isEmailAvailable",
-                        type:"GET",
-                        data:{
-                            email:function() {
-                                return $("#user\\.email").val()
-                            }
-                        }
-                    }
+                    serverCheck:true
                 },
                 "user.birthday":{
                     required:true,
@@ -47,12 +73,14 @@
                 "user.name":{
                     required: "Enter the name, please.",
                     minlength:"Length of the name should be at least 6 symbols",
-                    maxlength:"Length of the name should be at most 12 symbols"
+                    maxlength
+                            :
+                            "Length of the name should be at most 12 symbols"
                 },
                 "user.email":{
                     required: "Enter the mail, please.",
                     email:"Email is not valid",
-                    remote:"Email is not availiable."
+                    serverCheck:"Email is not availiable."
                 },
                 "user.birthday":{
                     required: "Enter the birthday, please.",
@@ -64,8 +92,8 @@
                 "user.gender":{
                     required: "Are you Women or Man?"
                 }
-
-            }
+            },
+            onclick: false
         })
     });
 </script>
@@ -86,6 +114,7 @@
                 <td>Mail:</td>
                 <td><sf:input path="user.email" size="10"/></td>
                 <td><sf:errors path="user.email.*" cssClass="error"/></td>
+                <td><input type="hidden" value="${userForm.user.email}" id="initialMail"/>
             </tr>
             <tr>
                 <td>Date of birthday:</td>
@@ -113,3 +142,6 @@
         </table>
     </fieldset>
 </sf:form>
+
+<a href="<c:url value="/users" />">All</a>
+<br/>

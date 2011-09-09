@@ -15,12 +15,9 @@
 
 </head>
 <body>
-<c:url var="formSend" value="/users/${id}"/>
-<tags:userForm formSend="${formSend}" userForm="${userForm}"/>
-<a href="<c:url value="/users" />">All</a>
-<br/>
-<a href="<c:url value="/users/${id}" />">View</a>
+<tags:userForm userForm="${userForm}"/>
 
-2Place your content here
+<a href="<c:url value="/users/${userForm.user.id}" />">View</a>
+
 </body>
 </html>

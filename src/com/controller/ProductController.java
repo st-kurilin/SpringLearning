@@ -41,10 +41,9 @@ public class ProductController {
     public String showAll(@RequestParam(value = "page", defaultValue = "0") Integer page,
                           @RequestParam(value = "pageSize", defaultValue = DEFAULT_PAGE_SIZE) Integer size,
                           @RequestParam(value = "sortBy", defaultValue = DEFAULT_SORT_BY) String sortBy,
-                          @RequestParam(value = "direction", defaultValue = DEFAULT_DIRECTION) String direction,
+                          @RequestParam(value = "direction", defaultValue = DEFAULT_DIRECTION) Sort.Direction direction,
                           Map<String, Object> model) {
-        final Sort.Direction dir = Sort.Direction.fromString(direction);
-        model.put("page", repository.findAll(new PageRequest(page, size, new Sort(dir, sortBy))));
+        model.put("page", repository.findAll(new PageRequest(page, size, new Sort(direction, sortBy))));
         return "products";
     }
 

@@ -71,7 +71,6 @@ public class UserController {
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String editPage(@PathVariable("id") Long id, Map<String, Object> model) {
         model.put("userForm", new UserForm(repository.findOne(id), null));
-        model.put("id", id);
         return "usersEdit";
     }
 
@@ -126,12 +125,12 @@ public class UserController {
     @RequestMapping(value = "/isEmailAvailable", method = RequestMethod.GET)
     @ResponseBody
     public String isEmailAvailable(@RequestParam String email) {
+
         User user = repository.findByEmail(new EmailAddress(email));
         if (user == null) {
             return Boolean.TRUE.toString();
-        } else {
-            return Boolean.FALSE.toString();
         }
+        return Boolean.FALSE.toString();
     }
 
     public static class UserForm {
