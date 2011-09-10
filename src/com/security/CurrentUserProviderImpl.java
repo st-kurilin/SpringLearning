@@ -4,7 +4,6 @@ import com.domain.customer.CurrentUserProvider;
 import com.domain.customer.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
 /**
  * @author Stanislav Kurilin

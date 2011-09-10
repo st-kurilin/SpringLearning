@@ -5,15 +5,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- the application context definition for the springapp DispatcherServlet -->
-
     <context:annotation-config/>
 
-
-    <import resource="persistence-configuration.cfg.xml"/>
-    <import resource="controllers.cfg.xml"/>
-    <import resource="jsp-view.cfg.xml"/>
-    <import resource="services.cfg.xml"/>
-    <import resource="sample-data-creation.cfg.xml"/>
-    <import resource="security.cfg.xml"/>
+    <import resource="spring/persistence-configuration.cfg.xml"/>
+    <import resource="spring/controllers.cfg.xml"/>
+    <import resource="spring/jsp-view.cfg.xml"/>
+    <import resource="spring/services.cfg.xml"/>
+    <import resource="spring/sample-data-creation.cfg.xml"/>
+    <import resource="spring/security.cfg.xml"/>
 </beans>

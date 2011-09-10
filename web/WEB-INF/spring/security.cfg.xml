@@ -9,16 +9,21 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd http://ww
 
     <context:component-scan base-package="com.security"/>
 
+    <!--autowired-->
+    <beans:bean id="userService" class="com.security.UserDetailsServiceImpl"/>
+
     <http use-expressions="true">
-        <form-login/>
-        <logout/>
-        <intercept-url pattern="/" access="permitAll" />
-        <intercept-url pattern="/products" access="isAuthenticated()" />
-        <!--<intercept-url pattern="/**" access="ROLE_GOOD_MAN"/>-->
+        <form-login
+                login-page="/signin"
+                default-target-url="/"
+                authentication-failure-handler-ref="authController"
+                login-processing-url="/signin_form"/>
+        <logout logout-url="/signout"/>
+        <intercept-url pattern="/" access="permitAll"/>
+        <intercept-url pattern="/products" access="hasRole('ROLE_GOOD_MAN')"/>
         <remember-me key="MOVE_ME_TO_PROPERTIES"/>
     </http>
     <authentication-manager>
         <authentication-provider user-service-ref="userService"/>
     </authentication-manager>
-
 </beans:beans>

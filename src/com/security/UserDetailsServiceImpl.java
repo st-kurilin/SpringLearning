@@ -18,8 +18,7 @@ import java.util.LinkedList;
 /**
  * @author Stanislav Kurilin
  */
-@Component(value = "userService")
-public class UserDetailsServiceImpl implements UserDetailsService {
+class UserDetailsServiceImpl implements UserDetailsService {
     private final UserRepository userRepository;
 
     @Inject
@@ -37,7 +36,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             @Override
             public Collection<GrantedAuthority> getAuthorities() {
                 final LinkedList<GrantedAuthority> results = new LinkedList<GrantedAuthority>();
-                results.add(new GrantedAuthorityImpl("ROLE_GOOD_MAN"));
+                if (user.getName().startsWith("Bob")) {
+                    results.add(new GrantedAuthorityImpl("ROLE_GOOD_MAN"));
+                }
                 return results;
             }
 
