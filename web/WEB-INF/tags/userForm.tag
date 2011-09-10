@@ -117,6 +117,11 @@
                 <td><input type="hidden" value="${userForm.user.email}" id="initialMail"/>
             </tr>
             <tr>
+                <td>Password:</td>
+                <td><sf:input path="user.password" size="10"/></td>
+                <td><sf:errors path="user.password" cssClass="error"/></td>
+            </tr>
+            <tr>
                 <td>Date of birthday:</td>
                 <td><sf:input path="user.birthday" size="10"/></td>
                 <td><sf:errors path="user.birthday" cssClass="error"/></td>

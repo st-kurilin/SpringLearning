@@ -3,6 +3,7 @@ package com.domain.customer;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -22,6 +23,9 @@ import java.util.Date;
 public class User extends AbstractPersistable<Long> {
     @Length(min = 2, max = 14)
     private String name;
+
+    @NotBlank
+    private String password;
 
     @Type(type = "com.persistence.EmailAddressType")
     @Valid
@@ -85,11 +89,18 @@ public class User extends AbstractPersistable<Long> {
         this.gender = gender;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "User{" +
-                "id='" + getId() + '\'' +
-                "name='" + name + '\'' +
+                ", name='" + name + '\'' +
                 ", email=" + email +
                 ", birthday=" + birthday +
                 ", gender=" + gender +
