@@ -70,7 +70,6 @@ public class ProductController {
     }
 
 
-
     @RequestMapping(value = "/isTitleAvailable", method = RequestMethod.GET)
     @ResponseBody
     public String isTitleAvailable(@RequestParam String title) {

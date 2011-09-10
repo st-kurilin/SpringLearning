@@ -31,6 +31,7 @@ public class AuthController implements AuthenticationFailureHandler, BeanPostPro
     ////TODO: [stas] move to config
     private final String loginParam = "email";
     private final String passwordParam = "password";
+
     @RequestMapping(value = "signin", method = RequestMethod.GET)
     public String loginPage() {
         return "auth/login";

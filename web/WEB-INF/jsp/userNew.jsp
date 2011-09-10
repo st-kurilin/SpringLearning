@@ -15,6 +15,6 @@
 
 </head>
 <body>
-    <tags:userForm userForm="${userForm}"/>
+<tags:userForm userForm="${userForm}"/>
 </body>
 </html>

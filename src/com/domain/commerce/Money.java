@@ -21,6 +21,7 @@ public class Money implements Serializable {
     public Money(long value) {
         this(new BigDecimal(value));
     }
+
     public Money(double value) {
         this(new BigDecimal(value));
     }

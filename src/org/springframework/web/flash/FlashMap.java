@@ -15,87 +15,89 @@
  */
 package org.springframework.web.flash;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Map for messages that should survive a redirect.
+ *
  * @author Keith Donald
  */
 public final class FlashMap {
-	
-	static final String FLASH_MAP_SESSION_ATTRIBUTE = FlashMap.class.getName();
-	
-	/**
-	 * Get the Flash Map for the current user session.
-	 * Creates one if necessary.
-	 * Note this method will create a HttpSession if one does not already exist.
-	 * @param request the servlet request
-	 */
-	@SuppressWarnings("unchecked")
-	public static Map<String, Object> getCurrent(HttpServletRequest request) {
-		HttpSession session = request.getSession();
-		synchronized (session) {
-			Map<String, Object> flash = (Map<String, Object>) session.getAttribute(FLASH_MAP_SESSION_ATTRIBUTE);
-			if (flash == null) {
-				flash = new HashMap<String, Object>();
-				session.setAttribute(FLASH_MAP_SESSION_ATTRIBUTE, flash);
-			}
-			return flash;
-		}
-	}
-	
-	/**
-	 * Put an attribute in the current flash map.
-	 * @param name the attribute name
-	 * @param value the attribute value
-	 */
-	public static void put(String name, Object value) {
-		getCurrent(getRequest(RequestContextHolder.currentRequestAttributes())).put(name, value);
-	}
 
-	/**
-	 * Set the 'message' attribute to a info {@link Message} that renders the info text. 
-	 */
-	public static void setInfoMessage(String info) {
-		put(MESSAGE_ATTRIBUTE, new Message(MessageType.INFO, info));
-	}
+    static final String FLASH_MAP_SESSION_ATTRIBUTE = FlashMap.class.getName();
 
-	/**
-	 * Set the 'message' attribute to a warning {@link Message} that renders the warning text. 
-	 */
-	public static void setWarningMessage(String warning) {
-		put(MESSAGE_ATTRIBUTE, new Message(MessageType.WARNING, warning));
-	}
+    /**
+     * Get the Flash Map for the current user session.
+     * Creates one if necessary.
+     * Note this method will create a HttpSession if one does not already exist.
+     *
+     * @param request the servlet request
+     */
+    @SuppressWarnings("unchecked")
+    public static Map<String, Object> getCurrent(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        synchronized (session) {
+            Map<String, Object> flash = (Map<String, Object>) session.getAttribute(FLASH_MAP_SESSION_ATTRIBUTE);
+            if (flash == null) {
+                flash = new HashMap<String, Object>();
+                session.setAttribute(FLASH_MAP_SESSION_ATTRIBUTE, flash);
+            }
+            return flash;
+        }
+    }
 
-	/**
-	 * Set the 'message' attribute to a error {@link Message} that renders the error text. 
-	 */
-	public static void setErrorMessage(String error) {
-		put(MESSAGE_ATTRIBUTE, new Message(MessageType.ERROR, error));
-	}
+    /**
+     * Put an attribute in the current flash map.
+     *
+     * @param name  the attribute name
+     * @param value the attribute value
+     */
+    public static void put(String name, Object value) {
+        getCurrent(getRequest(RequestContextHolder.currentRequestAttributes())).put(name, value);
+    }
 
-	/**
-	 * Set the 'message' attribute to a success {@link Message} that renders the success text. 
-	 */
-	public static void setSuccessMessage(String success) {
-		put(MESSAGE_ATTRIBUTE, new Message(MessageType.SUCCESS, success));
-	}
+    /**
+     * Set the 'message' attribute to a info {@link Message} that renders the info text.
+     */
+    public static void setInfoMessage(String info) {
+        put(MESSAGE_ATTRIBUTE, new Message(MessageType.INFO, info));
+    }
 
-	private static HttpServletRequest getRequest(RequestAttributes requestAttributes) {
-		return ((ServletRequestAttributes)requestAttributes).getRequest();
-	}
+    /**
+     * Set the 'message' attribute to a warning {@link Message} that renders the warning text.
+     */
+    public static void setWarningMessage(String warning) {
+        put(MESSAGE_ATTRIBUTE, new Message(MessageType.WARNING, warning));
+    }
 
-	private static final String MESSAGE_ATTRIBUTE = "message";
+    /**
+     * Set the 'message' attribute to a error {@link Message} that renders the error text.
+     */
+    public static void setErrorMessage(String error) {
+        put(MESSAGE_ATTRIBUTE, new Message(MessageType.ERROR, error));
+    }
 
-	private FlashMap() {
-	}
+    /**
+     * Set the 'message' attribute to a success {@link Message} that renders the success text.
+     */
+    public static void setSuccessMessage(String success) {
+        put(MESSAGE_ATTRIBUTE, new Message(MessageType.SUCCESS, success));
+    }
+
+    private static HttpServletRequest getRequest(RequestAttributes requestAttributes) {
+        return ((ServletRequestAttributes) requestAttributes).getRequest();
+    }
+
+    private static final String MESSAGE_ATTRIBUTE = "message";
+
+    private FlashMap() {
+    }
 
 }
