@@ -16,7 +16,7 @@
                 <directory>src/snippets/resources</directory>
             </resource>
         </resources>
-
+        <sourceDirectory>src</sourceDirectory>
     </build>
     <properties>
         <spring.version>3.0.5.RELEASE</spring.version>
