@@ -34,8 +34,8 @@
                     <td><c:out value="${product.title}"/></td>
                     <td><c:out value="${product.price}"/></td>
                     <td>
-                        <a href="<c:url value="/users/${product.user.id}"/>">
-                            <c:out value="${product.user.name}"/>
+                        <a href="<c:url value="/users/${product.owner.id}"/>">
+                            <c:out value="${product.owner.name}"/>
                         </a>
                     </td>
                     <td><a href="<c:url value="/products/${product.title}"/>">View</a></td>

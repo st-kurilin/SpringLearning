@@ -24,8 +24,8 @@
     <tr>
         <td>User</td>
         <td>
-            <a href="<c:url value="/users/${product.user.id}"/>">
-                <c:out value="${product.user.name}"/>
+            <a href="<c:url value="/users/${product.seller.id}"/>">
+                <c:out value="${product.seller.name}"/>
             </a>
         </td>
     </tr>

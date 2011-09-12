@@ -61,7 +61,7 @@ public class ProductController {
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@ModelAttribute @Valid Product product, BindingResult bindingResult) {
-        product.setUser(userRepository.findOne(1l));// get user from id
+        product.setSeller(userRepository.findOne(1l));// get user from id
         if (bindingResult.hasErrors()) {
             return "productNew";
         }

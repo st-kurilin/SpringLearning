@@ -44,11 +44,11 @@ public class Product extends AbstractPersistable<Long> {
         this.price = price;
     }
 
-    public User getUser() {
+    public User getSeller() {
         return seller;
     }
 
-    public void setUser(User user) {
+    public void setSeller(User user) {
         this.seller = user;
     }
 

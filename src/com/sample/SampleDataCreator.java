@@ -28,119 +28,59 @@ public class SampleDataCreator {
     }
 
     public void create() {
-        User user = new User();
-        user.setName("Elena");
-        user.setPassword("pass");
-        user.setEmail(new EmailAddress("elena.fabina@mail.ru"));
-        user.setBirthday(new Date(new GregorianCalendar(1991, 10, 10).getTimeInMillis()));
-        user.setGender(Gender.FEMALE);
-        user = userRepository.save(user);
+        fillUser(createUser("Elena", "pass", "elena.fabina@mail.ru", evaluateDate(1991, 10, 10), Gender.FEMALE),
+                createProduct("chair", 300.25),
+                createProduct("bedroom", 1230.20),
+                createProduct("towel", 5.5)
+        );
+        fillUser(createUser("Vasiliy", "pass", "vasil.luchhkevich@gmail.com", evaluateDate(1968, 3, 14), Gender.MALE),
+                createProduct("monitor", 1700.00),
+                createProduct("keyboard", 12.525)
+        );
+        fillUser(createUser("Petr", "pass", "petrAndVasik@yahoo.ru", evaluateDate(1991, 10, 10), Gender.FEMALE),
+                createProduct("book of Robinson Crusoe", 35.755),
+                createProduct("table", 350.454)
+        );
+        fillUser(createUser("Klara", "pass", "klara.petrova@mail.ru", evaluateDate(1958, 1, 4), Gender.FEMALE),
+                createProduct("T-Shirt with Harry Potter", 50),
+                createProduct("Lamp with Jennie", 5000.00)
+        );
+        fillUser(createUser("John", "pass", "john.smith@gmail.com", evaluateDate(1986, 5, 6), Gender.MALE),
+                createProduct("Banana with tomato", 1230.20),
+                createProduct("Headphones with microphone", 15.40)
+        );
+        fillUser(createUser("Karl", "pass", "karl.marks@mail.ru", evaluateDate(1965, 23, 12), Gender.MALE));
+        fillUser(createUser("Bob Marley", "pass", "bob.marley@gmail.com", evaluateDate(1986, 5, 6), Gender.MALE),
+                createProduct("Banana", 123089.20)
+        );
+    }
 
-        Product product = new Product();
-        product.setTitle("chair");
-        product.setPrice(new Money(300.25));
-        product.setUser(user);
-        productRepository.save(product);
+    private void fillUser(User seller, Product... products) {
+        final User entity = userRepository.save(seller);
+        for (Product product : products) {
+            product.setSeller(seller);
+            productRepository.save(product);
+        }
+    }
 
-        product = new Product();
-        product.setTitle("bedroom");
-        product.setPrice(new Money(1230.20));
-        product.setUser(user);
-        productRepository.save(product);
+    private Product createProduct(String title, double price) {
+        final Product result = new Product();
+        result.setTitle(title);
+        result.setPrice(new Money());
+        return result;
+    }
 
-        product = new Product();
-        product.setTitle("towel");
-        product.setPrice(new Money(5.5));
-        product.setUser(user);
-        productRepository.save(product);
+    private User createUser(String name, String pass, String email, Date birthday, Gender gender) {
+        User result = new User();
+        result.setName(name);
+        result.setPassword(pass);
+        result.setEmail(new EmailAddress(email));
+        result.setBirthday(birthday);
+        result.setGender(gender);
+        return result;
+    }
 
-        user = new User();
-        user.setName("Vasiliy");
-        user.setPassword("pass");
-        user.setEmail(new EmailAddress("vasil.luchhkevich@gmail.com"));
-        user.setBirthday(new Date(new GregorianCalendar(1968, 3, 14).getTimeInMillis()));
-        user.setGender(Gender.MALE);
-        user = userRepository.save(user);
-
-        product = new Product();
-        product.setTitle("monitor");
-        product.setPrice(new Money(1700.00));
-        product.setUser(user);
-        productRepository.save(product);
-
-        product = new Product();
-        product.setTitle("keyboard");
-        product.setPrice(new Money(12.525));
-        product.setUser(user);
-        productRepository.save(product);
-
-        user = new User();
-        user.setName("Petr");
-        user.setPassword("pass");
-        user.setEmail(new EmailAddress("petrAndVasik@yahoo.ru"));
-        user.setBirthday(new Date(new GregorianCalendar(1956, 11, 25).getTimeInMillis()));
-        user.setGender(Gender.MALE);
-        user = userRepository.save(user);
-
-        product = new Product();
-        product.setTitle("book of Robinson Crusoe");
-        product.setPrice(new Money(35.755));
-        product.setUser(user);
-        productRepository.save(product);
-
-        product = new Product();
-        product.setTitle("table");
-        product.setPrice(new Money(350.454));
-        product.setUser(user);
-        productRepository.save(product);
-
-
-        user = new User();
-        user.setName("Klara");
-        user.setPassword("pass");
-        user.setEmail(new EmailAddress("klara.petrova@mail.ru"));
-        user.setBirthday(new Date(new GregorianCalendar(1958, 1, 4).getTimeInMillis()));
-        user.setGender(Gender.FEMALE);
-        user = userRepository.save(user);
-
-        product = new Product();
-        product.setTitle("T-Shirt with Harry Potter");
-        product.setPrice(new Money(50));
-        product.setUser(user);
-        productRepository.save(product);
-
-        product = new Product();
-        product.setTitle("Lamp with Jennie");
-        product.setPrice(new Money(5000.00));
-        product.setUser(user);
-        productRepository.save(product);
-
-        user = new User();
-        user.setName("John");
-        user.setPassword("pass");
-        user.setEmail(new EmailAddress("john.smith@gmail.com"));
-        user.setBirthday(new Date(new GregorianCalendar(1986, 5, 6).getTimeInMillis()));
-        user.setGender(Gender.MALE);
-        user = userRepository.save(user);
-
-        product = new Product();
-        product.setTitle("Banana with tomato");
-        product.setPrice(new Money(1230.20));
-        product.setUser(user);
-        productRepository.save(product);
-
-        product = new Product();
-        product.setTitle("Headphones with microphone");
-        product.setPrice(new Money(15.40));
-        product.setUser(user);
-        productRepository.save(product);
-
-        user = new User();
-        user.setName("Karl");
-        user.setPassword("pass");
-        user.setEmail(new EmailAddress("karl.marks@mail.ru"));
-        user.setBirthday(new Date(new GregorianCalendar(1965, 23, 12).getTimeInMillis()));
-        user.setGender(Gender.FEMALE);
-        user = userRepository.save(user);
+    private Date evaluateDate(int year, int month, int date) {
+        return new Date(new GregorianCalendar(year, month, date).getTimeInMillis());
     }
 }
