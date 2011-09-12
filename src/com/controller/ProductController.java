@@ -31,10 +31,6 @@ public class ProductController {
 
     private final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
-    private final String DEFAULT_PAGE_SIZE = "4";
-    private final String DEFAULT_SORT_BY = "title";
-    private final String DEFAULT_DIRECTION = "ASC";
-
     @Inject
     public ProductController(ProductRepository repository, UserRepository userRepository) {
         this.repository = repository;
@@ -43,46 +39,45 @@ public class ProductController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String showAll(@RequestParam(value = "page", defaultValue = "0") Integer page,
-                          @RequestParam(value = "pageSize", defaultValue = DEFAULT_PAGE_SIZE) Integer size,
-                          @RequestParam(value = "sortBy", defaultValue = DEFAULT_SORT_BY) String sortBy,
-                          @RequestParam(value = "direction", defaultValue = DEFAULT_DIRECTION) Sort.Direction direction,
+                          @RequestParam(value = "pageSize", defaultValue = "4") Integer size,
+                          @RequestParam(value = "orderBy", defaultValue = "title") String orderBy,
+                          @RequestParam(value = "direction", defaultValue = "ASC") Sort.Direction direction,
                           Map<String, Object> model) {
-        Sort.Order order = new Sort.Order(direction, sortBy);
-        model.put("page", repository.findAll(new PageRequest(page, size, new Sort(order))));
-        return "products";
+        final Sort.Order order = new Sort.Order(direction, orderBy);
+        final PageRequest pageRequest = new PageRequest(page, size, new Sort(order));
+        model.put("page", repository.findAll(pageRequest));
+        return "shop/products";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String createPage(Map<String, Object> model) {
         model.put("product", new Product());
-        return "productNew";
+        return "shop/productNew";
     }
 
     @RequestMapping(value = "/{title}", method = RequestMethod.GET)
     public String showPage(@PathVariable("title") String titleOfProduct, Map<String, Object> model) {
-        model.put("product", repository.findByTitle(titleOfProduct));
-        return "productView";
+        final Product product = repository.findByTitle(titleOfProduct);
+        //TODO: [stas] show 404 if product not found
+        model.put("product", product);
+        return "shop/productView";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@ModelAttribute @Valid Product product, BindingResult bindingResult) {
         product.setSeller(userRepository.findByEmail(new EmailAddress(currentUserProvider.currentUserEmail())));// get user from id
         if (bindingResult.hasErrors()) {
-            return "productNew";
+            return "shop/productNew";
         }
         final Product entity = repository.save(product);
         return "redirect:/products/" + entity.getTitle();
     }
 
 
-    @RequestMapping(value = "/isTitleAvailable", method = RequestMethod.GET)
+    @RequestMapping(value = "/titles/available", method = RequestMethod.GET)
     @ResponseBody
     public String isTitleAvailable(@RequestParam String title) {
         Product product = repository.findByTitle(title);
-        if (product == null) {
-            return Boolean.TRUE.toString();
-        } else {
-            return Boolean.FALSE.toString();
-        }
+        return Boolean.toString(product == null);
     }
 }

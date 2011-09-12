@@ -16,7 +16,7 @@
                         title:{
                             required: true,
                             remote:{
-                                url:location.href.substring(0, location.href.lastIndexOf('products/')) + "products/isTitleAvailable",
+                                url:location.href.substring(0, location.href.lastIndexOf('products/')) + "products/titles/available",
                                 type:"GET"
                             }
                         },
@@ -42,7 +42,7 @@
 <link rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css"/>
 <link rel="stylesheet" href="<c:url value="/resources/css/validation_styles.css" />" media="all"/>
 
-<sf:form method="POST" modelAttribute="product" action="${formSend}" enctype="multipart/form-data">
+<sf:form method="POST" modelAttribute="product" action="${formSend}">
     <fieldset>
         <table>
             <tr>

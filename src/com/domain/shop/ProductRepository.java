@@ -9,7 +9,8 @@ import java.util.List;
 /**
  * @author Stanislav Kurilin
  */
-public interface ProductRepository extends CrudRepository<Product, Long>, PagingAndSortingRepository<Product, Long> {
+//TODO: [stas] make deal with crud : remove unusable operations
+public interface ProductRepository extends CrudRepository<Product, String>, PagingAndSortingRepository<Product, String> {
     List<Product> findBySeller(User user);
 
     Product findByTitle(String title);

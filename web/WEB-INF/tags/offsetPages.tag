@@ -3,8 +3,10 @@
 <%@ attribute name="root" required="true" %>
 <%@ attribute name="desc" required="true" %>
 <%@ attribute name="range" required="true" %>
+<%--
 <c:set var="order" value="${page.sort.iterator().next()}"/>
-<c:set var="addOrderToLink" value="sortBy=${order.property}&direction=${order.direction}"/>
+--%>
+<c:set var="addOrderToLink" value="sortBy=title&direction=ASC"/>
 <c:choose>
     <c:when test="${desc}">
         <c:if test="${!page.firstPage}">

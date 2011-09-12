@@ -1,7 +1,5 @@
 package com.domain.commerce;
 
-import sun.nio.cs.ext.Big5;
-
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
@@ -22,7 +20,7 @@ public class Money implements Serializable {
         if (value.isEmpty()) {
             return new Money(null);
         }
-        BigDecimal decimal= new BigDecimal(value);
+        BigDecimal decimal = new BigDecimal(value);
         return new Money(decimal);
     }
 
@@ -48,7 +46,7 @@ public class Money implements Serializable {
 
     @Override
     public String toString() {
-        if(value == null){
+        if (value == null) {
             return "";
         }
         return value.toString();

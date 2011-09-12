@@ -47,6 +47,17 @@ public class SampleDataCreator {
         );
         fillUser(createUser("John", "pass", "john.smith@gmail.com", evaluateDate(1986, 5, 6), Gender.MALE),
                 createProduct("Banana with tomato", 1230.20),
+                createProduct("Banana", 12.20),
+                createProduct("Tomato", 130.20),
+                createProduct("April mix", 230.20),
+                createProduct("Apple", 30.20),
+                createProduct("Clock", 130.20),
+                createProduct("Nokia 1100", 230.20),
+                createProduct("Nokia 1110", 20.10),
+                createProduct("IPhone 2", 200.10),
+                createProduct("IPhone 3", 300.10),
+                createProduct("IPhone 4", 700.10),
+                createProduct("IPhone 5", 1700.10),
                 createProduct("Headphones with microphone", 15.40)
         );
         fillUser(createUser("Karl", "pass", "karl.marks@mail.ru", evaluateDate(1965, 23, 12), Gender.MALE));

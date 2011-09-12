@@ -25,20 +25,13 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/users")
-public class UserController {
+public class UserController extends AbstractController {
 
     private final UserRepository repository;
     private final AvatarRepository avatarRepository;
     private final ProductRepository productRepository;
 
     private final Logger logger = LoggerFactory.getLogger(UserController.class);
-
-    @Inject
-    public UserController(UserRepository repository, AvatarRepository avatarRepository, ProductRepository productRepository) {
-        this.repository = repository;
-        this.avatarRepository = avatarRepository;
-        this.productRepository = productRepository;
-    }
 
     @InitBinder
     public void initBinder(WebDataBinder binder) {
@@ -48,16 +41,23 @@ public class UserController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
     }
 
+    @Inject
+    public UserController(UserRepository repository, AvatarRepository avatarRepository, ProductRepository productRepository) {
+        this.repository = repository;
+        this.avatarRepository = avatarRepository;
+        this.productRepository = productRepository;
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     public String showAll(Map<String, Object> model) {
         model.put("users", repository.findAll());
-        return "users";
+        return "user/users";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String createPage(Map<String, Object> model) {
         model.put("userForm", new UserForm(new User(), null));
-        return "userNew";
+        return "user/userNew";
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -65,19 +65,19 @@ public class UserController {
         final User user = repository.findOne(id);
         model.put("user", user);
         model.put("products", productRepository.findBySeller(user));
-        return "userView";
+        return "user/userView";
     }
 
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String editPage(@PathVariable("id") Long id, Map<String, Object> model) {
         model.put("userForm", new UserForm(repository.findOne(id), null));
-        return "usersEdit";
+        return "user/usersEdit";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@ModelAttribute @Valid UserForm userForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "userNew";
+            return "user/userNew";
         }
         final User user = userForm.getUser();
         final Avatar avatar = userForm.getAvatar();
@@ -90,7 +90,7 @@ public class UserController {
     public String edit(@PathVariable("id") Long id, @Valid UserForm userForm, BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
             model.put("id", id);
-            return "usersEdit";
+            return "user/usersEdit";
         }
         repository.updateEntity(id, userForm.getUser());
         avatarRepository.assign(id, userForm.getAvatar());
@@ -110,27 +110,16 @@ public class UserController {
     @RequestMapping(value = "/{id}/avatar", method = RequestMethod.GET)
     public ResponseEntity<byte[]> avatar(@PathVariable("id") Long id) {
         Avatar avatar = avatarRepository.load(id);
-
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("Content-Type", avatar.getContentType());
-
         return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/throwException", method = RequestMethod.GET)
-    public void throwException(@PathVariable("id") Long id) {
-        throw new IllegalArgumentException("bl bla");
-    }
-
-    @RequestMapping(value = "/isEmailAvailable", method = RequestMethod.GET)
+    @RequestMapping(value = "/emails/available", method = RequestMethod.GET)
     @ResponseBody
     public String isEmailAvailable(@RequestParam String email) {
-
         User user = repository.findByEmail(new EmailAddress(email));
-        if (user == null) {
-            return Boolean.TRUE.toString();
-        }
-        return Boolean.FALSE.toString();
+        return Boolean.toString(user == null);
     }
 
     public static class UserForm {
@@ -172,5 +161,3 @@ public class UserController {
 
     }
 }
-
-

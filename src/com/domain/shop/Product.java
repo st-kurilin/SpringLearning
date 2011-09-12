@@ -3,19 +3,19 @@ package com.domain.shop;
 import com.domain.commerce.Money;
 import com.domain.customer.User;
 import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 /**
  * @author Stanislav Kurilin
  */
 @Entity
-public class Product extends AbstractPersistable<Long> {
+public class Product {
     @NotBlank
+    @Id
     private String title;
 
     @Valid

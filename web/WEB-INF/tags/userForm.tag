@@ -10,98 +10,6 @@
     </c:otherwise>
 </c:choose>
 
-
-<script type="text/javascript" src="<c:url value="/resources/js/jquery-ui-1.8.16.custom.min.js" />"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.datepicker.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.widget.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.core.js"/>"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery.validate.js" />"></script>
-<script type="text/javascript">
- /*
- * url is absolute - can be trouble with changing context
- * */
-
-    $(function() {
-        $.validator.addMethod("serverCheck", function() {
-            var retResp;
-            if ($("#initialMail").val() == $("#user\\.email").val()) {
-                retResp = "true";
-            } else {
-                $.ajax({
-                    url:  "/users/isEmailAvailable",
-                    type:"GET",
-                    async:false,
-                    data: {
-                        email:function() {
-                            return $("#user\\.email").val()
-                        }
-                    },
-                    success: function(data) {
-                        retResp = data;
-                    }
-                });
-            }
-            return retResp == "true";
-        });
-
-        $("#user\\.birthday").datepicker();
-
-        $("#userForm").validate({
-            rules:{
-                "user.name":{
-                    required: true,
-                    minlength:2,
-                    maxlength:12
-                },
-                "user.email":{
-                    required:true,
-                    email:true,
-                    serverCheck:true
-                },
-                "user.birthday":{
-                    required:true,
-                    date:true
-                },
-                avatarFile:{
-                    accept: "png|jpe?g|gif|bmp"
-                },
-                "user.gender":{
-                    required:true
-                }
-            },
-            messages:{
-                "user.name":{
-                    required: "Enter the name, please.",
-                    minlength:"Length of the name should be at least 6 symbols",
-                    maxlength
-                            :
-                            "Length of the name should be at most 12 symbols"
-                },
-                "user.email":{
-                    required: "Enter the mail, please.",
-                    email:"Email is not valid",
-                    serverCheck:"Email is not availiable."
-                },
-                "user.birthday":{
-                    required: "Enter the birthday, please.",
-                    date:"Date is not valid"
-                },
-                avatarFile:{
-                    accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"
-                },
-                "user.gender":{
-                    required: "Are you Women or Man?"
-                }
-            },
-            onclick: false
-        })
-    });
-</script>
-
-<link rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css"/>
-<link rel="stylesheet" href="<c:url value="/resources/css/calendar_styles.css" />" media="all"/>
-<link rel="stylesheet" href="<c:url value="/resources/css/validation_styles.css" />" media="all"/>
-
 <sf:form method="POST" modelAttribute="userForm" action="${formSend}" enctype="multipart/form-data">
     <fieldset>
         <table>
@@ -147,6 +55,93 @@
         </table>
     </fieldset>
 </sf:form>
+<link rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/calendar_styles.css" />" media="all"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/validation_styles.css" />" media="all"/>
+
+<script type="text/javascript" src="<c:url value="/resources/js/jquery-ui-1.8.16.custom.min.js" />"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.datepicker.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.widget.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.core.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/resources/js/jquery.validate.js" />"></script>
+<script type="text/javascript">
+
+    $(function() {
+        $.validator.addMethod("serverCheck", function() {
+            var retResp;
+            if ($("#initialMail").val() == $("#user\\.email").val()) {
+                retResp = "true";
+            } else {
+                $.ajax({
+                            url:  "/users/emails/available",    //url is absolute - can be trouble with changing context
+                            type:"GET",
+                            async:false,
+                            data: {
+                                email:function() {
+                                    return $("#user\\.email").val()
+                                }
+                            },
+                            success: function(data) {
+                                retResp = data;
+                            }
+                        });
+            }
+            return retResp == "true";
+        });
+
+        $("#user\\.birthday").datepicker();
+
+        $("#userForm").validate({
+                    rules:{
+                        "user.name":{
+                            required: true,
+                            minlength:2,
+                            maxlength:12
+                        },
+                        "user.email":{
+                            required:true,
+                            email:true,
+                            serverCheck:true
+                        },
+                        "user.birthday":{
+                            required:true,
+                            date:true
+                        },
+                        avatarFile:{
+                            accept: "png|jpe?g|gif|bmp"
+                        },
+                        "user.gender":{
+                            required:true
+                        }
+                    },
+                    messages:{
+                        "user.name":{
+                            required: "Enter the name, please.",
+                            minlength:"Length of the name should be at least 6 symbols",
+                            maxlength
+                                    :
+                                    "Length of the name should be at most 12 symbols"
+                        },
+                        "user.email":{
+                            required: "Enter the mail, please.",
+                            email:"Email is not valid",
+                            serverCheck:"Email is not availiable."
+                        },
+                        "user.birthday":{
+                            required: "Enter the birthday, please.",
+                            date:"Date is not valid"
+                        },
+                        avatarFile:{
+                            accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"
+                        },
+                        "user.gender":{
+                            required: "Are you Women or Man?"
+                        }
+                    },
+                    onclick: false
+                })
+    });
+</script>
 
 <a href="<c:url value="/users" />">All</a>
 <br/>

@@ -1,7 +1,6 @@
 package com.security;
 
 import com.domain.customer.CurrentUserProvider;
-import com.domain.customer.User;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
