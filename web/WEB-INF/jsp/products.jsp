@@ -22,10 +22,10 @@
     <c:otherwise>
         <table>
             <tr>
-                <td>Id</td>
-                <td>Title</td>
-                <td>Price</td>
-                <td>User</td>
+                <td><tags:changeDirection root="/products" sortBy="id" page="${page}">Id</tags:changeDirection></td>
+                <td><tags:changeDirection root="/products" sortBy="title" page="${page}">Title</tags:changeDirection></td>
+                <td><tags:changeDirection root="/products" sortBy="price" page="${page}">Price</tags:changeDirection></td>
+                <td><tags:changeDirection root="/products" sortBy="seller" page="${page}">Seller</tags:changeDirection></td>
                 <td>Links</td>
             </tr>
             <c:forEach var="product" items="${page.content}">

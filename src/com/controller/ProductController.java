@@ -43,7 +43,9 @@ public class ProductController {
                           @RequestParam(value = "sortBy", defaultValue = DEFAULT_SORT_BY) String sortBy,
                           @RequestParam(value = "direction", defaultValue = DEFAULT_DIRECTION) Sort.Direction direction,
                           Map<String, Object> model) {
-        model.put("page", repository.findAll(new PageRequest(page, size, new Sort(direction, sortBy))));
+        Sort.Order order = new Sort.Order(direction,sortBy);
+        model.put("page", repository.findAll(new PageRequest(page, size, new Sort(order))));
+       // model.put("order", order);
         return "products";
     }
 
