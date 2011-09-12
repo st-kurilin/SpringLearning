@@ -7,6 +7,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -17,7 +18,7 @@ public class Product extends AbstractPersistable<Long> {
     @NotBlank
     private String title;
 
-    @NotNull
+    @Valid
     private Money price;
 
     private String description;

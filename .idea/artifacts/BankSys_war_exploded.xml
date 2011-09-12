@@ -71,6 +71,11 @@
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.14" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.6.11" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.6.11" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.0.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:3.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.6.8" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:3.0.5.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:3.0.5.RELEASE" />
         </element>
       </element>
     </root>

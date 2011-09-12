@@ -53,7 +53,7 @@
             <tr>
                 <td>Price:</td>
                 <td><sf:input path="price" size="10"/></td>
-                <td><sf:errors path="price" cssClass="error"/></td>
+                <td><sf:errors path="price.*" cssClass="error"/></td>
             </tr>
             <tr>
                 <td>Description:</td>

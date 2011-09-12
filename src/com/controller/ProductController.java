@@ -1,8 +1,11 @@
 package com.controller;
 
+import com.domain.customer.CurrentUserProvider;
+import com.domain.customer.EmailAddress;
 import com.domain.customer.UserRepository;
 import com.domain.shop.Product;
 import com.domain.shop.ProductRepository;
+import com.security.CurrentUserProviderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
@@ -24,6 +27,7 @@ public class ProductController {
 
     private final ProductRepository repository;
     private final UserRepository userRepository;
+    private final CurrentUserProvider currentUserProvider = new CurrentUserProviderImpl();
 
     private final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
@@ -43,7 +47,7 @@ public class ProductController {
                           @RequestParam(value = "sortBy", defaultValue = DEFAULT_SORT_BY) String sortBy,
                           @RequestParam(value = "direction", defaultValue = DEFAULT_DIRECTION) Sort.Direction direction,
                           Map<String, Object> model) {
-        Sort.Order order = new Sort.Order(direction,sortBy);
+        Sort.Order order = new Sort.Order(direction, sortBy);
         model.put("page", repository.findAll(new PageRequest(page, size, new Sort(order))));
         return "products";
     }
@@ -62,7 +66,7 @@ public class ProductController {
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@ModelAttribute @Valid Product product, BindingResult bindingResult) {
-        product.setSeller(userRepository.findOne(1l));// get user from id
+        product.setSeller(userRepository.findByEmail(new EmailAddress(currentUserProvider.currentUserEmail())));// get user from id
         if (bindingResult.hasErrors()) {
             return "productNew";
         }

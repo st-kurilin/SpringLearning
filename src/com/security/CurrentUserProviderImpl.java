@@ -11,13 +11,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class CurrentUserProviderImpl implements CurrentUserProvider {
     @Override
-    public User currentUser() {
+    public String currentUserEmail() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String username;
         if (principal instanceof UserDetails) {
-            String username = ((UserDetails) principal).getUsername();
+            username = ((UserDetails) principal).getUsername();
         } else {
-            String username = principal.toString();
+            username = principal.toString();
         }
-        return null;
+        return username;
     }
 }

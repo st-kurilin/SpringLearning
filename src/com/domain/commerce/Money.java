@@ -1,7 +1,10 @@
 package com.domain.commerce;
 
+import sun.nio.cs.ext.Big5;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -12,7 +15,16 @@ import java.math.BigDecimal;
 @Embeddable
 public class Money implements Serializable {
     @Column(name = "money")
+    @NotNull
     private BigDecimal value;
+
+    public static Money valueOf(String value) {
+        if (value.isEmpty()) {
+            return new Money(null);
+        }
+        BigDecimal decimal= new BigDecimal(value);
+        return new Money(decimal);
+    }
 
     public Money(BigDecimal value) {
         this.value = value;
@@ -36,6 +48,9 @@ public class Money implements Serializable {
 
     @Override
     public String toString() {
+        if(value == null){
+            return "";
+        }
         return value.toString();
     }
 }
