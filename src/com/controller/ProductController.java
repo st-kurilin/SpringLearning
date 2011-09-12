@@ -45,7 +45,6 @@ public class ProductController {
                           Map<String, Object> model) {
         Sort.Order order = new Sort.Order(direction,sortBy);
         model.put("page", repository.findAll(new PageRequest(page, size, new Sort(order))));
-       // model.put("order", order);
         return "products";
     }
 

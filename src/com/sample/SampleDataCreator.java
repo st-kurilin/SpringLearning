@@ -66,7 +66,7 @@ public class SampleDataCreator {
     private Product createProduct(String title, double price) {
         final Product result = new Product();
         result.setTitle(title);
-        result.setPrice(new Money());
+        result.setPrice(new Money(price));
         return result;
     }
 

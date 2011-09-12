@@ -66,7 +66,6 @@ public class Product extends AbstractPersistable<Long> {
     /*
     * show products only of this user
     * Add on market
-    * paginator
     * filter
     * */
 }
