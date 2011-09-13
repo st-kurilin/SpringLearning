@@ -20,7 +20,7 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd http://ww
                 login-processing-url="/signin_form"/>
         <logout logout-url="/signout"/>
         <intercept-url pattern="/" access="permitAll"/>
-        <intercept-url pattern="/products" access="hasRole('ROLE_GOOD_MAN')"/>
+        <intercept-url pattern="/products/**" access="hasRole('ROLE_GOOD_MAN')"/>
         <remember-me key="MOVE_ME_TO_PROPERTIES"/>
     </http>
     <authentication-manager>

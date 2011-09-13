@@ -40,7 +40,7 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.GET)
     public String showAll(@RequestParam(value = "page", defaultValue = "0") Integer page,
                           @RequestParam(value = "pageSize", defaultValue = "4") Integer size,
-                          @RequestParam(value = "orderBy", defaultValue = "title") String orderBy,
+                          @RequestParam(value = "sortBy", defaultValue = "title") String orderBy,
                           @RequestParam(value = "direction", defaultValue = "ASC") Sort.Direction direction,
                           Map<String, Object> model) {
         final Sort.Order order = new Sort.Order(direction, orderBy);

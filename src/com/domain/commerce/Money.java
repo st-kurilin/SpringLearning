@@ -13,16 +13,9 @@ import java.math.BigDecimal;
 @Embeddable
 public class Money implements Serializable {
     @Column(name = "money")
+
     @NotNull
     private BigDecimal value;
-
-    public static Money valueOf(String value) {
-        if (value.isEmpty()) {
-            return new Money(null);
-        }
-        BigDecimal decimal = new BigDecimal(value);
-        return new Money(decimal);
-    }
 
     public Money(BigDecimal value) {
         this.value = value;

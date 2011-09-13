@@ -21,7 +21,7 @@
             <tr>
                 <td>Mail:</td>
                 <td><sf:input path="user.email" size="10"/></td>
-                <td><sf:errors path="user.email.*" cssClass="error"/></td>
+                <td><sf:errors path="user.email*" cssClass="error"/></td>
                 <td><input type="hidden" value="${userForm.user.email}" id="initialMail"/>
             </tr>
             <tr>
@@ -103,6 +103,11 @@
                             email:true,
                             serverCheck:true
                         },
+                        "user.password":{
+                            required: true ,
+                            minlength:6,
+                            maxlength:18
+                        },
                         "user.birthday":{
                             required:true,
                             date:true
@@ -117,15 +122,18 @@
                     messages:{
                         "user.name":{
                             required: "Enter the name, please.",
-                            minlength:"Length of the name should be at least 6 symbols",
-                            maxlength
-                                    :
-                                    "Length of the name should be at most 12 symbols"
+                            minlength:"Length of the name should be at least 2 symbols",
+                            maxlength:"Length of the name should be at most 12 symbols"
                         },
                         "user.email":{
                             required: "Enter the mail, please.",
                             email:"Email is not valid",
                             serverCheck:"Email is not availiable."
+                        },
+                        "user.password":{
+                            required: "Enter the password, please." ,
+                            minlength:"Length of the name should be at least 6 symbols",
+                            maxlength:"Length of the name should be at most 18 symbols"
                         },
                         "user.birthday":{
                             required: "Enter the birthday, please.",

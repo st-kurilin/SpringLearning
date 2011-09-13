@@ -63,7 +63,7 @@ public class PagingBar extends TagSupport {
         for (Sort.Order order : page.getSort()) {
             //should be one ore zero times in current impl
             builder
-                    .append("orderBy=").append(order.getProperty())
+                    .append("sortBy=").append(order.getProperty())
                     .append("&")
                     .append("direction=").append(order.getDirection());
         }
@@ -122,7 +122,7 @@ public class PagingBar extends TagSupport {
 
         public void appendTo(String label, int number, StringBuilder builder) {
             builder
-                    .append("<a href=")
+                    .append("&nbsp;<a href=")
                     .append('"')
                     .append(prefix)
                     .append("?page=")
@@ -132,7 +132,7 @@ public class PagingBar extends TagSupport {
                     .append('"')
                     .append(">")
                     .append(label)
-                    .append("</a>");
+                    .append("</a>&nbsp;");
         }
 
         public void appendTo(int number, StringBuilder builder) {

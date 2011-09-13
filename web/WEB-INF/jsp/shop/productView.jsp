@@ -9,10 +9,6 @@
 <body>
 <table>
     <tr>
-        <td>Id</td>
-        <td><c:out value="${product.id}"/></td>
-    </tr>
-    <tr>
         <td>Title</td>
         <td><c:out value="${product.title}"/></td>
         <td><a href="<c:url value="/products" />">View all products</a></td>

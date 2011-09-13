@@ -24,11 +24,11 @@
         <table>
             <tr>
 
-                <td><tags:changeDirection root="/products" orderBy="title"
+                <td><tags:changeDirection root="/products" sortBy="title"
                                           page="${page}">Title</tags:changeDirection></td>
-                <td><tags:changeDirection root="/products" orderBy="price"
+                <td><tags:changeDirection root="/products" sortBy="price"
                                           page="${page}">Price</tags:changeDirection></td>
-                <td><tags:changeDirection root="/products" orderBy="seller"
+                <td><tags:changeDirection root="/products" sortBy="seller"
                                           page="${page}">Seller</tags:changeDirection></td>
                 <td>Links</td>
             </tr>
