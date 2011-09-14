@@ -12,7 +12,7 @@
 <html>
 <head><title>Simple jsp page</title></head>
 <body>
-
+   <tags:menu currentUser="${currentUser}"/>
 <c:choose>
     <c:when test="${page.totalPages == 0}">
         There are no any products.
@@ -51,7 +51,5 @@
         <%--<tags:pagesView root="/products" page="${page}" range="3"/>--%>
     </c:otherwise>
 </c:choose>
-<br/>
-<a href="<c:url value="/products/new" />"> Add new product</a>
 </body>
 </html>

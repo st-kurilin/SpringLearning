@@ -8,13 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.util.Map;
+
 /**
- * Implements AuthenticationFailureHandler to handle failures on auth
- * <p/>
- * Implements BeanPostProcessor as workaround  to configure UsernamePasswordAuthenticationFilter.
- * Should be fixed in spring 3.1.0.M1
- * For details consult https://jira.springsource.org/browse/SEC-1445
- *
  * @author Stanislav Kurilin
  */
 @Controller
@@ -36,7 +32,8 @@ public class AuthController {
 
     @RequestMapping("accessDenied")
     @ResponseStatus(HttpStatus.FORBIDDEN)
-    public String accessDeniedPage() {
+    public String accessDeniedPage(Map<String, Object> model) {
+        model.put("currentUser", currentUserProvider.currentUser());
         return "auth/accessDenied";
     }
 

@@ -4,14 +4,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 <html>
 <head><title>Simple jsp page</title></head>
 <body>
+<tags:menu currentUser="${currentUser}"/>
 <table>
     <tr>
         <td>Title</td>
         <td><c:out value="${product.title}"/></td>
-        <td><a href="<c:url value="/products" />">View all products</a></td>
     </tr>
     <tr>
         <td>Price</td>

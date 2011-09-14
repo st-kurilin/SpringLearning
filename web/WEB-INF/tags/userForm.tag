@@ -150,6 +150,3 @@
         })
     });
 </script>
-
-<a href="<c:url value="/users" />">All</a>
-<br/>

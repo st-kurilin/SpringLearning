@@ -4,6 +4,7 @@ import com.domain.customer.*;
 import com.domain.shop.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,7 @@ public class UserController extends AbstractController {
     private final UserRepository repository;
     private final AvatarRepository avatarRepository;
     private final ProductRepository productRepository;
+    private final CurrentUserProvider currentUserProvider;
 
     private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -42,15 +44,21 @@ public class UserController extends AbstractController {
     }
 
     @Inject
-    public UserController(UserRepository repository, AvatarRepository avatarRepository, ProductRepository productRepository) {
+    @Autowired
+    public UserController(UserRepository repository,
+                          AvatarRepository avatarRepository,
+                          ProductRepository productRepository,
+                          CurrentUserProvider currentUserProvider   ) {
         this.repository = repository;
         this.avatarRepository = avatarRepository;
         this.productRepository = productRepository;
+        this.currentUserProvider=currentUserProvider;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String showAll(Map<String, Object> model) {
         model.put("users", repository.findAll());
+        model.put("currentUser", currentUserProvider.currentUser());
         return "user/users";
     }
 
@@ -64,6 +72,7 @@ public class UserController extends AbstractController {
     public String showPage(@PathVariable("id") Long id, Map<String, Object> model) {
         final User user = repository.findOne(id);
         model.put("user", user);
+        model.put("currentUser", currentUserProvider.currentUser());
         model.put("products", productRepository.findBySeller(user));
         return "user/userView";
     }
@@ -71,6 +80,7 @@ public class UserController extends AbstractController {
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
     public String editPage(@PathVariable("id") Long id, Map<String, Object> model) {
         model.put("userForm", new UserForm(repository.findOne(id), null));
+        model.put("currentUser", currentUserProvider.currentUser());
         return "user/usersEdit";
     }
 

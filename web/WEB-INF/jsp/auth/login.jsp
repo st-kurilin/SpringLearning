@@ -1,10 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
 <html>
 <head><title>Login Page</title></head>
-<body onload='document.f.j_username.focus();'>
-<h3>Login with Username and Password</h3>
+<body onload='document.f.email.focus()'>
+<tags:menu />
 
+<h3>Login with Username and Password</h3>
 <c:if test="${signinError}">
     Please retry.
 </c:if>

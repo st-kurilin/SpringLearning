@@ -45,12 +45,14 @@ public class ProductController {
         final Sort.Order order = new Sort.Order(direction, orderBy);
         final PageRequest pageRequest = new PageRequest(page, size, new Sort(order));
         model.put("page", repository.findAll(pageRequest));
+        model.put("currentUser", currentUserProvider.currentUser());
         return "shop/products";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.GET)
     public String createPage(Map<String, Object> model) {
         model.put("product", new Product());
+        model.put("currentUser", currentUserProvider.currentUser());
         return "shop/productNew";
     }
 
@@ -59,6 +61,7 @@ public class ProductController {
         final Product product = repository.findByTitle(titleOfProduct);
         //TODO: [stas] show 404 if product not found
         model.put("product", product);
+        model.put("currentUser", currentUserProvider.currentUser());
         return "shop/productView";
     }
 

@@ -15,9 +15,8 @@
 
 </head>
 <body>
+<tags:menu currentUser="${currentUser}"/>
 <tags:userForm userForm="${userForm}"/>
-
-<a href="<c:url value="/users/${userForm.user.id}" />">View</a>
 
 </body>
 </html>

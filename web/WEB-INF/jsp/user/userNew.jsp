@@ -15,6 +15,7 @@
 
 </head>
 <body>
+<tags:menu currentUser="${currentUser}"/>
 <tags:userForm userForm="${userForm}"/>
 </body>
 </html>

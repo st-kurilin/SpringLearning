@@ -15,8 +15,8 @@
 
 </head>
 <body>
+<tags:menu currentUser="${currentUser}"/>
 <c:url var="formSend" value="/products/new"/>
 <tags:productForm formSend="${formSend}" product="${product}"/>
-<a href="<c:url value="/products" />">Cancel and view all products</a>
 </body>
 </html>

@@ -5,7 +5,8 @@
              xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
 http://www.springframework.org/schema/security
-http://www.springframework.org/schema/security/spring-security-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+http://www.springframework.org/schema/security/spring-security-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+">
 
     <context:component-scan base-package="com.security"/>
 
@@ -22,7 +23,9 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd http://ww
         <logout logout-url="/signout" logout-success-url="/users"/>
         <intercept-url pattern="/" access="permitAll"/>
         <intercept-url pattern="/products/**" access="hasRole('ROLE_GOOD_MAN')"/>
+        <intercept-url pattern="/users/*/edit" access="hasRole('ROLE_GOOD_MAN')"/>
         <remember-me key="MOVE_ME_TO_PROPERTIES"/>
+        <access-denied-handler error-page="/accessDenied"/>
     </http>
     <authentication-manager>
         <authentication-provider user-service-ref="userService"/>

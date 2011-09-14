@@ -16,6 +16,11 @@ import java.io.IOException;
 /**
  * @author: Andrey Loboda
  * @date : 14.09.11
+ *  * Implements AuthenticationFailureHandler to handle failures on auth
+ * <p/>
+ * Implements BeanPostProcessor as workaround  to configure UsernamePasswordAuthenticationFilter.
+ * Should be fixed in spring 3.1.0.M1
+ * For details consult https://jira.springsource.org/browse/SEC-1445
  */
 @Component
 public class AuthenticationBeanProcessing implements BeanPostProcessor, AuthenticationFailureHandler {
