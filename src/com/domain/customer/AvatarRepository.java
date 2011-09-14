@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @NoRepositoryBean
 public interface AvatarRepository {
-    //TODO:  Long -> UserId
+
     void assign(Long user, @Nullable Avatar avatar);
 
     Avatar load(Long user);

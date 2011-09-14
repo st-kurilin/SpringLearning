@@ -48,11 +48,11 @@ public class UserController extends AbstractController {
     public UserController(UserRepository repository,
                           AvatarRepository avatarRepository,
                           ProductRepository productRepository,
-                          CurrentUserProvider currentUserProvider   ) {
+                          CurrentUserProvider currentUserProvider) {
         this.repository = repository;
         this.avatarRepository = avatarRepository;
         this.productRepository = productRepository;
-        this.currentUserProvider=currentUserProvider;
+        this.currentUserProvider = currentUserProvider;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -67,7 +67,7 @@ public class UserController extends AbstractController {
         model.put("userForm", new UserForm(new User(), null));
         return "user/userNew";
     }
-
+           //TODO:displaying of avatar at user
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showPage(@PathVariable("id") Long id, Map<String, Object> model) {
         final User user = repository.findOne(id);

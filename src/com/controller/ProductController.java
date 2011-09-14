@@ -59,7 +59,9 @@ public class ProductController {
     @RequestMapping(value = "/{title}", method = RequestMethod.GET)
     public String showPage(@PathVariable("title") String titleOfProduct, Map<String, Object> model) {
         final Product product = repository.findByTitle(titleOfProduct);
-        //TODO: [stas] show 404 if product not found
+        if (product==null){
+            return "redirect:/static/error404.jsp";
+        }
         model.put("product", product);
         model.put("currentUser", currentUserProvider.currentUser());
         return "shop/productView";

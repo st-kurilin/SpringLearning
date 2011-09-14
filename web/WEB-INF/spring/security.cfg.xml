@@ -22,7 +22,7 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd http://ww
                 login-processing-url="/signin_form"/>
         <logout logout-url="/signout" logout-success-url="/users"/>
         <intercept-url pattern="/" access="permitAll"/>
-        <intercept-url pattern="/products/**" access="hasRole('ROLE_GOOD_MAN')"/>
+        <intercept-url pattern="/products/**" access="isAuthenticated()"/>
         <intercept-url pattern="/users/*/edit" access="hasRole('ROLE_GOOD_MAN')"/>
         <remember-me key="MOVE_ME_TO_PROPERTIES"/>
         <access-denied-handler error-page="/accessDenied"/>

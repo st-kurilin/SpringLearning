@@ -1,6 +1,7 @@
 package com.security;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -16,7 +17,7 @@ import java.io.IOException;
 /**
  * @author: Andrey Loboda
  * @date : 14.09.11
- *  * Implements AuthenticationFailureHandler to handle failures on auth
+ * * Implements AuthenticationFailureHandler to handle failures on auth
  * <p/>
  * Implements BeanPostProcessor as workaround  to configure UsernamePasswordAuthenticationFilter.
  * Should be fixed in spring 3.1.0.M1
@@ -24,9 +25,11 @@ import java.io.IOException;
  */
 @Component
 public class AuthenticationBeanProcessing implements BeanPostProcessor, AuthenticationFailureHandler {
-    ////TODO: [stas] move to config
-    private final String loginParam = "email";
-    private final String passwordParam = "password";
+    @Value("#{security.loginParam}")
+    private String loginParam;
+
+    @Value("#{security.passwordParam}")
+    private String passwordParam;
 
     @Override
     //Configure UsernamePasswordAuthenticationFilter

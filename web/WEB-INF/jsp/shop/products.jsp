@@ -12,7 +12,7 @@
 <html>
 <head><title>Simple jsp page</title></head>
 <body>
-   <tags:menu currentUser="${currentUser}"/>
+<tags:menu currentUser="${currentUser}"/>
 <c:choose>
     <c:when test="${page.totalPages == 0}">
         There are no any products.

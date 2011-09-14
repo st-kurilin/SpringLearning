@@ -60,7 +60,7 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
-    //TODO: [stas] should contain title, seller, description, list of photo, price.
+    //TODO: [stas] should contain  list of photo.
     //photo should be uploaded through ajax
     //first title should be used as id (you can edit title, but can't change id)
     //price should be placed in separate immutable class

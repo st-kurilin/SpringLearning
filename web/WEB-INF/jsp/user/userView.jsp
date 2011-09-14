@@ -16,8 +16,8 @@
         <td>Id</td>
         <td><c:out value="${user.id}"/></td>
         <sec:authorize url="/users/*/edit">
-        <td><a href="<c:url value="/users/${user.id}/edit" />">Edit</a></td>
-            </sec:authorize>
+            <td><a href="<c:url value="/users/${user.id}/edit" />">Edit</a></td>
+        </sec:authorize>
     </tr>
     <tr>
         <td>Name</td>
@@ -32,29 +32,29 @@
         <td><c:out value="${user.email.value}"/></td>
     </tr>
     <sec:authorize url="/products">
-    <tr>
-        <td>Products of this user</td>
-        <td>
-            <c:choose>
-                <c:when test="${fn:length(products)!=0}">
-                    <table>
-                        <tr>
-                            <td>Title</td>
-                            <td>Link</td>
-                        </tr>
-
-                        <c:forEach var="product" items="${products}">
+        <tr>
+            <td>Products of this user</td>
+            <td>
+                <c:choose>
+                    <c:when test="${fn:length(products)!=0}">
+                        <table>
                             <tr>
-                                <td>${product.title}</td>
-                                <td><a href="<c:url value="/products/${product.title}"/>">View</a></td>
+                                <td>Title</td>
+                                <td>Link</td>
                             </tr>
-                        </c:forEach>
-                    </table>
-                </c:when>
-                <c:otherwise>No products</c:otherwise>
-            </c:choose>
-        </td>
-    </tr>
+
+                            <c:forEach var="product" items="${products}">
+                                <tr>
+                                    <td>${product.title}</td>
+                                    <td><a href="<c:url value="/products/${product.title}"/>">View</a></td>
+                                </tr>
+                            </c:forEach>
+                        </table>
+                    </c:when>
+                    <c:otherwise>No products</c:otherwise>
+                </c:choose>
+            </td>
+        </tr>
     </sec:authorize>
 </table>
 </body>

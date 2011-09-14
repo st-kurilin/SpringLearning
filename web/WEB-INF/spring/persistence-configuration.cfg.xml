@@ -101,6 +101,6 @@
         <!--<repo:include-filter type="assignable" expression="org.springframework.data.repository.Repository"/>
         <repo:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>-->
     </jpa:repositories>
-    <bean class="com.persistence.AvatarRepositoryInMemoryImpl"/>
+    <bean class="com.persistence.AvatarRepositoryOnHardDrive"/>
 
 </beans>

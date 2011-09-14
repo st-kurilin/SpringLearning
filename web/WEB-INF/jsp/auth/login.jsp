@@ -4,7 +4,7 @@
 <html>
 <head><title>Login Page</title></head>
 <body onload='document.f.email.focus()'>
-<tags:menu />
+<tags:menu/>
 
 <h3>Login with Username and Password</h3>
 <c:if test="${signinError}">
