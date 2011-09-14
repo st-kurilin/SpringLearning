@@ -1,11 +1,9 @@
 package com.controller;
 
 import com.domain.customer.CurrentUserProvider;
-import com.domain.customer.EmailAddress;
 import com.domain.customer.UserRepository;
 import com.domain.shop.Product;
 import com.domain.shop.ProductRepository;
-import com.security.CurrentUserProviderImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
@@ -27,14 +25,15 @@ public class ProductController {
 
     private final ProductRepository repository;
     private final UserRepository userRepository;
-    private final CurrentUserProvider currentUserProvider = new CurrentUserProviderImpl();
+    private final CurrentUserProvider currentUserProvider;
 
     private final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     @Inject
-    public ProductController(ProductRepository repository, UserRepository userRepository) {
+    public ProductController(ProductRepository repository, UserRepository userRepository, CurrentUserProvider currentUserProvider) {
         this.repository = repository;
         this.userRepository = userRepository;
+        this.currentUserProvider = currentUserProvider;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -65,7 +64,7 @@ public class ProductController {
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@ModelAttribute @Valid Product product, BindingResult bindingResult) {
-        product.setSeller(userRepository.findByEmail(new EmailAddress(currentUserProvider.currentUserEmail())));// get user from id
+        product.setSeller(currentUserProvider.currentUser());// get user from id
         if (bindingResult.hasErrors()) {
             return "shop/productNew";
         }

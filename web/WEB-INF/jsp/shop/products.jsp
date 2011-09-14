@@ -8,7 +8,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags" %>
-  <%@ taglib uri="/WEB-INF/tags.tld"  prefix="tt" %>
+<%@ taglib uri="/WEB-INF/tags.tld" prefix="tt" %>
 <html>
 <head><title>Simple jsp page</title></head>
 <body>

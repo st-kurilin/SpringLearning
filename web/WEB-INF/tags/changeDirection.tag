@@ -1,6 +1,6 @@
 <%@ attribute name="root" required="true" %>
 <%@ attribute name="sortBy" required="true" %>
-<%@ attribute name="page" required="true" type="org.springframework.data.domain.Page"%>
+<%@ attribute name="page" required="true" type="org.springframework.data.domain.Page" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <c:set var="sortByLowerCase" value="${sortBy.toLowerCase()}"/>

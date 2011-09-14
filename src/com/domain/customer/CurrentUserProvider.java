@@ -4,5 +4,5 @@ package com.domain.customer;
  * @author Stanislav Kurilin
  */
 public interface CurrentUserProvider {
-    String currentUserEmail();
+    User currentUser();
 }

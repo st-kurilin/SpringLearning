@@ -37,30 +37,30 @@
     $(function() {
 
         $("#product").validate({
-                    rules:{
-                        title:{
-                            required: true,
-                            remote:{
-                                url:location.href.substring(0, location.href.lastIndexOf('products/')) + "products/titles/available",
-                                type:"GET"
-                            }
-                        },
-                        price:{
-                            required:true,
-                            number:true
-                        }
-                    },
-                    messages:{
-                        title:{
-                            required: "Enter the title, please.",
-                            remote:"This title of product is unavailable"
-                        },
-                        price:{
-                            required: "Enter the price, please.",
-                            number:"Price is not a number."
-                        }
+            rules:{
+                title:{
+                    required: true,
+                    remote:{
+                        url:location.href.substring(0, location.href.lastIndexOf('products/')) + "products/titles/available",
+                        type:"GET"
                     }
-                })
+                },
+                price:{
+                    required:true,
+                    number:true
+                }
+            },
+            messages:{
+                title:{
+                    required: "Enter the title, please.",
+                    remote:"This title of product is unavailable"
+                },
+                price:{
+                    required: "Enter the price, please.",
+                    number:"Price is not a number."
+                }
+            }
+        })
     });
 </script>
 
