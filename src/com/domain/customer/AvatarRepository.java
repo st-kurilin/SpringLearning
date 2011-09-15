@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 /**
  * @author Stanislav Kurilin
  */
-@Repository
 @NoRepositoryBean
 public interface AvatarRepository {
 

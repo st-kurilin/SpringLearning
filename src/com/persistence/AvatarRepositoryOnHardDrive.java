@@ -3,6 +3,7 @@ package com.persistence;
 import com.domain.customer.Avatar;
 import com.domain.customer.AvatarRepository;
 import com.sun.istack.internal.Nullable;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.io.*;
 
@@ -16,14 +17,14 @@ import static com.util.StreamCloser.close;
 public class AvatarRepositoryOnHardDrive implements AvatarRepository {
     //TODO: move to property file. Hint: take look at @Value annotation.
     //if it necessary, remove static attribute
-    //@Value("#{avatar_prop.dir_width}")
-    public final static int DIR_WIDTH = 10;
+    @Value("#{avatar_prop.dir_width}")
+    public int DIR_WIDTH;
 
-    //@Value("#{avatar_prop.dir_depth}")
-    public final static int DIR_DEPTH = 3;
+    @Value("#{avatar_prop.dir_depth}")
+    public int DIR_DEPTH;
 
-    //@Value("#{avatar_prop.init_folder}")
-    private final static String INIT_FOLDER = "D://avatars/";
+    @Value("#{avatar_prop.init_folder}")
+    private String INIT_FOLDER;
 
     @Override
     public void assign(Long user, @Nullable Avatar avatar) {
@@ -85,7 +86,7 @@ public class AvatarRepositoryOnHardDrive implements AvatarRepository {
         }
     }
 
-    private static String location(Long user) {
+    private String location(Long user) {
         StringBuilder builder = new StringBuilder(INIT_FOLDER);
         for (int i = 0; i < DIR_DEPTH; i++) {
             final int module = DIR_WIDTH + i;

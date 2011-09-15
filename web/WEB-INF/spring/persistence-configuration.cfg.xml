@@ -97,10 +97,7 @@
         </property>
     </bean>
 
-    <jpa:repositories base-package="com.domain">
-        <!--<repo:include-filter type="assignable" expression="org.springframework.data.repository.Repository"/>
-        <repo:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>-->
-    </jpa:repositories>
+    <jpa:repositories base-package="com.domain"/>
     <bean class="com.persistence.AvatarRepositoryOnHardDrive"/>
 
 </beans>
