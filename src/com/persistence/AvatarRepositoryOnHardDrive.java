@@ -46,9 +46,13 @@ public class AvatarRepositoryOnHardDrive implements AvatarRepository {
                 //TODO: delete
                 return;
             }
-            objectStream = new ObjectOutputStream(new FileOutputStream(location));
-            objectStream.writeObject(avatar);
 
+            File file = new File(location);
+            new File(file.getParent()).mkdirs();
+            file.createNewFile();
+
+            objectStream = new ObjectOutputStream(new FileOutputStream(file));
+            objectStream.writeObject(avatar);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
