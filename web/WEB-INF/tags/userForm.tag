@@ -132,12 +132,12 @@
                 },
                 "user.password":{
                     required: "Enter the password, please." ,
-                    minlength:"Length of the name should be at least 6 symbols",
-                    maxlength:"Length of the name should be at most 18 symbols"
+                    minlength:"Length of the password should be at least 6 symbols",
+                    maxlength:"Length of the password should be at most 18 symbols"
                 },
                 "user.birthday":{
                     required: "Enter the birthday, please.",
-                    date:"Date is not valid"
+                    date:"Birthday is not valid"
                 },
                 avatarFile:{
                     accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"

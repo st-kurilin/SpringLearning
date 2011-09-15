@@ -14,4 +14,5 @@ public interface AvatarRepository {
     void assign(Long user, @Nullable Avatar avatar);
 
     Avatar load(Long user);
+    boolean exist(Long userId);
 }

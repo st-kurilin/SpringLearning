@@ -67,13 +67,14 @@ public class UserController extends AbstractController {
         model.put("userForm", new UserForm(new User(), null));
         return "user/userNew";
     }
-           //TODO:displaying of avatar at user
+
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showPage(@PathVariable("id") Long id, Map<String, Object> model) {
         final User user = repository.findOne(id);
         model.put("user", user);
         model.put("currentUser", currentUserProvider.currentUser());
         model.put("products", productRepository.findBySeller(user));
+        model.put("existAvatar", avatarRepository.exist(id));
         return "user/userView";
     }
 
@@ -120,6 +121,9 @@ public class UserController extends AbstractController {
     @RequestMapping(value = "/{id}/avatar", method = RequestMethod.GET)
     public ResponseEntity<byte[]> avatar(@PathVariable("id") Long id) {
         Avatar avatar = avatarRepository.load(id);
+        if (avatar==null){
+            return new ResponseEntity<byte[]>(HttpStatus.NO_CONTENT);
+        }
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("Content-Type", avatar.getContentType());
         return new ResponseEntity<byte[]>(avatar.getContent(), responseHeaders, HttpStatus.OK);

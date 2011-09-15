@@ -22,6 +22,9 @@
     <tr>
         <td>Name</td>
         <td><c:out value="${user.name}"/></td>
+        <c:if test="${existAvatar}">
+            <td><img src="<c:url value="/users/${user.id}/avatar" />"/></td>
+        </c:if>
     </tr>
     <tr>
         <td>Gender</td>

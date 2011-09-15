@@ -3,7 +3,6 @@ package com.persistence;
 import com.domain.customer.Avatar;
 import com.domain.customer.AvatarRepository;
 import com.sun.istack.internal.Nullable;
-import org.springframework.beans.factory.annotation.Value;
 
 import java.io.*;
 
@@ -18,13 +17,13 @@ public class AvatarRepositoryOnHardDrive implements AvatarRepository {
     //TODO: move to property file. Hint: take look at @Value annotation.
     //if it necessary, remove static attribute
     //@Value("#{avatar_prop.dir_width}")
-    public final static int DIR_WIDTH=10;
+    public final static int DIR_WIDTH = 10;
 
     //@Value("#{avatar_prop.dir_depth}")
-    public final static int DIR_DEPTH=3;
+    public final static int DIR_DEPTH = 3;
 
     //@Value("#{avatar_prop.init_folder}")
-    private final static String INIT_FOLDER="D://avatars/";
+    private final static String INIT_FOLDER = "D://avatars/";
 
     @Override
     public void assign(Long user, @Nullable Avatar avatar) {
@@ -39,11 +38,21 @@ public class AvatarRepositoryOnHardDrive implements AvatarRepository {
         return retrieve(location);
     }
 
+    @Override
+    public boolean exist(Long userId) {
+        final String location = location(userId);
+        File file = new File(location);
+        return file.exists();
+    }
+
     private void save(String location, Avatar avatar) {
         ObjectOutputStream objectStream = null;
         try {
             if (avatar == null) {
-                //TODO: delete
+                File fileToDelete = new File(location);
+                if (fileToDelete.exists()) {
+                    fileToDelete.delete();
+                }
                 return;
             }
 
@@ -63,7 +72,11 @@ public class AvatarRepositoryOnHardDrive implements AvatarRepository {
     private Avatar retrieve(String location) {
         ObjectInputStream objectStream = null;
         try {
-            objectStream = new ObjectInputStream(new FileInputStream(location));
+            File file = new File(location);
+            if (!file.exists()) {
+                return null;
+            }
+            objectStream = new ObjectInputStream(new FileInputStream(file));
             return (Avatar) objectStream.readObject();
         } catch (Throwable e) {
             throw new RuntimeException(e);
