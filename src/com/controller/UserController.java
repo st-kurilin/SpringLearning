@@ -71,6 +71,9 @@ public class UserController extends AbstractController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showPage(@PathVariable("id") Long id, Map<String, Object> model) {
         final User user = repository.findOne(id);
+        if (user==null){
+            return "redirect:/error404";
+        }
         model.put("user", user);
         model.put("currentUser", currentUserProvider.currentUser());
         model.put("products", productRepository.findBySeller(user));
@@ -121,7 +124,7 @@ public class UserController extends AbstractController {
     @RequestMapping(value = "/{id}/avatar", method = RequestMethod.GET)
     public ResponseEntity<byte[]> avatar(@PathVariable("id") Long id) {
         Avatar avatar = avatarRepository.load(id);
-        if (avatar==null){
+        if (avatar == null) {
             return new ResponseEntity<byte[]>(HttpStatus.NO_CONTENT);
         }
         HttpHeaders responseHeaders = new HttpHeaders();

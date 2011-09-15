@@ -59,8 +59,8 @@ public class ProductController {
     @RequestMapping(value = "/{title}", method = RequestMethod.GET)
     public String showPage(@PathVariable("title") String titleOfProduct, Map<String, Object> model) {
         final Product product = repository.findByTitle(titleOfProduct);
-        if (product==null){
-            return "redirect:/static/error404.jsp";
+        if (product == null) {
+            return "redirect:/error404";
         }
         model.put("product", product);
         model.put("currentUser", currentUserProvider.currentUser());
@@ -69,7 +69,7 @@ public class ProductController {
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public String create(@ModelAttribute @Valid Product product, BindingResult bindingResult) {
-        product.setSeller(currentUserProvider.currentUser());// get user from id
+        product.setSeller(currentUserProvider.currentUser());
         if (bindingResult.hasErrors()) {
             return "shop/productNew";
         }

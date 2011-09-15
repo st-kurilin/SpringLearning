@@ -17,7 +17,7 @@ public class AvatarRepositoryInMemoryImpl implements AvatarRepository {
     @Override
     public void assign(Long user, @Nullable Avatar avatar) {
         if (avatar == null) {
-            if (exist(user)){
+            if (exist(user)) {
                 avatars.remove(user);
             }
             return;
@@ -27,8 +27,8 @@ public class AvatarRepositoryInMemoryImpl implements AvatarRepository {
 
     @Override
     public Avatar load(Long user) {
-        if  (!exist(user)){
-             return null;
+        if (!exist(user)) {
+            return null;
         }
         return avatars.get(user);
     }

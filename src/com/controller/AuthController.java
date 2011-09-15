@@ -24,9 +24,6 @@ public class AuthController {
 
     @RequestMapping(value = "signin", method = RequestMethod.GET)
     public String loginPage() {
-        if (currentUserProvider.currentUser() != null) {
-            return "redirect:/users/";
-        }
         return "auth/login";
     }
 
@@ -36,7 +33,6 @@ public class AuthController {
         model.put("currentUser", currentUserProvider.currentUser());
         return "auth/accessDenied";
     }
-
 
 }
 

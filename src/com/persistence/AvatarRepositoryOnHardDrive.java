@@ -15,8 +15,7 @@ import static com.util.StreamCloser.close;
  */
 
 public class AvatarRepositoryOnHardDrive implements AvatarRepository {
-    //TODO: move to property file. Hint: take look at @Value annotation.
-    //if it necessary, remove static attribute
+
     @Value("#{avatar_prop.dir_width}")
     public int DIR_WIDTH;
 

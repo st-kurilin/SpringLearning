@@ -9,5 +9,6 @@
 <body>
 <tags:menu currentUser="${currentUser}"/>
 
-Page not found</body>
+Page not found
+</body>
 </html>
