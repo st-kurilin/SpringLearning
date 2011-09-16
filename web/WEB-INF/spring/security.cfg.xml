@@ -17,7 +17,7 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd http://ww
         <form-login
                 login-page="/signin"
                 default-target-url="/users"
-                authentication-failure-handler-ref="authenticationBeanProcessing"
+                authentication-failure-handler-ref="authController"
                 login-processing-url="/signin_form"/>
         <logout logout-url="/signout" logout-success-url="/users"/>
 

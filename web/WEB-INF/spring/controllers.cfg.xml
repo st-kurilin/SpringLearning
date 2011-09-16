@@ -19,9 +19,9 @@
     <bean id="conversionService"
           class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
-            <list>
-                <bean class="com.binding.MoneyConverter"/>
-            </list>
+            <set>
+                <bean class="com.controller.binding.MoneyConverter"/>
+            </set>
         </property>
     </bean>
 
@@ -34,7 +34,7 @@
 
     <!--for configuration AuthenticationBeanProcessing-->
     <util:properties id="security" location="classpath:security.properties"/>
-    <util:properties id="avatar_prop" location="classpath:avatar_prop.properties"/>
+    <util:properties id="avatar_prop" location="classpath:avatarPersistence.properties"/>
 
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basenames">

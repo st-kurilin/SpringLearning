@@ -1,4 +1,4 @@
-package com.binding;
+package com.controller.binding;
 
 import com.domain.commerce.Money;
 import org.springframework.core.convert.converter.Converter;
@@ -13,13 +13,10 @@ public class MoneyConverter implements Converter<String, Money> {
 
     @Override
     public Money convert(String text) {
-        BigDecimal decimal;
-        if (text.isEmpty()) {
-            decimal = null;
-        } else {
-            decimal = new BigDecimal(text);
+        if(text.isEmpty()){
+            return new Money();
         }
-        return new Money(decimal);
+        return new Money(new BigDecimal(text));
     }
 }
 

@@ -10,7 +10,7 @@
 <c:if test="${signinError}">
     Please retry.
 </c:if>
-<form name='f' action='/signin_form' method='POST'>
+<form name='signIn' action='/signin_form' method='POST'>
     <table>
         <tr>
             <td>Email:</td>
@@ -21,13 +21,12 @@
             <td><input type='password' name='password'/></td>
         </tr>
         <tr>
-            <td><input type='checkbox' name='_spring_security_remember_me'/></td>
+            <td><input type='checkbox' name='remember_me'/></td>
             <td>Remember me on this computer.</td>
         </tr>
         <tr>
             <td colspan='2'><input name="submit" type="submit"/></td>
         </tr>
-
         <tr>
             <td colspan='2'><input name="reset" type="reset"/></td>
         </tr>
