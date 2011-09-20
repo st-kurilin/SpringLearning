@@ -13,7 +13,7 @@ public class MoneyConverter implements Converter<String, Money> {
 
     @Override
     public Money convert(String text) {
-        if(text.isEmpty()){
+        if (text.isEmpty()) {
             return new Money();
         }
         return new Money(new BigDecimal(text));

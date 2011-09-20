@@ -1,7 +1,6 @@
 package com.controller.error;
 
 import com.domain.customer.CurrentUserProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +21,7 @@ public class ErrorHandlingController {
     public ErrorHandlingController(CurrentUserProvider currentUserProvider) {
         this.currentUserProvider = currentUserProvider;
     }
+
     @RequestMapping(value = "error404", method = RequestMethod.GET)
     public String pageNotFound(Map<String, Object> model) {
         model.put("currentUser", currentUserProvider.currentUser());

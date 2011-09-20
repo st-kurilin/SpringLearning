@@ -1,8 +1,8 @@
-<%@ attribute name="userForm" required="true" type="com.controller.UserController.UserForm" %>
+<%@ attribute name="userForm" required="true" type="com.controller.UserForm" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:choose>
-    <c:when test="${userForm.user.isNew()}">
+    <c:when test="${userForm.user.new}">
         <c:url var="formSend" value="/users/new"/>
     </c:when>
     <c:otherwise>

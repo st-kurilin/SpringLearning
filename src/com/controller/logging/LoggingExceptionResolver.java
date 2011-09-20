@@ -24,17 +24,17 @@ public class LoggingExceptionResolver extends SimpleMappingExceptionResolver {
         return super.resolveException(request, response, handler, ex);
     }
 
-    /**
-     * @param throwable, Throwable that has been thrown
-     * @return String that represents stackTrace of the exception with all causes
+    /*
+     * Returns string that represents stackTrace of the exception with all causes
      */
-
     private String getExceptionStackTrace(Throwable throwable) {
         StringBuilder sb = new StringBuilder();
-        sb.append("\n StackTrace:" + getStackTrace(throwable));
+        sb.append("\n StackTrace:").append(getStackTrace(throwable));
         Throwable cause = throwable.getCause();
         while (cause != null) {
-            sb.append("\nCause:".intern() + getStackTrace(cause));
+            sb.append("\nCause:")
+                    .append(cause.getMessage())
+                    .append(getStackTrace(cause));
             cause = cause.getCause();
         }
         return sb.toString();
@@ -44,7 +44,7 @@ public class LoggingExceptionResolver extends SimpleMappingExceptionResolver {
         StringBuilder sb = new StringBuilder();
         for (StackTraceElement element : throwable.getStackTrace()) {
             sb.append(element.toString());
-            sb.append("\n");
+            sb.append('\n');
         }
         return sb;
     }

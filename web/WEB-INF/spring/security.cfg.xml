@@ -3,15 +3,20 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xmlns:context="http://www.springframework.org/schema/context"
              xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/security
-http://www.springframework.org/schema/security/spring-security-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 ">
 
     <context:component-scan base-package="com.security"/>
 
-    <!--autowired-->
-    <beans:bean id="userService" class="com.security.UserDetailsServiceImpl"/>
+    <global-method-security secured-annotations="enabled" pre-post-annotations="enabled">
+        <expression-handler ref="expHandler"/>
+    </global-method-security>
+    <beans:bean id="expHandler"
+                class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+        <beans:property name="permissionEvaluator" ref="permissionEvaluator"/>
+    </beans:bean>
 
     <http use-expressions="true">
         <form-login
@@ -21,12 +26,9 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd http://ww
                 login-processing-url="/signin_form"/>
         <logout logout-url="/signout" logout-success-url="/users"/>
 
-        <intercept-url pattern="/resources/**" filters="none"/>
         <intercept-url pattern="/signin" access="isAnonymous()"/>
-        <intercept-url pattern="/users/new" access="isAnonymous()"/>
         <intercept-url pattern="/" access="permitAll"/>
         <intercept-url pattern="/products/**" access="isAuthenticated()"/>
-        <intercept-url pattern="/users/*/edit" access="hasRole('ROLE_GOOD_MAN')"/>
 
         <remember-me key="#{security.keyRememberMe}"/>
         <access-denied-handler error-page="/accessDenied"/>
@@ -34,4 +36,5 @@ http://www.springframework.org/schema/security/spring-security-3.0.xsd http://ww
     <authentication-manager>
         <authentication-provider user-service-ref="userService"/>
     </authentication-manager>
+
 </beans:beans>

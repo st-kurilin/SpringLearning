@@ -46,7 +46,7 @@
     </bean>
 
 
-    <bean id="exceptionResolver" class="com.controller.logging.LoggingExceptionResolver">
+    <!--<bean id="exceptionResolver" class="com.controller.logging.LoggingExceptionResolver">
         <property name="exceptionMappings">
             <props>
                 <prop key="java.lang.Exception">errors/error500</prop>
@@ -57,6 +57,6 @@
     <mvc:interceptors>
         <bean class="com.controller.logging.LogControllers"/>
     </mvc:interceptors>
-
+    -->
 
 </beans>

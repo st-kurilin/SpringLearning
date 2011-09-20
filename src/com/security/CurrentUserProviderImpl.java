@@ -14,7 +14,7 @@ import javax.inject.Inject;
  * @author Stanislav Kurilin
  */
 @Component
-public class CurrentUserProviderImpl implements CurrentUserProvider {
+class CurrentUserProviderImpl implements CurrentUserProvider {
     private final UserRepository userRepository;
 
     @Inject
@@ -27,8 +27,7 @@ public class CurrentUserProviderImpl implements CurrentUserProvider {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
             String emailName = ((UserDetails) principal).getUsername();
-            User user = userRepository.findByEmail(new EmailAddress(emailName));
-            return user;
+            return userRepository.findByEmail(new EmailAddress(emailName));
         }
         return null;
     }

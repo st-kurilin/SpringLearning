@@ -23,7 +23,7 @@ import java.util.Map;
  */
 @Controller
 public class AuthController implements AuthenticationFailureHandler {
-    @Value("#{security.parameter.login}")
+    @Value("#{security.parameterLogin}")
     private String loginParam;
     @Inject
     private CurrentUserProvider currentUserProvider;

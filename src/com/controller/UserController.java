@@ -4,16 +4,15 @@ import com.domain.customer.*;
 import com.domain.shop.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -27,11 +26,10 @@ import java.util.Map;
 @Controller
 @RequestMapping("/users")
 public class UserController extends AbstractController {
-
-    private final UserRepository repository;
-    private final AvatarRepository avatarRepository;
-    private final ProductRepository productRepository;
-    private final CurrentUserProvider currentUserProvider;
+    private UserRepository repository;
+    private AvatarRepository avatarRepository;
+    private ProductRepository productRepository;
+    private CurrentUserProvider currentUserProvider;
 
     private final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -43,8 +41,13 @@ public class UserController extends AbstractController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
     }
 
+    /**
+     * This empty constructor is needed in order for the Spring Security annotations to work as expected
+     */
+    public UserController() {
+    }
+
     @Inject
-    @Autowired
     public UserController(UserRepository repository,
                           AvatarRepository avatarRepository,
                           ProductRepository productRepository,
@@ -71,7 +74,7 @@ public class UserController extends AbstractController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public String showPage(@PathVariable("id") Long id, Map<String, Object> model) {
         final User user = repository.findOne(id);
-        if (user==null){
+        if (user == null) {
             return "redirect:/error404";
         }
         model.put("user", user);
@@ -82,6 +85,7 @@ public class UserController extends AbstractController {
     }
 
     @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
+    @PreAuthorize("hasPermission(#id, 'user-edit')")
     public String editPage(@PathVariable("id") Long id, Map<String, Object> model) {
         model.put("userForm", new UserForm(repository.findOne(id), null));
         model.put("currentUser", currentUserProvider.currentUser());
@@ -89,6 +93,7 @@ public class UserController extends AbstractController {
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
+
     public String create(@ModelAttribute @Valid UserForm userForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "user/userNew";
@@ -101,6 +106,7 @@ public class UserController extends AbstractController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
+    @PreAuthorize("hasPermission(#id, 'user-edit')")
     public String edit(@PathVariable("id") Long id, @Valid UserForm userForm, BindingResult bindingResult, Map<String, Object> model) {
         if (bindingResult.hasErrors()) {
             model.put("id", id);
@@ -134,47 +140,9 @@ public class UserController extends AbstractController {
 
     @RequestMapping(value = "/emails/available", method = RequestMethod.GET)
     @ResponseBody
-    public String isEmailAvailable(@RequestParam String email) {
+    public String isEmailAvailable(@RequestParam("email") String email) {
         User user = repository.findByEmail(new EmailAddress(email));
         return Boolean.toString(user == null);
     }
 
-    public static class UserForm {
-        @Valid
-        private User user;
-        @Valid
-        private CommonsMultipartFile avatarFile;
-
-        public UserForm() {
-        }
-
-        public UserForm(User user, CommonsMultipartFile avatarFile) {
-            this.user = user;
-            this.avatarFile = avatarFile;
-        }
-
-        public User getUser() {
-            return user;
-        }
-
-        public void setUser(User user) {
-            this.user = user;
-        }
-
-        public CommonsMultipartFile getAvatarFile() {
-            return avatarFile;
-        }
-
-        public void setAvatarFile(CommonsMultipartFile avatarFile) {
-            this.avatarFile = avatarFile;
-        }
-
-        public Avatar getAvatar() {
-            if (avatarFile.isEmpty()) {
-                return null;
-            }
-            return new Avatar(avatarFile.getBytes(), avatarFile.getContentType());
-        }
-
-    }
 }

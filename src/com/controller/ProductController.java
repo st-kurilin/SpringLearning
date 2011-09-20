@@ -22,7 +22,6 @@ import java.util.Map;
 @Controller
 @RequestMapping("/products")
 public class ProductController {
-
     private final ProductRepository repository;
     private final UserRepository userRepository;
     private final CurrentUserProvider currentUserProvider;

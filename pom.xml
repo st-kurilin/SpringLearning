@@ -20,6 +20,7 @@
     </build>
     <properties>
         <spring.version>3.0.5.RELEASE</spring.version>
+        <spring.security.version>3.0.5.RELEASE</spring.security.version>
         <jpa.version>2.0.0</jpa.version>
         <junit.version>4.8</junit.version>
         <hibernate.version>3.6.6.Final</hibernate.version>
@@ -113,22 +114,22 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.security.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.security.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.security.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
-            <version>${spring.version}</version>
+            <version>${spring.security.version}</version>
         </dependency>
 
         <dependency>
@@ -207,6 +208,13 @@
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
             <version>2.1</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>r09</version>
         </dependency>
 
     </dependencies>

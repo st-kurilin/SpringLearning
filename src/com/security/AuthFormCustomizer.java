@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  * @author Stanislav Kurilin
  */
 @Component
-public class AuthFormCustomizer implements BeanPostProcessor {
+class AuthFormCustomizer implements BeanPostProcessor {
     @Value("#{security.parameterLogin}")
     private String loginParam;
     @Value("#{security.parameterPassword}")
