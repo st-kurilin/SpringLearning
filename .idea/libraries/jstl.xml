@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jstl.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/standard.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/jmimemagic-0.1.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

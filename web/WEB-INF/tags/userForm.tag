@@ -1,6 +1,8 @@
 <%@ attribute name="userForm" required="true" type="com.controller.UserForm" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="/WEB-INF/tags.tld" prefix="tt" %>
+
 <c:choose>
     <c:when test="${userForm.user.new}">
         <c:url var="formSend" value="/users/new"/>
@@ -50,6 +52,15 @@
                     <sf:errors path="avatarFile" cssClass="error"/></td>
             </tr>
             <tr>
+                <td>Roles:</td>
+                <td>
+                    <table>
+                        <tt:rolesEditor user="${userForm.user}" path="user.role"/>
+                    </table>
+                    <input type="file" name="avatarFile"/>
+                    <sf:errors path="avatarFile" cssClass="error"/></td>
+            </tr>
+            <tr>
                 <td colspan=3><input type="submit"/></td>
             </tr>
         </table>
@@ -73,18 +84,18 @@
                 retResp = "true";
             } else {
                 $.ajax({
-                    url:  "/users/emails/available",    //url is absolute - can be trouble with changing context
-                    type:"GET",
-                    async:false,
-                    data: {
-                        email:function() {
-                            return $("#user\\.email").val()
-                        }
-                    },
-                    success: function(data) {
-                        retResp = data;
-                    }
-                });
+                            url:  "/users/emails/available",    //url is absolute - can be trouble with changing context
+                            type:"GET",
+                            async:false,
+                            data: {
+                                email:function() {
+                                    return $("#user\\.email").val()
+                                }
+                            },
+                            success: function(data) {
+                                retResp = data;
+                            }
+                        });
             }
             return retResp == "true";
         });
@@ -92,61 +103,62 @@
         $("#user\\.birthday").datepicker();
 
         $("#userForm").validate({
-            rules:{
-                "user.name":{
-                    required: true,
-                    minlength:2,
-                    maxlength:12
-                },
-                "user.email":{
-                    required:true,
-                    email:true,
-                    serverCheck:true
-                },
-                "user.password":{
-                    required: true ,
-                    minlength:6,
-                    maxlength:18
-                },
-                "user.birthday":{
-                    required:true,
-                    date:true
-                },
-                avatarFile:{
-                    accept: "png|jpe?g|gif|bmp"
-                },
-                "user.gender":{
-                    required:true
-                }
-            },
-            messages:{
-                "user.name":{
-                    required: "Enter the name, please.",
-                    minlength:"Length of the name should be at least 2 symbols",
-                    maxlength:"Length of the name should be at most 12 symbols"
-                },
-                "user.email":{
-                    required: "Enter the mail, please.",
-                    email:"Email is not valid",
-                    serverCheck:"Email is not availiable."
-                },
-                "user.password":{
-                    required: "Enter the password, please." ,
-                    minlength:"Length of the password should be at least 6 symbols",
-                    maxlength:"Length of the password should be at most 18 symbols"
-                },
-                "user.birthday":{
-                    required: "Enter the birthday, please.",
-                    date:"Birthday is not valid"
-                },
-                avatarFile:{
-                    accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"
-                },
-                "user.gender":{
-                    required: "Are you Women or Man?"
-                }
-            },
-            onclick: false
-        })
+                    rules:{
+                        "user.name":{
+                            required: true,
+                            minlength:2,
+                            maxlength:12
+                        },
+                        "user.email":{
+                            required:true,
+                            email:true,
+                            serverCheck:true
+                        },
+                        "user.password":{
+                            required: true ,
+                            minlength:6,
+                            maxlength:18
+                        },
+                        "user.birthday":{
+                            required:true,
+                            date:true
+                        },
+                        avatarFile:{
+                            accept: "png|jpe?g|gif|bmp"
+                        },
+                        "user.gender":{
+                            required:true
+                        }
+                    },
+                    messages:{
+                        "user.name":{
+                            required: "Enter the name, please.",
+                            minlength:"Length of the name should be at least 2 symbols",
+                            maxlength:"Length of the name should be at most 12 symbols"
+                        },
+                        "user.email":{
+                            required: "Enter the mail, please.",
+                            email:"Email is not valid",
+                            serverCheck:"Email is not availiable."
+                        },
+                        "user.password":{
+                            required: "Enter the password, please." ,
+                            minlength:"Length of the password should be at least 6 symbols",
+                            maxlength:"Length of the password should be at most 18 symbols"
+                        },
+                        "user.birthday":{
+                            required: "Enter the birthday, please.",
+                            date:"Birthday is not valid"
+                        },
+                        avatarFile:{
+                            accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"
+                        },
+                        "user.gender":{
+                            required: "Are you Women or Man?"
+                        }
+                    },
+                    onfocusout:true,
+                    onclick: false
+                })
     });
 </script>

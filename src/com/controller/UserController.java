@@ -2,8 +2,11 @@ package com.controller;
 
 import com.domain.customer.*;
 import com.domain.shop.ProductRepository;
+import com.google.common.collect.Collections2;
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.propertyeditors.CustomCollectionEditor;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -16,9 +19,10 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
+import java.beans.PropertyEditor;
+import java.beans.PropertyEditorSupport;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Stanislav Kurilin

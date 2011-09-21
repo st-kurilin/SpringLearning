@@ -21,6 +21,7 @@
         <property name="converters">
             <set>
                 <bean class="com.controller.binding.MoneyConverter"/>
+                <bean class="com.controller.binding.RoleConverter"/>
             </set>
         </property>
     </bean>

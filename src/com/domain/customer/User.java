@@ -1,5 +1,9 @@
 package com.domain.customer;
 
+import com.domain.Role;
+import com.google.common.collect.ImmutableSet;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.validator.constraints.Length;
@@ -12,6 +16,8 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.util.Date;
+import java.util.EnumSet;
+import java.util.Set;
 
 
 /**
@@ -37,6 +43,9 @@ public class User extends AbstractPersistable<Long> {
     @Past
     private Date birthday;
 
+    @ElementCollection(fetch = FetchType.EAGER)
+    @Enumerated(EnumType.STRING)
+    private Set<Role> roles;
 
     @Enumerated(EnumType.STRING)
     @NotNull
@@ -95,6 +104,14 @@ public class User extends AbstractPersistable<Long> {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = EnumSet.copyOf(roles);
     }
 
     @Override
