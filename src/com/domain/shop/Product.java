@@ -7,12 +7,14 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.Valid;
 
 /**
  * @author Stanislav Kurilin
  */
 @Entity
+@Table(name = "PRODUCTS")
 public class Product {
     @NotBlank
     @Id

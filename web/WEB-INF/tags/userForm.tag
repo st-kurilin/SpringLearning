@@ -2,7 +2,7 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:choose>
-    <c:when test="${userForm.user.new}">
+    <c:when test="${userForm.user.id == null}">
         <c:url var="formSend" value="/users/new"/>
     </c:when>
     <c:otherwise>
@@ -143,7 +143,7 @@
                     accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"
                 },
                 "user.gender":{
-                    required: "Are you Women or Man?"
+                    required: "Define your gender, please."
                 }
             },
             onclick: false

@@ -69,7 +69,7 @@ public class SampleDataCreator {
     private void fillUser(User seller, Product... products) {
         final User entity = userRepository.save(seller);
         for (Product product : products) {
-            product.setSeller(seller);
+            product.setSeller(entity);
             productRepository.save(product);
         }
     }

@@ -17,8 +17,6 @@ public interface ProductRepository extends CrudRepository<Product, String>, Pagi
     @Override
     Page<Product> findAll(Pageable pageable);
 
-    @Override
-    Product save(Product entity);
 
     Product findByTitle(String title);
     //TODO: [stas] pageable retrieve with custom soring (by price/date)
