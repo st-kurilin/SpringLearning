@@ -1,17 +1,14 @@
 package com.sample;
 
+import com.domain.Role;
 import com.domain.commerce.Money;
-import com.domain.customer.EmailAddress;
-import com.domain.customer.Gender;
-import com.domain.customer.User;
-import com.domain.customer.UserRepository;
+import com.domain.customer.*;
 import com.domain.shop.Product;
 import com.domain.shop.ProductRepository;
 import org.springframework.stereotype.Component;
 
 import javax.inject.Inject;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.*;
 
 /**
  * @author Stanislav Kurilin
@@ -28,24 +25,32 @@ public class SampleDataCreator {
     }
 
     public void create() {
-        fillUser(createUser("Elena", "pass", "elena.fabina@mail.ru", evaluateDate(1991, 10, 10), Gender.FEMALE),
+        final Role adminRole = Role.ADMINISTRATOR;
+        final Role userRole = Role.USER;
+
+        fillUser(createUser("Elena", "pass", "elena.fabina@mail.ru", evaluateDate(1991, 10, 10), Gender.FEMALE,
+                adminRole , userRole),
                 createProduct("chair", 300.25),
                 createProduct("bedroom", 1230.20),
                 createProduct("towel", 5.5)
         );
-        fillUser(createUser("Vasiliy", "pass", "vasil.luchhkevich@gmail.com", evaluateDate(1968, 3, 14), Gender.MALE),
+        fillUser(createUser("Vasiliy", "pass", "vasil.luchhkevich@gmail.com", evaluateDate(1968, 3, 14), Gender.MALE,
+                adminRole , userRole),
                 createProduct("monitor", 1700.00),
                 createProduct("keyboard", 12.525)
         );
-        fillUser(createUser("Petr", "pass", "petrAndVasik@yahoo.ru", evaluateDate(1991, 10, 10), Gender.FEMALE),
+        fillUser(createUser("Petr", "pass", "petrAndVasik@yahoo.ru", evaluateDate(1991, 10, 10), Gender.FEMALE,
+                userRole),
                 createProduct("book of Robinson Crusoe", 35.755),
                 createProduct("table", 350.454)
         );
-        fillUser(createUser("Klara", "pass", "klara.petrova@mail.ru", evaluateDate(1958, 1, 4), Gender.FEMALE),
+        fillUser(createUser("Klara", "pass", "klara.petrova@mail.ru", evaluateDate(1958, 1, 4), Gender.FEMALE,
+                userRole),
                 createProduct("T-Shirt with Harry Potter", 50),
                 createProduct("Lamp with Jennie", 5000.00)
         );
-        fillUser(createUser("John", "pass", "john.smith@gmail.com", evaluateDate(1986, 5, 6), Gender.MALE),
+        fillUser(createUser("John", "pass", "john.smith@gmail.com", evaluateDate(1986, 5, 6), Gender.MALE,
+                adminRole , userRole),
                 createProduct("Banana with tomato", 1230.20),
                 createProduct("Banana", 12.20),
                 createProduct("Tomato", 130.20),
@@ -60,8 +65,8 @@ public class SampleDataCreator {
                 createProduct("IPhone 5", 1700.10),
                 createProduct("Headphones with microphone", 15.40)
         );
-        fillUser(createUser("Karl", "pass", "karl.marks@mail.ru", evaluateDate(1965, 23, 12), Gender.MALE));
-        fillUser(createUser("Bob Marley", "pass", "bob.marley@gmail.com", evaluateDate(1986, 5, 6), Gender.MALE),
+        fillUser(createUser("Karl", "pass", "karl.marks@mail.ru", evaluateDate(1965, 23, 12), Gender.MALE, userRole));
+        fillUser(createUser("Bob Marley", "pass", "bob.marley@gmail.com", evaluateDate(1986, 5, 6), Gender.MALE, userRole),
                 createProduct("Banana", 123089.20)
         );
     }
@@ -81,13 +86,16 @@ public class SampleDataCreator {
         return result;
     }
 
-    private User createUser(String name, String pass, String email, Date birthday, Gender gender) {
+    private User createUser(String name, String pass, String email, Date birthday, Gender gender, Role... roles) {
         User result = new User();
         result.setName(name);
         result.setPassword(pass);
         result.setEmail(new EmailAddress(email));
         result.setBirthday(birthday);
         result.setGender(gender);
+        Set<Role> roleSet = new HashSet<Role>(roles.length);
+        roleSet.addAll(Arrays.asList(roles));
+        result.setRoles(roleSet);
         return result;
     }
 

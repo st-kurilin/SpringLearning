@@ -65,7 +65,60 @@
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.ui.core.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/jquery.validate.js" />"></script>
 <script type="text/javascript">
-
+    var locale='en/US';
+    var localizedStrings = {
+        userName:{
+            required:{
+                'en/US':'Enter the name, please.'
+            },
+            minlength:{
+                'en/US':'Length of the name should be at least 2 symbols'
+            },
+            maxlength:{
+                'en/US':'Length of the name should be at most 12 symbols'
+            }
+        },
+        userEmail:{
+            required:{
+                'en/US':'Enter the mail, please.'
+            },
+            email:{
+                'en/US':'Email is not valid.'
+            },
+            serverCheck:{
+                'en/US':'Email is not available.'
+            }
+        },
+        userPassword:{
+            required:{
+                'en/US':'Enter the password, please.'
+            },
+            minlength:{
+                'en/US':'Length of the password should be at least 6 symbols'
+            },
+            maxlength:{
+                'en/US':'Length of the password should be at most 18 symbols'
+            }
+        },
+        userBirthday:{
+            required:{
+                'en/US':'Enter the birthday, please.'
+            },
+            date:{
+                'en/US':'Birthday is not valid'
+            }
+        },
+        avatarFile:{
+            accept:{
+                'en/US':'Only files PNG, JPEG, GIF, BMP  can be uploaded'
+            }
+        },
+        userGender:{
+            required:{
+                'en/US':'Define your gender, please.'
+            }
+        }
+    };
     $(function() {
         $.validator.addMethod("serverCheck", function() {
             var retResp;
@@ -121,29 +174,29 @@
             },
             messages:{
                 "user.name":{
-                    required: "Enter the name, please.",
-                    minlength:"Length of the name should be at least 2 symbols",
-                    maxlength:"Length of the name should be at most 12 symbols"
+                    required:localizedStrings.userName.required[locale],
+                    minlength:localizedStrings.userName.minlength[locale],
+                    maxlength:localizedStrings.userName.maxlength[locale]
                 },
                 "user.email":{
-                    required: "Enter the mail, please.",
-                    email:"Email is not valid",
-                    serverCheck:"Email is not availiable."
+                    required:localizedStrings.userEmail.required[locale],
+                    email:localizedStrings.userEmail.email[locale],
+                    serverCheck:localizedStrings.userEmail.serverCheck[locale]
                 },
                 "user.password":{
-                    required: "Enter the password, please." ,
-                    minlength:"Length of the password should be at least 6 symbols",
-                    maxlength:"Length of the password should be at most 18 symbols"
+                    required: localizedStrings.userPassword.required[locale] ,
+                    minlength:localizedStrings.userPassword.minlength[locale],
+                    maxlength:localizedStrings.userPassword.maxlength[locale]
                 },
                 "user.birthday":{
-                    required: "Enter the birthday, please.",
-                    date:"Birthday is not valid"
+                    required: localizedStrings.userBirthday.required[locale],
+                    date:localizedStrings.userBirthday.date[locale]
                 },
                 avatarFile:{
-                    accept:"Only files PNG, JPEG, GIF, BMP  can be uploaded"
+                    accept:localizedStrings.avatarFile.accept[locale]
                 },
                 "user.gender":{
-                    required: "Define your gender, please."
+                    required: localizedStrings.userGender.required[locale]
                 }
             },
             onclick: false

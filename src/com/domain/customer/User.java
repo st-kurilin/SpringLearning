@@ -1,5 +1,7 @@
 package com.domain.customer;
 
+import com.domain.Role;
+import org.hibernate.annotations.CollectionOfElements;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.validator.constraints.Length;
@@ -12,6 +14,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.util.Date;
+import java.util.Set;
 
 
 /**
@@ -43,6 +46,11 @@ public class User extends AbstractPersistable<Long> {
     //TODO: [stas] there are should be case with unspecified gender. BTW, I think it should be radiobuttons on UI
     private Gender gender;
 
+    @ElementCollection (targetClass = Role.class, fetch = FetchType.EAGER)
+    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "userID"))
+    @Column(name = "role", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Set<Role> roles;
 
     public User() {
     }
@@ -99,11 +107,23 @@ public class User extends AbstractPersistable<Long> {
 
     @Override
     public String toString() {
+        StringBuilder rolesInStr = new StringBuilder(" with rules:");
+        for (Role userRole : roles) {
+            rolesInStr.append(userRole).append(" ");
+        }
         return "User{" +
                 ", name='" + name + '\'' +
                 ", email=" + email +
                 ", birthday=" + birthday +
                 ", gender=" + gender +
-                '}';
+                ',' + roles + '}';
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }

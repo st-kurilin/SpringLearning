@@ -8,6 +8,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import static java.lang.String.format;
 
@@ -36,7 +38,11 @@ abstract class Principal implements UserDetails {
         return new Principal() {
             @Override
             public Collection<GrantedAuthority> getAuthorities() {
-                return ImmutableSet.<GrantedAuthority>of(Role.USER.authority());
+                Set<GrantedAuthority> authorities = new HashSet<GrantedAuthority>();
+                for (Role role : user.getRoles()){
+                    authorities.add(role.authority());
+                }
+                return authorities;
             }
 
             @Override
